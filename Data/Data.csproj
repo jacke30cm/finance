@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="DataWorker.cs" />
     <Compile Include="Entities\EntityBases.cs" />
     <Compile Include="Entities\Competition.cs" />
     <Compile Include="Entities\Image.cs" />
