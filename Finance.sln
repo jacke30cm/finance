@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finance", "Finance\Finance.csproj", "{2FEFED4D-0559-401E-BC6D-7488F0072321}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{8644384C-7FCA-4F47-89D0-95391FDC8073}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{C12135D4-0263-4E55-88F2-46922EA1803F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FEFED4D-0559-401E-BC6D-7488F0072321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FEFED4D-0559-401E-BC6D-7488F0072321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FEFED4D-0559-401E-BC6D-7488F0072321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FEFED4D-0559-401E-BC6D-7488F0072321}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8644384C-7FCA-4F47-89D0-95391FDC8073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8644384C-7FCA-4F47-89D0-95391FDC8073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8644384C-7FCA-4F47-89D0-95391FDC8073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8644384C-7FCA-4F47-89D0-95391FDC8073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12135D4-0263-4E55-88F2-46922EA1803F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12135D4-0263-4E55-88F2-46922EA1803F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12135D4-0263-4E55-88F2-46922EA1803F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12135D4-0263-4E55-88F2-46922EA1803F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
