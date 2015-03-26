@@ -1,0 +1,247 @@
+﻿
+.menu {
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 80px;
+    background: #FFF;
+    z-index: 1;
+}
+
+    .menu ul {
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translate(-0%, -50%);
+    }
+
+        .menu ul li {
+            display: inline;
+            margin: 0 20px 0 20px;
+        }
+
+    .menu .logotype {
+        position: absolute;
+        height: 40px;
+        top: 50%;
+        left: 5%;
+        transform: translate(-50%, -50%);
+    }
+
+    .menu .user-panel {
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        top: 50%;
+        right: 5%;
+        text-align: right;
+        transform: translate(-0%, -50%);
+        cursor: pointer;
+    }
+
+        .menu .user-panel .drop-down {
+            position: absolute;
+            left: 0;
+            top: 80px;
+            width: 200px;
+            min-height: 50px;
+            background: #FFF;
+            z-index: 2;
+            text-align: left;
+            display: none;
+            border: 1px solid #EBEBEB;
+            border-top: none;
+        }
+
+            .menu .user-panel .drop-down .arrow {
+                position: absolute;
+                top: 2px;
+                left: 50%;
+                width: 10px;
+                height: 10px;
+                background: #FFF;
+                transform: rotate(45deg) translate(-50%, -50%);
+            }
+
+            .menu .user-panel .drop-down .list-item {
+                border-bottom: 1px solid #EBEBEB;
+                -moz-transition: 0.3s ease-in-out;
+                -webkit-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+            }
+
+
+                .menu .user-panel .drop-down .list-item:hover {
+                    background: #FAFAFA;
+                }
+
+                .menu .user-panel .drop-down .list-item:last-of-type {
+                    border: none;
+                }
+
+
+                .menu .user-panel .drop-down .list-item i {
+                    font-size: 9px;
+                    margin-left: 20px;
+                }
+
+                .menu .user-panel .drop-down .list-item p {
+                    margin-left: 10px;
+                }
+
+        .menu .user-panel .canvas {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-left: 30px;
+        }
+
+            .menu .user-panel .canvas img {
+                width: 60px;
+            }
+
+        .menu .user-panel .canvas, p {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 50px;
+        }
+
+
+
+.control-panel {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    z-index: 10;
+    background: transparent;
+}
+
+.control-panel-ghost {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background: #444;
+    opacity: 0.9;
+}
+
+.control-panel-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    opacity: 0.7;
+    z-index: 9;
+}
+
+
+.control-panel .column {
+    min-width: 250px;
+
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid #777;
+    z-index: 11;
+}
+
+.control-panel .content-column {
+    min-width: 100%;
+
+    height: 100%;
+    padding: 100px 50px;
+    border: none;
+}
+
+.content-column .content {
+
+    width: 400px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+
+}
+
+.content-column .content .image-drop {
+
+    width: 100%;
+    height: 250px;
+    border: 1px dashed #EBEBEB; 
+
+}
+
+.control-panel .level-2 {
+    position: absolute;
+    left: 15%;
+    display: none;
+    opacity: 0.0;
+}
+
+.control-panel .level-3 {
+    position: absolute;
+    left: 30%;
+    display: none;
+    opacity: 0.0;
+}
+
+.control-panel .column ul {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 0%;
+    z-index: 11;
+}
+
+
+    .control-panel .column ul li {
+        width: 100%;
+        transition: 0.3s ease-in-out;
+    }
+
+        .control-panel .column ul li:hover {
+            background: #666;
+        }
+
+        .control-panel .column ul li i, p {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .control-panel .column ul li i {
+            margin: 20px 0 20px 15%;
+        }
+
+        .control-panel .column ul li p {
+            font-size: 10px;
+            letter-spacing: 3px;
+            font-weight: 300;
+            text-transform: uppercase;
+            line-height: 2;
+            cursor: pointer;
+            margin: 20px 0 20px 5%;
+        }
+
+.button-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 11;
+    cursor: pointer;
+}
+
+.control-panel .create-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999; 
+}

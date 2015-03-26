@@ -1,0 +1,160 @@
+﻿@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Muli:300,400);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,800,400);
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, 
+form, label, legend, input, table, caption, tbody, tfoot, thead, tr, th, td , section
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body				
+{		
+	background: #EBEBEB; 
+	overflow: hidden;  
+}
+
+div 					
+{		
+	position: relative; 
+}
+
+p, li, a, h1, h2, h3, h4 
+{
+	font-family: 'Open Sans'; 
+	color: #444; 
+}
+
+p 
+{
+	font-size: 11px; 
+	letter-spacing: 2px; 
+	font-weight: 400; 
+	text-transform: none; 
+	line-height: 2;
+}
+
+.-capitalize {
+    text-transform: uppercase;
+    font-size: 9px;
+}
+
+.-discrete {
+    color: #CCC; 
+}
+
+a, li {
+    font-size: 10px; 
+	letter-spacing: 3px; 
+	font-weight: 300; 
+	text-transform: uppercase; 
+	line-height: 2;
+    cursor: pointer;
+}
+
+.-white
+{
+	color: #EBEBEB; 
+}
+
+
+h1 {
+
+	font-size: 22px; 
+	letter-spacing: 2.5; 
+	font-weight: 300; 
+}
+
+h2 {
+
+	font-size: 18px;
+    letter-spacing: 1px;
+	font-weight: 400;
+    line-height: 18px; 
+
+}
+
+.button-primary {
+
+    width: 150px;
+    min-height: 5px;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    border: none;
+}
+
+input[type="text"] {
+
+    width: calc(100% - 10px);
+    height: 35px;
+    padding: 0 0 0 10px;
+    background: #EBEBEB;
+    /*border: 1px solid #EBEBEB;*/
+
+    font-family: 'Open Sans';
+    font-size: 11px; 
+	letter-spacing: 1px; 
+	font-weight: 400; 
+	text-transform: none; 
+
+}
+
+textarea {
+
+    width: calc(100% - 20px);
+    min-height: 100px;
+    padding: 10px;
+    background: #EBEBEB;
+    border:none;
+
+    font-family: 'Open Sans';
+    font-size: 11px; 
+	letter-spacing: 1px; 
+	font-weight: 400; 
+	text-transform: none; 
+
+}
+
+.-green {
+    background: #90c394; 
+}
+
+.-cyan {
+    background: #90c3c1; 
+}
+
+.-purple {
+    background: #9095c3; 
+}
+
+.-yellow {
+    background: #bfc390; 
+}
+
+.-red {
+    background: #c39090; 
+}
+
+.-pink {
+    background: #c390b8; 
+}
+
+.-orange {
+    background: #c3a690;
+}
+
+.-blue {
+    background: #506175; 
+}
+
+.-light-green {
+    background: #69a293;
+}
