@@ -18,8 +18,8 @@ form, label, legend, input, table, caption, tbody, tfoot, thead, tr, th, td , se
 
 body				
 {		
-	background: #EBEBEB; 
-	overflow: hidden;  
+	background: #EBEBEB;
+    overflow: hidden;
 }
 
 div 					

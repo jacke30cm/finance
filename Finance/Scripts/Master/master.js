@@ -1,4 +1,28 @@
-﻿$(document).ready(function() {
+﻿(function ($) {
+    $(window).load(function () {
+
+        $('#feed').mCustomScrollbar({
+            axis: "x",
+            theme: "light",
+            autoDraggerLength: true,
+            autoHideScrollbar: true,
+            scrollbarPosition: "inside",
+            alwaysShowScrollbar: 0,
+            advanced: { autoExpandHorizontalScroll: true },
+            mouseWheel: { scrollAmount: 300 },
+            scrollInertia: 400,
+        });
+
+    });
+})(jQuery);
+
+$(document).ready(function () {
+
+
+
+    
+    
+
 
 
     // Bring user-options

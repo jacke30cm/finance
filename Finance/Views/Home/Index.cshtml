@@ -1,24 +1,23 @@
 ﻿
-<div class="row">
-    
-    
+<div id="feed" class="row">
+
 
     <div class="col-large">
-        
+
         <h1>Mina tävlingar</h1>
         <br />
 
         <div class="block-m">
-            
+
             <div class="competition">
                 <div class="competition-ghost"></div>
 
                 <div class="image-wrap">
-                    <img src="~/Content/Images/Competitions/wstreet.jpg"/>
+                    <img src="~/Content/Images/Competitions/wstreet.jpg" />
                 </div>
-                
+
                 <div class="content">
-                    
+
                     <h2>Sesams aktietävling</h2>
                     <p class="-capitalize "> Pågår en vecka till</p>
                 </div>
@@ -26,7 +25,7 @@
             </div>
 
         </div>
-        
+
         <div class="block-m">
 
             <div class="competition">
@@ -47,30 +46,88 @@
         </div>
 
         <div class="block-m">
-            
+
             <div class="create-competition">
 
-               
+
 
             </div>
 
         </div>
-     
+
     </div>
-    
-  
+
+    <div class="col-large">
+
+        <h1>Populära tävlingar</h1>
+        <br />
+
+        @for (var c = 0; c < 4; c++)
+        {
+
+            <div class="block-m">
+
+                @for (var x = 0; x < 4; x++)
+                {
+
+
+                    <div class="block-s">
+                        <div class="competition">
+                            <div class="competition-ghost"></div>
+
+                            @*<div class="image-wrap">
+                                    <img src="~/Content/Images/Competitions/wstreet.jpg" />
+                                </div>
+
+                                <div class="content">
+
+                                    <h2>Sesams aktietävling</h2>
+                                    <p class="-capitalize "> Pågår en vecka till</p>
+                                </div>*@
+
+                        </div>
+                    </div>
+
+                }
+            </div>
+        }
+
+
+    </div>
+
     <div class="col-large">
 
         <h1>Feed</h1>
         <br />
 
         <div class="event-block">
-            
-           
+
+
 
 
         </div>
-        
+
+        <div class="event-block">
+
+
+
+
+        </div>
+
+    </div>
+
+    <div class="col-large">
+
+        <h1>Other</h1>
+        <br />
+
+        <div class="event-block">
+
+
+
+
+        </div>
+
         <div class="event-block">
 
 
@@ -81,3 +138,4 @@
     </div>
 
 </div>
+

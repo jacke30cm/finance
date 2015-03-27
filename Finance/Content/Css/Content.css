@@ -1,14 +1,28 @@
 ﻿
+
+
 .main-content {
     width: 90%;
     height: 90%;
     padding: 4%;
 }
 
-.row {
-    width: auto;
+.main-content .left-ghost, right-ghost {
+
+    position: absolute;
+    top: 0;
+    width: 30px;
     height: 100%;
+
 }
+
+.row {
+    max-width: 8000px;
+    max-height:800px;
+    /*overflow: auto;*/
+    overflow: hidden; 
+}
+
 
     .row .col-large {
         width: 615px;
@@ -17,6 +31,7 @@
         background: transparent;
         display: inline-block;
         vertical-align: top;
+        float: left;
     }
 
 .block-s, .block-m, .block-lg {
@@ -84,6 +99,6 @@
     width: 100%;
     min-height: 150px;
     background: #FFF;
-    margin: 5px 0 0 0; 
+    margin: 0 0 5px 0; 
 
 }
