@@ -29,7 +29,6 @@
     }
 
     .col-s, col-m, .col-lg {
-        
         height: 100%;
         margin: 0 15px 0 0;
         background: transparent;
@@ -42,7 +41,7 @@
     }
 
     .col-m {
-        width: 300px; 
+        width: 300px;
     }
 
     .col-lg {
@@ -88,7 +87,80 @@
             padding: 25px;
         }
 
-    
+    .rectangular-block {
+        width: 100%;
+        min-height: 50px;
+        background: #FFF;
+        margin: 0 0 5px 0;
+    }
+
+    .table-col-6 {
+        position: relative;
+        width: calc(100% - 100px);
+        min-height: 50px;
+    }
+
+
+        .table-col-6 thead tr {
+            width: 100%;
+        }
+
+            .table-col-6 thead tr td {
+                width: 16%;
+                min-height: 15px;
+                padding: 10px;
+            }
+
+
+
+        .table-col-6 tbody tr {
+            width: 100%;
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+            .table-col-6 tbody tr td {
+                width: calc(100% / 6);
+                min-height: 15px;
+                padding: 10px;
+            }
+
+    .table-col-4 {
+        position: relative;
+        /*width: calc(100% - 100px);*/
+        width: 100%;
+        min-height: 50px;
+    }
+
+
+        .table-col-4 thead tr {
+            width: 100%;
+        }
+
+            .table-col-4 thead tr td {
+                width: 20%;
+                min-height: 15px;
+                padding: 10px;
+                display: table-cell;
+                border-bottom: 1px solid #EBEBEB;
+            }
+
+                .table-col-4 thead tr td:first-of-type {
+                    width: 40%;
+                }
+
+
+        .table-col-4 tbody tr {
+            width: 100%;
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+            .table-col-4 tbody tr td {
+                width: 25%;
+                min-height: 15px;
+                padding: 10px;
+                display: table-cell;
+                border-bottom: 1px solid #EBEBEB;
+            }
 }
 
 @media screen and (max-width: 1366px) {
@@ -158,4 +230,89 @@
         height: 255px;
     }
 
+    .block-lg {
+        width: 515px;
+        height: 515px;
+    }
+
+        .block-lg .content {
+            width: calc(100% - 50px);
+            height: calc(100% - 50px);
+            padding: 25px;
+        }
+
+    .rectangular-block {
+        width: 100%;
+        min-height: 50px;
+        background: #FFF;
+        margin: 0 0 5px 0;
+    }
+
+    .table-col-6 {
+        position: relative;
+        width: calc(100% - 100px);
+        min-height: 50px;
+    }
+
+
+        .table-col-6 thead tr {
+            width: 100%;
+        }
+
+            .table-col-6 thead tr td {
+                width: 16%;
+                min-height: 15px;
+                padding: 10px;
+            }
+
+
+
+        .table-col-6 tbody tr {
+            width: 100%;
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+            .table-col-6 tbody tr td {
+                width: calc(100% / 6);
+                min-height: 15px;
+                padding: 10px;
+            }
+
+    .table-col-4 {
+        position: relative;
+        /*width: calc(100% - 100px);*/
+        width: 100%;
+        min-height: 50px;
+    }
+
+
+        .table-col-4 thead tr {
+            width: 100%;
+        }
+
+            .table-col-4 thead tr td {
+                width: 20%;
+                min-height: 15px;
+                padding: 5px;
+                display: table-cell;
+                border-bottom: 1px solid #EBEBEB;
+            }
+
+                .table-col-4 thead tr td:first-of-type {
+                    width: 40%;
+                }
+
+
+        .table-col-4 tbody tr {
+            width: 100%;
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+            .table-col-4 tbody tr td {
+                width: 25%;
+                min-height: 10px;
+                padding: 5px;
+                display: table-cell;
+                border-bottom: 1px solid #EBEBEB;
+            }
 }

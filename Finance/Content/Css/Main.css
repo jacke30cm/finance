@@ -51,6 +51,14 @@ p
     color: #CCC; 
 }
 
+.-jumbo {
+    font-size: 28px;
+}
+
+.-bold {
+    font-weight: 700;
+}
+
 a, li {
     font-size: 10px; 
 	letter-spacing: 3px; 
@@ -60,11 +68,25 @@ a, li {
     cursor: pointer;
 }
 
-.color-white
-{
-	color: #EBEBEB; 
+
+a:link {
+    color: initial;
+    text-decoration: none; 
 }
 
+
+a:visited {
+    color: initial;
+}
+
+
+a:hover {
+    color: initial;
+}
+
+a:active {
+    color: initial;
+}
 
 h1 {
 
@@ -126,6 +148,15 @@ textarea {
 	text-transform: none; 
 
 }
+
+/*Font colors*/
+
+.color-white
+{
+	color: #EBEBEB; 
+}
+
+/*Background colors*/
 
 .-white {
     background: #FFF;

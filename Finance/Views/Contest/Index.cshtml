@@ -16,14 +16,14 @@
 
                 <div class="pie-chart" data-percent="55">
                     <div class="chart-content">
-                        <br/>
                         <h1>15 000</h1>
-                        <br />
-                        <p class="-capitalize"> att handla för </p>
-
+                        <p>SEK</p>
                     </div>
                 </div>
 
+                <div class="pie-chart-label">
+                    <p class="-capitalize">Kapital att handla för</p>
+                </div>
 
             </div>
 
@@ -35,14 +35,16 @@
 
                 <div class="pie-chart" data-percent="-55">
                     <div class="chart-content">
-                        <br />
-                        <h1>-55.3%</h1>
-                        <br />
-                        <p class="-capitalize"> utveckling </p>
+
+                        <h1>-55.3</h1>
+                        <p>%</p>
 
                     </div>
                 </div>
 
+                <div class="pie-chart-label">
+                    <p class="-capitalize">Portföljutveckling</p>
+                </div>
 
             </div>
 
@@ -52,16 +54,123 @@
 
             <div class="clean-content -white">
                 <div class="donut-chart"></div>
+
+
+                <div class="pie-chart-label">
+                    <p class="-capitalize">Portföljfördelning</p>
+                </div>
+
             </div>
 
         </div>
+
+        <div class="block-m">
+
+            <div class="clean-content -white">
+
+                <h1 class="-jumbo"> 33 000</h1>
+                <p class="-capitalize">sek</p>
+
+                <div class="pie-chart-label">
+                    <p class="-capitalize">Totalt portföljvärde</p>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
+
+    <div class="col-lg">
+        <h1>Portföljutveckling</h1>
+        <br />
+
+        <div class="block-lg">
+            <div class="clean-content -white">
+
+                <div class="account-development"></div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
     <div class="col-lg">
         <h1>Innehav</h1>
         <br />
 
         <div class="block-lg">
             <div class="clean-content -white">
+
+                <table class="table-col-4">
+                    
+                    <thead>
+                        <tr>
+                            <td>
+                                <p class="-capitalize -bold">
+                                    Namn
+                                </p>
+                            </td>
+                            <td>
+                                <p class="-capitalize -bold">
+                                    Antal
+                                </p>
+                            </td>
+                            <td>
+                                <p class="-capitalize -bold">
+                                    Utveckling
+                                </p>
+                            </td>
+                            <td>
+                                <p class="-capitalize -bold">
+                                    Avkastning
+                                </p>
+                            </td>
+                           
+
+                        </tr>
+                        
+
+                    </thead>
+
+                    <tbody>
+                        @for (var x = 0; x < 6; x++)
+                        {
+
+                            <tr>
+                                <td>
+                                    <p class="">
+                                        Arocell
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="">
+                                        155
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="">
+                                        +5.25%
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="">
+                                        255 SEK
+                                    </p>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+
+
+
+                </table>
 
 
 
@@ -80,10 +189,37 @@
         <br />
 
         <div class="block-lg">
-            <div class="clean-content -white">
+            
+            <div class="rectangular-block">
+                <div class="block-s">
+                    
+                    <div class="transaction-identifier -green">
+                        <i class="fa fa-arrow-right color-white"></i>
+                    </div>
 
+                </div>
 
+                <div class="block-s">
+                    <p>Here follows text</p>
+                </div>
 
+            </div>
+            
+            <div class="rectangular-block">
+                <div class="block-s">
+
+                    <div class="transaction-identifier -red">
+                        <i class="fa fa-arrow-left color-white"></i>
+                    </div>
+
+                </div>
+
+                <div class="block-s">
+                    <p>Here follows text</p>
+                </div>
+            </div>
+            
+            <div class="rectangular-block">
 
             </div>
 

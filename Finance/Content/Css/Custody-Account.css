@@ -1,57 +1,183 @@
-﻿
-#custody-account .col-lg .block-lg .clean-content {
-    width: calc(100% - 100px);
-    height: calc(100% - 100px);
-    padding: 50px;
+﻿@media screen and (min-width: 1366px) {
+    #custody-account .col-lg .block-lg .clean-content {
+        width: calc(100% - 100px);
+        height: calc(100% - 100px);
+        padding: 50px;
+    }
+
+    #custody-account .col-lg .block-m .clean-content {
+        width: calc(100% - 100px);
+        height: calc(100% - 100px);
+        padding: 50px;
+    }
+
+        #custody-account .col-lg .block-m .clean-content .pie-chart {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #custody-account .col-lg .block-m .clean-content .pie-chart-label {
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            left: 25px;
+            bottom: 10px;
+        }
+
+        #custody-account .col-lg .block-m .clean-content .pie-chart .chart-content {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        #custody-account .col-lg .block-m .clean-content .donut-chart {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+            #custody-account .col-lg .block-m .clean-content .donut-chart .donut-label {
+                width: 50px;
+                min-height: 25px;
+                border-radius: 50%;
+                padding: 10px;
+            }
+
+    #custody-account .col-lg .block-lg .clean-content .account-development {
+        position: absolute;
+        left: 0%;
+        top: 50%;
+        width: 615px;
+        height: 715px;
+        transform: translate(-0%, -50%);
+    }
+
+
+    #custody-account .col-lg .block-lg .rectangular-block .block-s {
+        height: 70px;
+    }
+
+        #custody-account .col-lg .block-lg .rectangular-block .block-s .transaction-identifier {
+            position: absolute;
+            left: 15%;
+            top: 50%;
+            transform: translate(-0%, -50%);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+            #custody-account .col-lg .block-lg .rectangular-block .block-s .transaction-identifier i {
+                position: absolute;
+                font-size: 12px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
 }
 
-#custody-account .col-lg .block-m .clean-content {
-    width: calc(100% - 100px);
-    height: calc(100% - 100px);
-    padding: 50px;
-}
+@media screen and (max-width: 1366px) {
 
-#custody-account .col-lg .block-m .clean-content .pie-chart {
+    #custody-account .col-lg .block-lg .clean-content {
+        width: calc(100% - 100px);
+        height: calc(100% - 100px);
+        padding: 50px;
+    }
 
-    position: absolute;
+    #custody-account .col-lg .block-m .clean-content {
+        width: calc(100% - 100px);
+        height: calc(100% - 100px);
+        padding: 50px;
+    }
 
-    width: 200px;
-    height: 200px;
+        #custody-account .col-lg .block-m .clean-content .pie-chart {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); 
+        #custody-account .col-lg .block-m .clean-content .pie-chart-label {
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            left: 25px;
+            bottom: 20px;
+        }
 
-}
+        #custody-account .col-lg .block-m .clean-content .pie-chart .chart-content {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
 
-#custody-account .col-lg .block-m .clean-content .pie-chart .chart-content {
+        #custody-account .col-lg .block-m .clean-content .donut-chart {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-    position: absolute;
+            #custody-account .col-lg .block-m .clean-content .donut-chart .donut-label {
+                width: 50px;
+                min-height: 25px;
+                border-radius: 50%;
+                padding: 10px;
+            }
 
-    width: 100px;
-    height: 100px;
+                #custody-account .col-lg .block-m .clean-content .donut-chart .donut-label p {
+                    line-height: initial;
+                }
 
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
 
-#custody-account .col-lg .block-m .clean-content .donut-chart {
+    #custody-account .col-lg .block-lg .clean-content .account-development {
+        position: absolute;
+        left: 0%;
+        top: 50%;
+        width: 515px;
+        height: 615px;
+        transform: translate(-0%, -50%);
+    }
 
-    position: absolute;
 
-    width: 280px;
-    height: 280px;
+    #custody-account .col-lg .block-lg .rectangular-block .block-s {
+        height: 70px;
+    }
 
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); 
+        #custody-account .col-lg .block-lg .rectangular-block .block-s .transaction-identifier {
+            position: absolute;
+            left: 15%;
+            top: 50%;
+            transform: translate(-0%, -50%);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
 
-}
-
-#custody-account .col-lg .block-m .clean-content .donut-chart .donut-label{
-
-    padding: 10px; 
-
+            #custody-account .col-lg .block-lg .rectangular-block .block-s .transaction-identifier i {
+                position: absolute;
+                font-size: 12px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
 }

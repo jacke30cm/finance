@@ -10,7 +10,7 @@
             alwaysShowScrollbar: 0,
             advanced: { autoExpandHorizontalScroll: true },
             mouseWheel: { scrollAmount: 300 },
-            keyboard: {  scrollAmount: 15},
+            keyboard: { scrollAmount: 15 },
             scrollInertia: 400,
         });
 
@@ -33,6 +33,73 @@
 
 $(document).ready(function () {
 
+    //Account Development chart
+
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Datum', 'Utveckling'],
+          ['1/5', 5],
+          ['2/5', 4],
+          ['3/5', 7],
+          ['4/5', 13],
+          ['5/5', 9],
+          ['6/5', 10],
+          ['7/5', 9],
+          ['8/5', 14],
+          ['9/5', 16],
+          ['10/5', 15],
+          ['11/5', 14],
+          ['12/5', 16],
+          ['13/5', 19],
+          ['14/5', 20],
+          ['15/5', 22],
+          ['16/5', 21],
+          ['17/5', 20],
+          ['18/5', 23],
+          ['19/5', 21],
+          ['20/5', 26],
+          ['21/5', 15],
+          ['22/5', 7],
+          ['23/5', 6],
+          ['24/5', 6],
+          ['25/5', 6], 
+          ['26/5', -5]
+        ]);
+
+        var options = {
+            curveType: 'function',
+            legend: { position: 'none' },
+            fontName: 'Open Sans',
+            animation: { startup: true, duration: 500, easing: 'out' },
+            series: {
+                0: {
+                    color: '#90c3c1'
+                }
+
+            },
+            hAxis: {
+                format: 'dd-MM',
+            },
+            vAxis: {
+                format: '#\'%',
+                baselineColor: '#EBEBEB',
+                gridlines: {
+                    color: '#EBEBEB'
+                }
+
+            }
+        };
+
+        var chart = new google.visualization.LineChart($('.account-development')[0]);
+
+        chart.draw(data, options);
+    }
+
+
+
+
     //Donut chart
     if ($('.donut-chart').length > 0) {
         var data = [
@@ -46,7 +113,7 @@ $(document).ready(function () {
                 pie: {
                     show: true,
                     //innerRadius: .4,
-                    innerRadius: 0.62,
+                    innerRadius: 0.64,
                     stroke: {
                         width: 2,
                         color: "#F9F9F9"
@@ -64,7 +131,7 @@ $(document).ready(function () {
             },
             legend: {
                 show: false,
-                
+
             },
             grid: {
                 hoverable: true
@@ -81,8 +148,7 @@ $(document).ready(function () {
     // Easy pie chart
     var options = {
 
-        size: 200,
-        lineWidth: 15,
+
         barColor: '#a4c8be',
         lineCap: 'square',
         scaleColor: false,
@@ -90,6 +156,17 @@ $(document).ready(function () {
         easing: 'easeOutCubic',
         trackColor: '#EBEBEB'
     };
+
+    if ($(window).width() >= 1366) {
+
+        options.size = 180;
+        options.lineWidth = 12;
+
+    } else {
+
+        options.size = 150;
+        options.lineWidth = 10;
+    }
 
     $('.pie-chart').each(function () {
 
@@ -122,36 +199,36 @@ $(document).ready(function () {
             return '#90c3c1';
         }
         else if (percentage >= 66) {
-            
+
             return '#90c394';
         }
 
     };
 
 
-    setInterval(function() {
+    setInterval(function () {
 
         $('.pie-chart').data('easyPieChart').update(Math.floor(100 * Math.random()));
 
-    }, 3000); 
-    
+    }, 3000);
+
 
 
 
     // Bring user-options
 
-    $(this).on('click', '.user-panel', function() {
+    $(this).on('click', '.user-panel', function () {
 
 
         if ($(this).find('.drop-down').css('display') == 'none') {
-            
+
             $(this).find('.drop-down').css('display', 'initial');
 
         } else {
-            
+
             $(this).find('.drop-down').css('display', 'none');
         }
-        
+
 
     });
 
@@ -159,7 +236,7 @@ $(document).ready(function () {
 
     $(this).on('mouseenter', '.competition', function () {
 
-        $(this).find('.competition-ghost').stop().animate({ opacity: 0.6 }, 700, 'easeOutQuint'); 
+        $(this).find('.competition-ghost').stop().animate({ opacity: 0.6 }, 700, 'easeOutQuint');
 
     });
 
@@ -209,6 +286,6 @@ $(document).ready(function () {
 
         $('.control-panel').animate({ bottom: '-50%' }, 500, 'easeOutQuint');
     }
-   
 
-}); 
+
+});
