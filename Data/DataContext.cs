@@ -26,8 +26,8 @@ namespace Data
         
 
         // Tabeller
-
-        public DbSet<Competition> Competitions { get; set; }
+        public DbSet<Contest> Contests { get; set; }
+        public DbSet<Image> Images { get; set; }
        
     }
 }

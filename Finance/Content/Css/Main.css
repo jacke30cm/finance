@@ -60,7 +60,7 @@ a, li {
     cursor: pointer;
 }
 
-.-white
+.color-white
 {
 	color: #EBEBEB; 
 }
@@ -69,16 +69,17 @@ a, li {
 h1 {
 
 	font-size: 22px; 
-	letter-spacing: 2.5; 
+	letter-spacing: 1px; 
 	font-weight: 300; 
 }
 
 h2 {
 
-	font-size: 18px;
+	font-size: 14px;
     letter-spacing: 1px;
 	font-weight: 400;
-    line-height: 18px; 
+    line-height: 18px;
+    text-transform: uppercase;
 
 }
 
@@ -86,13 +87,16 @@ h2 {
 
     width: 150px;
     min-height: 5px;
-    padding: 5px 10px 5px 10px;
+    padding: 10px 10px 10px 10px;
     text-align: center;
     border: none;
+    cursor: pointer;
+
 }
 
 input[type="text"] {
 
+    position: relative;
     width: calc(100% - 10px);
     height: 35px;
     padding: 0 0 0 10px;
@@ -121,6 +125,10 @@ textarea {
 	font-weight: 400; 
 	text-transform: none; 
 
+}
+
+.-white {
+    background: #FFF;
 }
 
 .-green {
@@ -157,4 +165,12 @@ textarea {
 
 .-light-green {
     background: #69a293;
+}
+
+.-float-left {
+    float: left;
+}
+
+.-float-right {
+    float: right; 
 }

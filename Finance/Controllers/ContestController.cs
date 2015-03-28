@@ -6,17 +6,12 @@ using System.Web.Mvc;
 
 namespace Finance.Controllers
 {
-    public class HomeController : BaseController
+    public class ContestController : Controller
     {
+        
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult About()
-        {
-            return View();
-        }
-       
     }
 }

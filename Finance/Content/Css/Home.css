@@ -1,0 +1,130 @@
+﻿@media screen and (min-width: 1366px) {
+
+    .competition {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #FFF;
+    }
+
+        .competition .competition-ghost {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #FFF;
+            opacity: 0.0;
+            z-index: 10;
+        }
+
+        .competition .image-wrap {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+            .competition .image-wrap img {
+                width: 305px;
+            }
+
+        .competition .content {
+            width: calc(100% - 50px);
+            height: 100px;
+            padding: 25px;
+            text-align: center;
+        }
+
+    .create-competition {
+        width: 100%;
+        height: 305px;
+        border: 1px dashed #CCC;
+    }
+
+    .event-block {
+        width: 100%;
+        min-height: 50px;
+        background: #FFF;
+        margin: 0 0 5px 0;
+    }
+
+        .event-block .block-s .image-wrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+            .event-block .block-s .image-wrap img {
+                height: 70px;
+            }
+}
+
+@media screen and (max-width: 1366px) {
+    .competition {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #FFF;
+    }
+
+        .competition .competition-ghost {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #FFF;
+            opacity: 0.0;
+            z-index: 10;
+        }
+
+        .competition .image-wrap {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+        }
+
+            .competition .image-wrap img {
+                width: 255px;
+            }
+
+        .competition .content {
+            width: calc(100% - 50px);
+            height: 100px;
+            padding: 25px;
+            text-align: center;
+        }
+
+    .create-competition {
+        width: 100%;
+        height: 305px;
+        border: 1px dashed #CCC;
+    }
+
+    .event-block {
+        width: 100%;
+        min-height: 50px;
+        background: #FFF;
+        margin: 0 0 5px 0;
+    }
+
+        .event-block .block-s .image-wrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+            .event-block .block-s .image-wrap img {
+                height: 70px;
+            }
+}

@@ -16,6 +16,9 @@ namespace Finance
                         "~/Scripts/jqueryEase.js",
                          "~/Scripts/jquery.mousewheel.min.js",
                         "~/Scripts/jquery.mCustomScrollbar.js",
+                        "~/Scripts/jquery.easypiechart.min.js",
+                        "~/Scripts/jquery.flot.min.js",
+                        "~/Scripts/jquery.flot.pie.min.js",
                         "~/Scripts/spin.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/master").Include(
@@ -29,7 +32,20 @@ namespace Finance
                       "~/Content/Css/Main.css",
                       "~/Content/Css/Menu.css",
                       "~/Content/Css/jquery.mCustomScrollbar.css",
-                      "~/Content/Css/Content.css"));
+                      "~/Content/Css/Components.css"));
+
+            //Home
+            bundles.Add(new StyleBundle("~/CssBundle/home").Include(
+                      "~/Content/Css/Home.css"));
+
+
+            //About
+            bundles.Add(new StyleBundle("~/CssBundle/about").Include(
+                      "~/Content/Css/About.css"));
+
+            //Custody Account -> Default startpage when in contest
+            bundles.Add(new StyleBundle("~/CssBundle/custody-account").Include(
+                      "~/Content/Css/Custody-Account.css"));
         }
     }
 }

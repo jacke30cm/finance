@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Start";
+    @Styles.Render("~/CssBundle/about")
+
+}
+
+
+<div id="about" class="row horizontal-scroll">
+
+
+    <div class="col-lg">
+
+        <h1>Vad är ... </h1>
+        <br />
+
+        <div class="block-lg">
+            <div class="content">
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="col-lg">
+
+        <h1>Vi som utvecklar ... </h1>
+        <br />
+
+        <div class="block-lg">
+
+            <div class="block-m -white">
+
+                <div class="content">
+                    <div class="image-wrap">
+                        <img src="~/Content/Images/Users/jake.jpg" />
+                    </div>
+                </div>
+                <div class="content">
+                    <h2>Jacob Ståhl</h2>
+                    <p class="-discrete -capitalize"> Back-end </p>
+                </div>
+
+            </div>
+
+
+            <div class="block-m -white">
+
+                <div class="content">
+                    <div class="image-wrap">
+                        <img src="~/Content/Images/Users/sherlock.jpg" />
+                    </div>
+                </div>
+                <div class="content">
+                    <h2>Marcus Pihlquist</h2>
+                    <p class="-discrete -capitalize"> Front + back-end </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="col-lg">
+
+        <h1>Kontakt </h1>
+        <br />
+
+        <div class="block-lg">
+            <div class="clean-content -white">
+
+                <p class="-capitalize">Namn</p>
+                <input type="text" />
+
+                <br />
+                <br />
+                <br />
+
+                <p class="-capitalize">Epost</p>
+                <input type="text" />
+
+                <br />
+                <br />
+                <br />
+
+                <p class="-capitalize">Meddelande</p>
+                <textarea></textarea>
+                
+                <br />
+                <br />
+                
+                <br />
+                <br />
+
+                <button class="button-primary -green -float-right">
+                    <p class="color-white -capitalize">Skicka</p>
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+@Html.Action("ControlPanel", "Master", new { name = "CreateCompetition" })

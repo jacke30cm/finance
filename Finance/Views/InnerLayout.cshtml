@@ -8,7 +8,7 @@
     @* Styles *@
     @Styles.Render("~/CssBundle/css")
     @Styles.Render("~/CssBundle/fontawesome")
-
+    
     @* Scripts *@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/master")
@@ -19,10 +19,11 @@
     @Html.Action("Menu", "Master")
 
     <div class="main-content">
+        @*<div class="right-ghost"></div>*@
         @RenderBody()
     </div>
 
-    @Html.Action("ControlPanel", "Master", new {name = "CreateCompetition"})
+    
 
 </body>
 </html>

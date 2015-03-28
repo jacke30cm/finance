@@ -1,6 +1,8 @@
 ﻿$(document).ready(function() {
 
 
+
+
     // Animate right border on click
 
     $(this).on('click', '.control-panel .column ul li', function() {
@@ -12,7 +14,7 @@
 
         });
 
-        $(this).css({ 'border-right' : '3px solid #FFF', 'background' : '#666' }); 
+        $(this).css({ 'border-right' : '3px solid #FFF', 'background' : '#666', 'width' : '247px' }); 
 
 
     });

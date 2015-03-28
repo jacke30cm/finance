@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data.Entities
 {
-    public class Competition : RelationalBase
+    public class Contest : RelationalBase
     {
         public string Name { get; set; }
 

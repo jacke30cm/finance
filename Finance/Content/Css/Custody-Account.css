@@ -1,0 +1,57 @@
+﻿
+#custody-account .col-lg .block-lg .clean-content {
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    padding: 50px;
+}
+
+#custody-account .col-lg .block-m .clean-content {
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    padding: 50px;
+}
+
+#custody-account .col-lg .block-m .clean-content .pie-chart {
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+
+}
+
+#custody-account .col-lg .block-m .clean-content .pie-chart .chart-content {
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#custody-account .col-lg .block-m .clean-content .donut-chart {
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+
+}
+
+#custody-account .col-lg .block-m .clean-content .donut-chart .donut-label{
+
+    padding: 10px; 
+
+}

@@ -6,12 +6,12 @@
 
         <ul>
             <li data-href="public-competition">
-                <i class="fa fa-globe fa-2x -white"></i>
-                <p class="-white -capitalize">Publik tävling</p>
+                <i class="fa fa-globe fa-2x color-white"></i>
+                <p class="color-white -capitalize">Publik tävling</p>
             </li>
             <li data-href="private-competition">
-                <i class="fa fa-lock fa-2x -white"></i>
-                <p class="-white -capitalize">Privat tävling</p>
+                <i class="fa fa-lock fa-2x color-white"></i>
+                <p class="color-white -capitalize">Privat tävling</p>
             </li>
 
         </ul>
@@ -21,67 +21,88 @@
 
         <ul>
             <li data-href="filter-column">
-                <i class="fa fa-bars fa-2x -white"></i>
-                <p class="-white -capitalize">Information</p>
+                <i class="fa fa-bars fa-2x color-white"></i>
+                <p class="color-white -capitalize">Information</p>
             </li>
             <li data-href="filter-column">
-                <i class="fa fa-chain fa-2x -white"></i>
-                <p class="-white -capitalize">Inbjudningar</p>
+                <i class="fa fa-cogs fa-2x color-white"></i>
+                <p class="color-white -capitalize">Inställningar</p>
             </li>
-        
+            <li data-href="filter-column">
+                <i class="fa fa-chain fa-2x color-white"></i>
+                <p class="color-white -capitalize">Inbjudningar</p>
+            </li>
+
 
         </ul>
 
     </div>
-    
+
     <div class="column level-2" data-target="private-competition" value="2">
 
         <ul>
             <li data-href="private-competition-information">
-                <i class="fa fa-navicon fa-2x -white"></i>
-                <p class="-white -capitalize">Information</p>
+                <i class="fa fa-navicon fa-2x color-white"></i>
+                <p class="color-white -capitalize">Information</p>
+            </li>
+            <li data-href="private-competition-settings">
+                <i class="fa fa-cog fa-2x color-white"></i>
+                <p class="color-white -capitalize">Inställningar</p>
             </li>
             <li data-href="private-competition-invites">
-                <i class="fa fa-chain fa-2x -white"></i>
-                <p class="-white -capitalize">Inbjudningar</p>
+                <i class="fa fa-chain fa-2x color-white"></i>
+                <p class="color-white -capitalize">Inbjudningar</p>
             </li>
-            
+
 
         </ul>
 
     </div>
-    
+
     <div class="column level-3 content-column" data-target="private-competition-information" value="3">
 
         <div class="content">
-            
-            <p class="-white -capitalize">Tävlingsnamn</p>
-            <input type="text"/>
-            
-            <br/>
-            <br/>
 
-            <p class="-white -capitalize">Beskrivning</p>
+            <p class="color-white -capitalize">Tävlingsnamn</p>
+            <input type="text" />
+
+            <br />
+            <br />
+
+            <p class="color-white -capitalize">Beskrivning</p>
             <textarea></textarea>
 
         </div>
-        
+
         <div class="content">
-            
-           
+
+
 
         </div>
 
     </div>
-    
+
     <div class="column level-3 content-column" data-target="private-competition-invites" value="3">
 
-        <p> Invitation tab</p>
+        <p class="color-white -capitalize">Invitationtab</p>
 
     </div>
-    
 
-    <button class="create-button button-primary -white">
+    <div class="column level-3 content-column" data-target="private-competition-settings" value="3">
+        <div class="content">
+            <p class="color-white -capitalize">Maximalt antal deltagande</p>
+            <input type="text" />
+
+            <br />
+
+            <p class="color-white -capitalize">Investeringssumma</p>
+            <input id="create-contest-maximum-sum"type="text" />
+
+        </div>
+    </div>
+
+
+    <button class="create-button button-primary">
         <p class=" -capitalize"> Skapa tävling </p>
     </button>
 

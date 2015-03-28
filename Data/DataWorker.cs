@@ -15,7 +15,7 @@ namespace Data
 
         // RelationalDB
         private RelationalRepository<User> userRepository;
-
+        private RelationalRepository<Contest> contestRepository;
         // MongoDB
 
 
@@ -25,11 +25,14 @@ namespace Data
         {
             get { return this.userRepository ?? new RelationalRepository<User>(context); }
         }
+        public RelationalRepository<Contest> ContestRepository
+        {
+            get { return this.contestRepository ?? new RelationalRepository<Contest>(context); }
+        }
 
 
 
 
-        // MongoRepositories
 
         public void Save()
         {

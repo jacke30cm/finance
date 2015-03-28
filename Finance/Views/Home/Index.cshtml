@@ -1,8 +1,12 @@
-﻿
-<div id="feed" class="row">
+﻿@{
+    ViewBag.Title = "Start"; 
+    @Styles.Render("~/CssBundle/home")
+}
 
+<div id="home" class="row horizontal-scroll">
+    
 
-    <div class="col-large">
+    <div class="col-lg">
 
         <h1>Mina tävlingar</h1>
         <br />
@@ -45,19 +49,11 @@
 
         </div>
 
-        <div class="block-m">
 
-            <div class="create-competition">
-
-
-
-            </div>
-
-        </div>
 
     </div>
 
-    <div class="col-large">
+    <div class="col-lg">
 
         <h1>Populära tävlingar</h1>
         <br />
@@ -74,17 +70,6 @@
                     <div class="block-s">
                         <div class="competition">
                             <div class="competition-ghost"></div>
-
-                            @*<div class="image-wrap">
-                                    <img src="~/Content/Images/Competitions/wstreet.jpg" />
-                                </div>
-
-                                <div class="content">
-
-                                    <h2>Sesams aktietävling</h2>
-                                    <p class="-capitalize "> Pågår en vecka till</p>
-                                </div>*@
-
                         </div>
                     </div>
 
@@ -95,28 +80,33 @@
 
     </div>
 
-    <div class="col-large">
+    <div class="col-lg vertical-scroll">
 
         <h1>Feed</h1>
         <br />
 
-        <div class="event-block">
+        @for (var x = 0; x < 8; x++)
+        {
 
 
+            <div class="event-block">
 
+                <div class="block-s">
+                    <div class="image-wrap">
+                        <img src="~/Content/Images/Users/sherlock.jpg" />
+                    </div>
+                </div>
 
-        </div>
+                <div class="block-s">
+                    <p>Here follows text</p>
+                </div>
 
-        <div class="event-block">
-
-
-
-
-        </div>
+            </div>
+        }
 
     </div>
 
-    <div class="col-large">
+    <div class="col-lg">
 
         <h1>Other</h1>
         <br />
@@ -139,3 +129,4 @@
 
 </div>
 
+@Html.Action("ControlPanel", "Master", new { name = "CreateCompetition" })
