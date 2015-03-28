@@ -1,9 +1,18 @@
-﻿@media screen and (min-width: 1366px) {
-    #custody-account .col-lg .block-lg .clean-content {
-        width: calc(100% - 100px);
-        height: calc(100% - 100px);
-        padding: 50px;
+﻿/* LARGE SCREEN RESOLUTION CSS*/
+
+@media screen and (min-width: 1366px) {
+
+    #custody-account .col-lg .block-lg {
+        height: 100%;
+        width: 100%;
     }
+
+
+        #custody-account .col-lg .block-lg .clean-content {
+            width: calc(100% - 100px);
+            min-height: 515px;
+            padding: 50px;
+        }
 
     #custody-account .col-lg .block-m .clean-content {
         width: calc(100% - 100px);
@@ -59,10 +68,16 @@
         left: 0%;
         top: 50%;
         width: 615px;
-        height: 715px;
+        height: 615px;
         transform: translate(-0%, -50%);
     }
 
+    #custody-account .col-lg .block-lg .clean-content .account-development-tooltip {
+        padding: 10px;
+        border: 1px solid #EBEBEB;
+        overflow: hidden;
+        box-shadow: none;
+    }
 
     #custody-account .col-lg .block-lg .rectangular-block .block-s {
         height: 70px;
@@ -85,15 +100,58 @@
                 top: 50%;
                 transform: translate(-50%, -50%);
             }
+
+
+    #custody-account .col-lg .block-lg .clean-content .account-summary {
+        position: relative;
+        width: 515px;
+        left: 50%;
+        margin-top: 50px;
+        transform: translate(-50%, -0%);
+    }
+
+        #custody-account .col-lg .block-lg .clean-content .account-summary .col-s {
+            width: 120px;
+            height: 120px;
+            margin: 0 5px 0 0;
+            background: transparent;
+            border-right: 1px solid #EBEBEB;
+            text-align: center;
+        }
+
+            #custody-account .col-lg .block-lg .clean-content .account-summary .col-s p {
+                margin-top: 30%;
+            }
+
+            #custody-account .col-lg .block-lg .clean-content .account-summary .col-s:last-of-type {
+                margin: 0;
+                border: none;
+            }
 }
+
+
+
+
+
+/* MEDIUM SCREEN RESOLUTION CSS*/
+
+
+
+
 
 @media screen and (max-width: 1366px) {
 
-    #custody-account .col-lg .block-lg .clean-content {
-        width: calc(100% - 100px);
-        height: calc(100% - 100px);
-        padding: 50px;
+
+    #custody-account .col-lg .block-lg {
+        height: 100%;
+        width: 100%;
     }
+
+        #custody-account .col-lg .block-lg .clean-content {
+            width: calc(100% - 100px);
+            min-height: 415px;
+            padding: 50px;
+        }
 
     #custody-account .col-lg .block-m .clean-content {
         width: calc(100% - 100px);
@@ -179,5 +237,32 @@
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
+            }
+
+
+    #custody-account .col-lg .block-lg .clean-content .account-summary {
+        width: 415px;
+        left: 50%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        transform: translate(-50%, -0%);
+    }
+
+        #custody-account .col-lg .block-lg .clean-content .account-summary .col-s {
+            width: 200px;
+            height: 120px;
+            margin: 0 5px 0 0;
+            background: transparent;
+            border-right: 1px solid #EBEBEB;
+            text-align: center;
+        }
+
+            #custody-account .col-lg .block-lg .clean-content .account-summary .col-s p {
+                margin-top: 10%;
+            }
+
+            #custody-account .col-lg .block-lg .clean-content .account-summary .col-s:nth-of-type(even) {
+                margin: 0;
+                border: none;
             }
 }

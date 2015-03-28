@@ -156,6 +156,10 @@ textarea {
 	color: #EBEBEB; 
 }
 
+.color-red {
+    color: #dd7f7f; 
+}
+
 /*Background colors*/
 
 .-white {
@@ -179,7 +183,7 @@ textarea {
 }
 
 .-red {
-    background: #c39090; 
+    background: #dd7f7f; 
 }
 
 .-pink {

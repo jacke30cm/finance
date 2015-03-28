@@ -21,9 +21,19 @@ namespace Finance
                         "~/Scripts/jquery.flot.pie.min.js",
                         "~/Scripts/spin.min.js"));
 
+            // Master-js
             bundles.Add(new ScriptBundle("~/bundles/master").Include(
                         "~/Scripts/Master/master.js",
                         "~/Scripts/Master/control-panel.js"));
+
+
+            // Custody-account
+            bundles.Add(new ScriptBundle("~/bundles/custody-account").Include(
+                        "~/Scripts/Contest/custody-account.js"));
+
+
+
+
 
 
             //STYLES

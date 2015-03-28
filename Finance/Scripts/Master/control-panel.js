@@ -2,6 +2,48 @@
 
 
 
+    //Bring controlpanel
+    $(this).on('click', '.user-panel .drop-down #create-competition', function (e) {
+
+        e.preventDefault();
+
+        $('.control-panel-overlay').css('opacity', '0.0');
+        $('.control-panel-overlay').css('display', 'initial');
+
+        $('.control-panel-overlay').animate({ opacity: 0.7 }, 500);
+
+        $('.control-panel').animate({ bottom: '0%' }, 500, 'easeOutQuint');
+
+    });
+
+
+    $(document).on('click', '.control-panel .button-close', function () {
+
+        closeDown();
+    });
+
+    $(document).on('click', '.control-panel-overlay', function () {
+
+        closeDown();
+    });
+
+    $(document).on('keyup', function (e) {
+
+        if (e.keyCode == 27) {
+
+            closeDown();
+        }
+    });
+
+    function closeDown() {
+
+        $('.control-panel-overlay').animate({ opacity: 0.0 }, 500, function () {
+            $(this).css('display', 'none');
+        });
+
+        $('.control-panel').animate({ bottom: '-50%' }, 500, 'easeOutQuint');
+    }
+
 
     // Animate right border on click
 

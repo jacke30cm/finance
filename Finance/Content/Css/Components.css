@@ -59,7 +59,7 @@
         display: inline-block;
         vertical-align: top;
         margin: 0px 0px 5px 0px;
-        overflow: hidden;
+        /*overflow: hidden;*/
     }
 
     .block-s {
@@ -129,6 +129,7 @@
         /*width: calc(100% - 100px);*/
         width: 100%;
         min-height: 50px;
+        border-spacing: 0;
     }
 
 
@@ -152,7 +153,12 @@
         .table-col-4 tbody tr {
             width: 100%;
             border-bottom: 1px solid #EBEBEB;
+            transition: 0.2s ease-in-out;
         }
+
+            .table-col-4 tbody tr:hover {
+                background: #FAFAFA;
+            }
 
             .table-col-4 tbody tr td {
                 width: 25%;
@@ -162,6 +168,16 @@
                 border-bottom: 1px solid #EBEBEB;
             }
 }
+
+
+
+
+
+/* MEDIUM SCREEN RESOLUTION CSS */
+
+
+
+
 
 @media screen and (max-width: 1366px) {
 
@@ -193,19 +209,31 @@
         overflow: hidden;
     }
 
-        .row .col-lg {
-            width: 515px;
-            height: 100%;
-            margin: 0 15px 0 0;
-            background: transparent;
-            display: inline-block;
-            vertical-align: top;
-        }
+    .col-s, col-m, .col-lg {
+        height: 100%;
+        margin: 0 15px 0 0;
+        background: transparent;
+        display: inline-block;
+        vertical-align: top;
+    }
 
-        .row .vertical-scroll {
-            width: 515px;
-            max-height: 800px;
-        }
+    .col-s {
+        width: 145px;
+    }
+
+    .col-m {
+        width: 300px;
+    }
+
+    .col-lg {
+        width: 515px;
+    }
+
+
+    .row .vertical-scroll {
+        width: 515px;
+        max-height: 800px;
+    }
 
 
 
@@ -280,9 +308,9 @@
 
     .table-col-4 {
         position: relative;
-        /*width: calc(100% - 100px);*/
         width: 100%;
         min-height: 50px;
+        border-spacing: 0;
     }
 
 
@@ -306,12 +334,18 @@
         .table-col-4 tbody tr {
             width: 100%;
             border-bottom: 1px solid #EBEBEB;
+            transition: 0.2s ease-in-out;
         }
+
+            .table-col-4 tbody tr:hover {
+                background: #FAFAFA;
+            }
+
 
             .table-col-4 tbody tr td {
                 width: 25%;
                 min-height: 10px;
-                padding: 5px;
+                padding: 1px;
                 display: table-cell;
                 border-bottom: 1px solid #EBEBEB;
             }
