@@ -8,6 +8,6 @@ namespace Finance.Controllers
 {
     public class BaseController : Controller
     {
-        
+      
     }
 }

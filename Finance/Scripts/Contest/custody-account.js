@@ -20,51 +20,14 @@
 
     $(document).on('keyup', '#custody-account  .col-lg  .block-lg  .rectangular-block  .col-lg  .input-text-special-wrap  input[type="text"]', function () {
 
-        var searchString = $(this).val();
-
-        if (searchString == '') {
-            $('#custody-account .col-lg  .block-lg .block-lg .rectangular-block').css('display', '');
-            return;
-        }
+        var searchString = $(this).val().toLowerCase();
 
 
         $('#custody-account .col-lg  .block-lg .block-lg .rectangular-block').each(function () {
 
-            var value = $(this).find('.block-s:nth-of-type(2)').find('p').text();
+            var value = $(this).find('.block-s:nth-of-type(2)').find('p').text().toLowerCase();
 
-
-            //if (value.startsWith(searchString)) {
-
-            //    //$(this).css('display', 'none');
- 
-            //}
-            //else if (value.endsWith(searchString)) {
-
-            //    //$(this).css('display', 'none');
- 
-
-            //} else {
-
-            //    $(this).css('display', 'none');
-            //}
-           
-
-            if (searchString.match('^' + value)) {
-
-                //$(this).css('display', 'none');
-
-            }
-            else if (searchString.match(value + '$')) {
-
-                //$(this).css('display', 'none');
-
-
-                } 
-            else {
-
-                $(this).css('display', 'none');
-            }
-
+            $(this)[value.indexOf(searchString) !== -1 ? 'show' : 'hide'](); 
 
         });
 

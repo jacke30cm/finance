@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Services
 {
+    public static class LocationHelper
+    {
+        public static string Location { get; set; }
+
+    }
+
     public static class DateHelper
     {
      

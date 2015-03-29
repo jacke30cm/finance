@@ -1,7 +1,9 @@
 ﻿@{
     ViewBag.Title = "Min akitedepå";
     @Styles.Render("~/CssBundle/custody-account")
-    @Scripts.Render("~/Scripts/Contest/custody-account.js")
+
+    @Scripts.Render("~/bundles/anchor-routing")
+    @Scripts.Render("~/bundles/custody-account")
 }
 
 <div id="custody-account" class="row horizontal-scroll">
@@ -67,20 +69,6 @@
 
         </div>
 
-        @*<div class="block-m">
-
-            <div class="clean-content -white">
-
-                <h1 class="-jumbo"> 33 000</h1>
-                <p class="-capitalize">sek</p>
-
-                <div class="pie-chart-label">
-                    <p class="-capitalize">Totalt portföljvärde</p>
-                </div>
-
-            </div>
-
-        </div>*@
 
     </div>
     
@@ -92,9 +80,8 @@
 
         <div class="block-lg">
             <div class="clean-content -white">
-
+                
                 <div class="account-development"></div>
-
 
             </div>
 
