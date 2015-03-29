@@ -140,7 +140,7 @@
             .table-col-4 thead tr td {
                 width: 20%;
                 min-height: 15px;
-                padding: 10px;
+                padding: 0px 10px 25px 10px;
                 display: table-cell;
                 border-bottom: 1px solid #EBEBEB;
             }
@@ -321,7 +321,7 @@
             .table-col-4 thead tr td {
                 width: 20%;
                 min-height: 15px;
-                padding: 5px;
+                padding: 0px 0px 25px 0px;
                 display: table-cell;
                 border-bottom: 1px solid #EBEBEB;
             }

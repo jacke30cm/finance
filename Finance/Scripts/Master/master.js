@@ -33,8 +33,33 @@
 
 $(document).ready(function () {
 
+
+    //Input- focus- actions
+
+    $('input[type="text"]').on('keyup', function(e) {
+
+        if (e.keyCode == 27) {
+
+            $(this).val(''); 
+
+        }
+
+    });
+
+
+    // Fancier checkboxes
+    $('.fancy-checkbox').labelauty({
+        development: false,
+        class: "labelauty",
+        label: false,
+        separator: "|",
+        checked_label: "Checked",
+        unchecked_label: "Unchecked",
+        minimum_width: false,
+        same_width: true
+    });
     
-    // Bring user-options
+        // Bring user-options
 
     $(this).on('click', '.user-panel', function () {
 

@@ -36,10 +36,10 @@
 
             <div class="clean-content -white">
 
-                <div class="pie-chart" data-percent="-55">
+                <div class="pie-chart" data-percent="-75">
                     <div class="chart-content">
 
-                        <h1>-55.3</h1>
+                        <h1>-75.3</h1>
                         <p>%</p>
 
                     </div>
@@ -221,44 +221,81 @@
         <br />
 
         <div class="block-lg">
-            
+
             <div class="rectangular-block">
-                <div class="block-s">
+                
+                <div class="col-s">
+                    <p class="-capitalize -bold"> Senaste </p>
+                </div>
+                <div class="col-lg">
                     
-                    <div class="transaction-identifier -green">
-                        <i class="fa fa-arrow-right color-white"></i>
+
+                    <div class="input-text-special-wrap">
+                        <div class="slicer"></div>
+                        <div class="icon"></div>
+                        <input type="text" placeholder="Sök efter transaktion"/>
                     </div>
 
                 </div>
-
-                <div class="block-s">
-                    <p>Here follows text</p>
-                </div>
+                
+                
+                @*<input class="fancy-checkbox" type="checkbox" data-labelauty="Im not checked|Im checked" />*@
 
             </div>
-            
-            <div class="rectangular-block">
-                <div class="block-s">
 
-                    <div class="transaction-identifier -red">
-                        <i class="fa fa-arrow-left color-white"></i>
+            <div class="block-lg vertical-scroll">
+
+                
+                @for (var x = 0; x < 20; x++)
+                {
+                    <div class="rectangular-block">
+                        <div class="block-s">
+                            
+                            @if (x == 2 || x == 4)
+                            {
+                                <div class="transaction-identifier -green">
+                                    <i class="fa fa-arrow-right color-white"></i>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="transaction-identifier -red">
+                                    <i class="fa fa-arrow-left color-white"></i>
+                                </div>
+                            }
+                            
+                            
+                            <p class="-bold">500</p>
+
+                        </div>
+
+                        <div class="block-s">
+                            @if (x == 2 || x == 4)
+                            {
+                                <p>Aerocrine Dynamics</p>
+                            }
+                            else
+                            {
+                                <p>Arocell</p>
+                            }
+                        </div>
+                        
+                        <div class="block-s">
+                            <p>5.55 SEK</p>
+                        </div>
+
+                        <div class="block-s">
+                            <p class=" -mini">2 timmar sedan</p>
+                        </div>
+
                     </div>
+                }
+              
 
-                </div>
-
-                <div class="block-s">
-                    <p>Here follows text</p>
-                </div>
-            </div>
-            
-            <div class="rectangular-block">
 
             </div>
-
 
         </div>
-
-
 
     </div>
 </div>

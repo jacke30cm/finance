@@ -2,25 +2,25 @@
 
 @media screen and (min-width: 1366px) {
 
-    #custody-account .col-lg .block-lg {
+    #custody-account > .col-lg > .block-lg {
         height: 100%;
         width: 100%;
     }
 
 
-        #custody-account .col-lg .block-lg .clean-content {
-            width: calc(100% - 100px);
-            min-height: 515px;
-            padding: 50px;
-        }
+    #custody-account .col-lg .block-lg > .clean-content {
+        width: calc(100% - 100px);
+        min-height: 515px;
+        padding: 50px;
+    }
 
-    #custody-account .col-lg .block-m .clean-content {
+    #custody-account .col-lg .block-m > .clean-content {
         width: calc(100% - 100px);
         height: calc(100% - 100px);
         padding: 50px;
     }
 
-        #custody-account .col-lg .block-m .clean-content .pie-chart {
+        #custody-account .col-lg .block-m > .clean-content > .pie-chart {
             position: absolute;
             width: 180px;
             height: 180px;
@@ -29,7 +29,7 @@
             transform: translate(-50%, -50%);
         }
 
-        #custody-account .col-lg .block-m .clean-content .pie-chart-label {
+        #custody-account .col-lg .block-m > .clean-content > .pie-chart-label {
             position: absolute;
             width: 200px;
             height: 30px;
@@ -37,7 +37,7 @@
             bottom: 10px;
         }
 
-        #custody-account .col-lg .block-m .clean-content .pie-chart .chart-content {
+        #custody-account .col-lg .block-m > .clean-content > .pie-chart > .chart-content {
             position: absolute;
             width: 100px;
             height: 50px;
@@ -47,21 +47,21 @@
             text-align: center;
         }
 
-        #custody-account .col-lg .block-m .clean-content .donut-chart {
-            position: absolute;
-            width: 250px;
-            height: 250px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
+    #custody-account .col-lg .block-m .clean-content .donut-chart {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-            #custody-account .col-lg .block-m .clean-content .donut-chart .donut-label {
-                width: 50px;
-                min-height: 25px;
-                border-radius: 50%;
-                padding: 10px;
-            }
+        #custody-account .col-lg .block-m .clean-content .donut-chart .donut-label {
+            width: 50px;
+            min-height: 25px;
+            border-radius: 50%;
+            padding: 10px;
+        }
 
     #custody-account .col-lg .block-lg .clean-content .account-development {
         position: absolute;
@@ -79,21 +79,42 @@
         box-shadow: none;
     }
 
-    #custody-account .col-lg .block-lg .rectangular-block .block-s {
-        height: 70px;
+
+
+    #custody-account .col-lg .block-lg > .rectangular-block {
+        min-height: 10px;
     }
 
-        #custody-account .col-lg .block-lg .rectangular-block .block-s .transaction-identifier {
-            position: absolute;
-            left: 15%;
-            top: 50%;
-            transform: translate(-0%, -50%);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
+        #custody-account .col-lg .block-lg > .rectangular-block > .col-s {
+            min-height: 10px;
+            width: 50px;
+            padding: 50px 50px 50px 50px;
+            border-right: 1px solid #EBEBEB;
         }
 
-            #custody-account .col-lg .block-lg .rectangular-block .block-s .transaction-identifier i {
+        #custody-account .col-lg .block-lg > .rectangular-block > .col-lg {
+            min-height: 10px;
+            width: 300px;
+            padding: 35px 50px 0px 50px;
+        }
+
+    #custody-account .col-lg .block-lg .rectangular-block > .block-s {
+        height: 20px;
+        width: 90px;
+        padding: 25px;
+
+    }
+
+
+        #custody-account .col-lg .block-lg .rectangular-block > .block-s > .transaction-identifier {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+            #custody-account .col-lg .block-lg .rectangular-block > .block-s > .transaction-identifier > i {
                 position: absolute;
                 font-size: 12px;
                 left: 50%;
@@ -101,8 +122,16 @@
                 transform: translate(-50%, -50%);
             }
 
+        #custody-account .col-lg .block-lg .rectangular-block > .block-s:first-of-type > p {
 
-    #custody-account .col-lg .block-lg .clean-content .account-summary {
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 10px;
+        }
+
+
+
+    #custody-account .col-lg .block-lg .clean-content > .account-summary {
         position: relative;
         width: 515px;
         left: 50%;
@@ -110,7 +139,7 @@
         transform: translate(-50%, -0%);
     }
 
-        #custody-account .col-lg .block-lg .clean-content .account-summary .col-s {
+        #custody-account .col-lg .block-lg .clean-content > .account-summary > .col-s {
             width: 120px;
             height: 120px;
             margin: 0 5px 0 0;
@@ -119,11 +148,11 @@
             text-align: center;
         }
 
-            #custody-account .col-lg .block-lg .clean-content .account-summary .col-s p {
+            #custody-account .col-lg .block-lg .clean-content > .account-summary > .col-s > p {
                 margin-top: 30%;
             }
 
-            #custody-account .col-lg .block-lg .clean-content .account-summary .col-s:last-of-type {
+            #custody-account .col-lg .block-lg .clean-content > .account-summary > .col-s:last-of-type {
                 margin: 0;
                 border: none;
             }
@@ -217,27 +246,53 @@
     }
 
 
-    #custody-account .col-lg .block-lg .rectangular-block .block-s {
-        height: 70px;
+    #custody-account .col-lg .block-lg > .rectangular-block {
+        min-height: 10px;
     }
 
-        #custody-account .col-lg .block-lg .rectangular-block .block-s .transaction-identifier {
-            position: absolute;
-            left: 15%;
-            top: 50%;
-            transform: translate(-0%, -50%);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
+        #custody-account .col-lg .block-lg > .rectangular-block > .col-s {
+            min-height: 10px;
+            width: 50px;
+            padding: 25px;
+            border-right: 1px solid #EBEBEB;
         }
 
-            #custody-account .col-lg .block-lg .rectangular-block .block-s .transaction-identifier i {
+        #custody-account .col-lg .block-lg > .rectangular-block > .col-lg {
+            min-height: 10px;
+            width: 250px;
+            padding: 35px 50px 0px 50px;
+        }
+
+    #custody-account .col-lg .block-lg .rectangular-block > .block-s {
+        height: 20px;
+        width: 90px;
+        padding: 15px;
+
+    }
+
+
+        #custody-account .col-lg .block-lg .rectangular-block > .block-s > .transaction-identifier {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+            #custody-account .col-lg .block-lg .rectangular-block > .block-s > .transaction-identifier > i {
                 position: absolute;
                 font-size: 12px;
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
             }
+
+        #custody-account .col-lg .block-lg .rectangular-block > .block-s:first-of-type > p {
+
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 10px;
+        }
 
 
     #custody-account .col-lg .block-lg .clean-content .account-summary {

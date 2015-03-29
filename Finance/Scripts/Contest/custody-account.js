@@ -1,11 +1,84 @@
 ﻿$(document).ready(function () {
 
+
+    //PROTOTYPES
+
+    if (typeof String.prototype.startsWith != 'function') {
+        String.prototype.startsWith = function (str) {
+
+            return this.slice(0, str.length) == str;
+        };
+    }
+
+    if (typeof String.prototype.endsWith != 'function') {
+        String.prototype.endsWith = function (str) {
+            return this.slice(-str.length) == str;
+        };
+    }
+
+    // Search for transactions 
+
+    $(document).on('keyup', '#custody-account  .col-lg  .block-lg  .rectangular-block  .col-lg  .input-text-special-wrap  input[type="text"]', function () {
+
+        var searchString = $(this).val();
+
+        if (searchString == '') {
+            $('#custody-account .col-lg  .block-lg .block-lg .rectangular-block').css('display', '');
+            return;
+        }
+
+
+        $('#custody-account .col-lg  .block-lg .block-lg .rectangular-block').each(function () {
+
+            var value = $(this).find('.block-s:nth-of-type(2)').find('p').text();
+
+
+            //if (value.startsWith(searchString)) {
+
+            //    //$(this).css('display', 'none');
+ 
+            //}
+            //else if (value.endsWith(searchString)) {
+
+            //    //$(this).css('display', 'none');
+ 
+
+            //} else {
+
+            //    $(this).css('display', 'none');
+            //}
+           
+
+            if (searchString.match('^' + value)) {
+
+                //$(this).css('display', 'none');
+
+            }
+            else if (searchString.match(value + '$')) {
+
+                //$(this).css('display', 'none');
+
+
+                } 
+            else {
+
+                $(this).css('display', 'none');
+            }
+
+
+        });
+
+    });
+
+
+
     //Account Development chart
 
     google.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        var data = google.visualization.arrayToDataTable([
+
+        var arr = [
           ['Datum', 'Utveckling'],
           ['1/5', 5],
           ['2/5', 4],
@@ -29,12 +102,21 @@
           ['20/5', 26],
           ['21/5', 15],
           ['22/5', 7],
-          ['23/5', 6],
-          ['24/5', 6],
-          ['25/5', 6],
-          ['26/5', -5]
-        ]);
+          ['23/5', -5],
+          ['24/5', -21],
+          ['25/5', -44],
+          ['26/5', -75]
 
+        ];
+
+        var data = google.visualization.arrayToDataTable(arr);
+
+        var color = '#90c3c1';
+
+        if (arr[arr.length - 1][1] < 0) {
+
+            color = '#dd7f7f';
+        }
 
         var options = {
             curveType: 'function',
@@ -44,7 +126,7 @@
             animation: { startup: true, duration: 500, easing: 'out' },
             series: {
                 0: {
-                    color: '#90c3c1'
+                    color: color
                 }
 
             },
@@ -59,7 +141,7 @@
                 }
 
             },
-            toolTip: {isHtml: true}
+            toolTip: { isHtml: true }
         };
 
         var chart = new google.visualization.LineChart($('.account-development')[0]);

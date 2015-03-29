@@ -19,6 +19,7 @@ namespace Finance
                         "~/Scripts/jquery.easypiechart.min.js",
                         "~/Scripts/jquery.flot.min.js",
                         "~/Scripts/jquery.flot.pie.min.js",
+                        "~/Scripts/jquery-labelauty.js",
                         "~/Scripts/spin.min.js"));
 
             // Master-js
@@ -42,6 +43,7 @@ namespace Finance
                       "~/Content/Css/Main.css",
                       "~/Content/Css/Menu.css",
                       "~/Content/Css/jquery.mCustomScrollbar.css",
+                      "~/Content/Css/jquery-labelauty.css",
                       "~/Content/Css/Components.css"));
 
             //Home

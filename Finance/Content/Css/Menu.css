@@ -41,14 +41,14 @@
             cursor: pointer;
         }
 
-            .menu .user-panel .drop-down {
+            .menu .user-panel > .drop-down {
                 position: absolute;
                 left: 0;
                 top: 80px;
                 width: 200px;
                 min-height: 50px;
                 background: #FFF;
-                z-index: 999;
+                z-index: 9999;
                 text-align: left;
                 display: none;
                 border: 1px solid #EBEBEB;
@@ -73,15 +73,15 @@
                     -moz-transition: 0.3s ease-in-out;
                     -webkit-transition: 0.3s ease-in-out;
                     transition: 0.2s ease-in-out;
-                    z-index: 999;
+                    z-index: 9999;
                 }
 
 
-                    .menu .user-panel .drop-down .list-item:hover {
+                    .menu .user-panel > .drop-down .list-item:hover {
                         background: #FAFAFA;
                     }
 
-                    .menu .user-panel .drop-down .list-item:last-of-type {
+                    .menu .user-panel > .drop-down .list-item:last-of-type {
                         border: none;
                     }
 
