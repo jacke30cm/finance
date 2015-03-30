@@ -170,7 +170,9 @@
 
 .anchor-section {
 
-    display: none; 
+    display: none;
+    opacity: 0.0;
+    top: -30px;
 
 }
 

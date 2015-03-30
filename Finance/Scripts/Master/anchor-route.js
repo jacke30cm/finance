@@ -67,14 +67,13 @@
      
     function getSection(request) {
 
+        $('.anchor-section').css({ 'display': 'none', 'opacity': '', 'top': '' });
+
         $('.anchor-section').each(function() {
 
             var anchor = $(this).attr('anchor-location'); 
 
             if (anchor == request) {
-
-                $('.anchor-section').css({ 'display' : 'none', 'opacity' : '0.0', 'top' : '-30px' });
-
 
                 $(this).css('display', 'initial');
                 $(this).animate({ opacity: 1.0, top: '0px' }, 1000, 'easeOutExpo');
@@ -91,6 +90,7 @@
     function pageTitle($element) {
 
         var title = $element.attr('anchor-title');
+        document.title = document.title.split('-')[0]; 
         document.title += ' - ' + title; 
     }
 

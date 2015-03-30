@@ -83,6 +83,8 @@
 
         var options = {
             curveType: 'function',
+            height: 615,
+            width: 615,
             legend: { position: 'none' },
             fontName: 'Open Sans',
             fontSize: 12,
@@ -95,6 +97,7 @@
             },
             hAxis: {
                 format: 'dd-MM',
+                showTextEvery: parseInt(data.getNumberOfRows() / 4),
             },
             vAxis: {
                 format: '#\'%',
