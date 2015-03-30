@@ -28,5 +28,14 @@ namespace Data.Entities
         public DateTime? SignOut { get; set; }
         public DateTime? BirthDate { get; set; }
 
+        public ICollection<Contest> ContestId { get; set; }
+
+        public User()
+        {
+
+            ContestId = new HashSet<Contest>();
+
+        }
+
     }
 }

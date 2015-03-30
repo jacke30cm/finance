@@ -29,5 +29,8 @@ namespace Data
         public DbSet<Contest> Contests { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Share> Shares { get; set; } 
+        
+
+
     }
 }

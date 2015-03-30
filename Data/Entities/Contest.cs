@@ -13,15 +13,16 @@ namespace Data.Entities
         public int AmountOfParticipants { get; set; }
         public double CashLimit { get; set; }
 
-        public ICollection<ContestMembers> Members { get; set; } 
+        public ICollection<User> Contestant { get; set; }
 
+        public Contest()
+        {
+
+            Contestant = new HashSet<User>();
+        }
     }
 
-    public class ContestMembers : RelationalBase
-    {
-
-        public User id { get; set; }
+  
 
 
-    }
 }
