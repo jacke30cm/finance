@@ -270,6 +270,10 @@
     <Content Include="Views\Master\Control-CreateCompetition.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Contest\Index.cshtml" />
+    <Content Include="Views\Contest\Portfolio.cshtml" />
+    <Content Include="Views\Contest\Overview.cshtml" />
+    <Content Include="Views\Contest\Market.cshtml" />
+    <Content Include="Views\Contest\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
