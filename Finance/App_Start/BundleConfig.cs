@@ -27,6 +27,10 @@ namespace Finance
                         "~/Scripts/Master/master.js",
                         "~/Scripts/Master/control-panel.js"));
 
+                                    
+            // Anchor-routes for sites that handle anchor-routing
+            bundles.Add(new ScriptBundle("~/bundles/anchor-routing").Include(
+                        "~/Scripts/Master/anchor-route.js"));
 
             // Custody-account
             bundles.Add(new ScriptBundle("~/bundles/custody-account").Include(

@@ -167,6 +167,13 @@
                 display: table-cell;
                 border-bottom: 1px solid #EBEBEB;
             }
+
+.anchor-section {
+
+    display: none; 
+
+}
+
 }
 
 
