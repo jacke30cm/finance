@@ -14,6 +14,7 @@ Thumbs.db
 *.tlb
 *.tlh
 *.bak
+*.mdf
 *.cache
 *.ilk
 *.log
@@ -31,7 +32,5 @@ $tf*/
 
 !.nuget/nuget.exe
 /packages/
-/Wicsys-CRM/APP_DATA/
+/Finance/APP_DATA/
 
-/Wicsys-CRM.sln.GhostDoc.xml
-/Wicsys-CRM.sln.GhostDoc.user.dic
