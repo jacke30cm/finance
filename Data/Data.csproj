@@ -69,7 +69,7 @@
     <Compile Include="Entities\EntityBases.cs" />
     <Compile Include="Entities\Contest.cs" />
     <Compile Include="Entities\Image.cs" />
-    <Compile Include="Entities\Prices.cs" />
+    <Compile Include="Entities\StockPriceHistory.cs" />
     <Compile Include="Entities\Share.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\201503271709051_Initial.cs" />
