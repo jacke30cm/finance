@@ -69,7 +69,8 @@
     <Compile Include="Entities\EntityBases.cs" />
     <Compile Include="Entities\Contest.cs" />
     <Compile Include="Entities\Image.cs" />
-    <Compile Include="Entities\StockPriceHistory.cs" />
+    <Compile Include="Entities\Portfolio.cs" />
+    <Compile Include="Entities\ShareHistory.cs" />
     <Compile Include="Entities\Share.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\201503271709051_Initial.cs" />
@@ -79,6 +80,10 @@
     <Compile Include="Migrations\201503301602162_test.cs" />
     <Compile Include="Migrations\201503301602162_test.Designer.cs">
       <DependentUpon>201503301602162_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503302012473_test1.cs" />
+    <Compile Include="Migrations\201503302012473_test1.Designer.cs">
+      <DependentUpon>201503302012473_test1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503301602162_test.resx">
       <DependentUpon>201503301602162_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503302012473_test1.resx">
+      <DependentUpon>201503302012473_test1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

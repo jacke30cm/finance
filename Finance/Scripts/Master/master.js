@@ -11,7 +11,7 @@
             advanced: { autoExpandHorizontalScroll: true },
             mouseWheel: { scrollAmount: 300 },
             keyboard: { scrollAmount: 15 },
-            scrollInertia: 400,
+            scrollInertia: 800,
         });
 
 

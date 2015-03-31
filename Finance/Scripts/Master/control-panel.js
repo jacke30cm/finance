@@ -2,21 +2,26 @@
 
 
 
-    //Bring controlpanel
+    //Bring correct 
+
+
+
+    //Bring competition-control-panel
     $(this).on('click', '.user-panel .drop-down #create-competition', function (e) {
 
         e.preventDefault();
-
-        $('.control-panel-overlay').css('opacity', '0.0');
-        $('.control-panel-overlay').css('display', 'initial');
-
-        $('.control-panel-overlay').animate({ opacity: 0.7 }, 500);
-
-        $('.control-panel').animate({ bottom: '0%' }, 500, 'easeOutQuint');
-
+        showUp(); 
     });
 
 
+    //Bring share-control-panel
+    $(this).on('click', '.share-control-action', function (e) {
+
+        e.preventDefault();
+        showUp();
+    });
+
+    // Click, and button-actions
     $(document).on('click', '.control-panel .button-close', function () {
 
         closeDown();
@@ -35,6 +40,20 @@
         }
     });
 
+
+    // Bring control panel
+    function showUp() {
+        
+        $('.control-panel-overlay').css('opacity', '0.0');
+        $('.control-panel-overlay').css('display', 'initial');
+
+        $('.control-panel-overlay').animate({ opacity: 0.7 }, 500);
+
+        $('.control-panel').animate({ bottom: '0%' }, 500, 'easeOutQuint');
+
+    }
+
+    // Close control panel
     function closeDown() {
 
         $('.control-panel-overlay').animate({ opacity: 0.0 }, 500, function () {
@@ -93,6 +112,7 @@
                 if (level == 2) {
 
                     $('.control-panel .level-3').stop().animate({ opacity: 0.0, left: '500px' }, 250, 'easeOutQuint');
+
                     $('.control-panel .level-2').each(function() {
 
                         $(this).find('ul li').css({ 'border': 'none', 'background' : '' }); 
@@ -109,7 +129,6 @@
 
                     correctTab.css({ 'display': 'initial', 'left': distances[0] });
                     correctTab.stop().animate({ opacity: 1.0, left: distances[1] }, 500, 'easeOutQuint');
-
                     
 
                     

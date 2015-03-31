@@ -22,7 +22,7 @@ namespace Data.Entities
         public double Lowest { get; set; }
 
 
-        public ICollection<StockPriceHistory> Prices { get; set; } 
+        public ICollection<ShareHistory> Prices { get; set; } 
 
     }
 }

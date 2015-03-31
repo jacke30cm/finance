@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Data.Entities
 {
-    public class StockPriceHistory : RelationalBase
+    public class ShareHistory : RelationalBase
     {
         
         public double Sell { get; set; }
         public double Buy { get; set; }
+        public double Change { get; set; }
         public DateTime TimeStamp { get; set; }
 
 

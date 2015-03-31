@@ -1,0 +1,281 @@
+﻿<div id="custody-account" class="row horizontal-scroll">
+
+
+    @* ÖVERSIKT *@
+
+    <div class="col-lg">
+        <h1>Översikt</h1>
+        <br />
+
+        <div class="block-m">
+
+            <div class="clean-content -white">
+
+                <div class="pie-chart" data-percent="55">
+                    <div class="chart-content">
+                        <h1>15 000</h1>
+                        <p>SEK</p>
+                    </div>
+                </div>
+
+                <div class="pie-chart-label">
+                    <p class="-capitalize">Kapital att handla för</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="block-m">
+
+            <div class="clean-content -white">
+
+                <div class="pie-chart" data-percent="-75">
+                    <div class="chart-content">
+
+                        <h1>-75.3</h1>
+                        <p>%</p>
+
+                    </div>
+                </div>
+
+                <div class="pie-chart-label">
+                    <p class="-capitalize">Portföljutveckling</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="block-m">
+
+            <div class="clean-content -white">
+                <div class="donut-chart"></div>
+
+
+                <div class="pie-chart-label">
+                    <p class="-capitalize">Portföljfördelning</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    @* PORTFÖLJUTVECKLING *@
+
+    <div class="col-lg">
+        <h1>Portföljutveckling</h1>
+        <br />
+
+        <div class="block-lg">
+            <div class="clean-content -white">
+
+                <div class="account-development"></div>
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+    @* INNEHAV *@
+
+    <div class="col-lg vertical-scroll">
+        <h1>Innehav</h1>
+        <br />
+
+        <div class="block-lg">
+            <div class="clean-content -white">
+
+                <table class="table-col-4">
+
+                    <thead>
+                        <tr>
+                            <td>
+                                <p class="-capitalize -bold">
+                                    Namn
+                                </p>
+                            </td>
+                            <td>
+                                <p class="-capitalize -bold">
+                                    Antal
+                                </p>
+                            </td>
+                            <td>
+                                <p class="-capitalize -bold">
+                                    Utveckling
+                                </p>
+                            </td>
+                            <td>
+                                <p class="-capitalize -bold">
+                                    Avkastning
+                                </p>
+                            </td>
+
+
+                        </tr>
+
+
+                    </thead>
+
+                    <tbody>
+                        @for (var x = 0; x < 4; x++)
+                        {
+
+                            <tr>
+                                <td>
+                                    <p class="">
+                                        Arocell
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="">
+                                        155
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="">
+                                        +5.25%
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="">
+                                        255 SEK
+                                    </p>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+
+
+
+                </table>
+
+
+                <div class="account-summary">
+
+                    <div class="col-s">
+                        <p class="-capitalize"> Inköp</p>
+                        <h1>50 000</h1>
+                    </div>
+                    <div class="col-s">
+                        <p class="-capitalize"> Marknadsvärde</p>
+                        <h1>33 000</h1>
+                    </div>
+                    <div class="col-s">
+                        <p class="-capitalize"> Avkastning %</p>
+                        <h1 class="color-red">-5.0</h1>
+                    </div>
+                    <div class="col-s">
+                        <p class="-capitalize"> Avkastning </p>
+                        <h1 class="color-red">-21 000</h1>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+    @* TRANSAKTIONER *@
+
+    <div class="col-lg">
+        <h1>Transaktioner</h1>
+        <br />
+
+        <div class="block-lg">
+
+            <div class="rectangular-block">
+
+                <div class="col-s">
+                    <p class="-capitalize -bold"> Senaste </p>
+                </div>
+                <div class="col-lg">
+
+
+                    <div class="input-text-special-wrap">
+                        <div class="slicer"></div>
+                        <div class="icon"></div>
+                        <input type="text" placeholder="Sök efter transaktion" />
+                    </div>
+
+                </div>
+
+
+                @*<input class="fancy-checkbox" type="checkbox" data-labelauty="Im not checked|Im checked" />*@
+
+            </div>
+
+            <div class="block-lg vertical-scroll">
+
+
+                @for (var x = 0; x < 20; x++)
+                {
+                    <div class="rectangular-block">
+                        <div class="block-s">
+
+                            @if (x == 2 || x == 4)
+                            {
+                                <div class="transaction-identifier -green">
+                                    <i class="fa fa-arrow-right color-white"></i>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="transaction-identifier -red">
+                                    <i class="fa fa-arrow-left color-white"></i>
+                                </div>
+                            }
+
+
+                            <p class="-bold">500</p>
+
+                        </div>
+
+                        <div class="block-s">
+                            @if (x == 2 || x == 4)
+                            {
+                                <p>Aerocrine Dynamics</p>
+                            }
+                            else
+                            {
+                                <p>Arocell</p>
+                            }
+                        </div>
+
+                        <div class="block-s">
+                            <p>5.55 SEK</p>
+                        </div>
+
+                        <div class="block-s">
+                            <p class=" -mini">2 timmar sedan</p>
+                        </div>
+
+                    </div>
+                }
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

@@ -30,7 +30,7 @@
     // If the anchor is matched with a action -> Bring that section, else, fall back to default-view
     if (isValidAnchor(initialUrl)) {
         
-        getSection(url);
+        getSection(initialUrl);
 
     } else {
 
@@ -67,16 +67,18 @@
      
     function getSection(request) {
 
+        $('.anchor-section').css({ 'display': 'none', 'opacity': '', 'top': '' });
+
         $('.anchor-section').each(function() {
 
             var anchor = $(this).attr('anchor-location'); 
 
             if (anchor == request) {
 
-                $('.anchor-section').css({ 'display' : 'none', 'opacity' : '0.0', 'top' : '-30px' });
+                $(this).css('display', 'initial');
+                $(this).animate({ opacity: 1.0, top: '0px' }, 1000, 'easeOutExpo');
 
-                $(this).css('display', 'initial').animate({ top: '0px', opacity: '1.0' }, 500, 'easeOutQuint');
-                pageTitle($(this)); 
+                pageTitle($(this));
                 return false;
             }
 
@@ -88,7 +90,8 @@
     function pageTitle($element) {
 
         var title = $element.attr('anchor-title');
-        document.title += '- ' + title; 
+        document.title = document.title.split('-')[0]; 
+        document.title += ' - ' + title; 
     }
 
 

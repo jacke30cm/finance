@@ -14,14 +14,19 @@ namespace Finance.Controllers
             return PartialView("~/Views/Master/Menu.cshtml"); 
         }
 
-        public ActionResult ControlPanel(string name)
+        public ActionResult ContestControl(string name)
         {
             if (name.Equals("CreateCompetition"))
             {
-                return PartialView("~/Views/Master/Control-CreateCompetition.cshtml");
+                return PartialView("~/Views/Master/Control-Create-Competition.cshtml");
             }
 
-            return PartialView("~/Views/Master/Control-CreateCompetition.cshtml");
+            return PartialView("~/Views/Master/Control-Create-Competition.cshtml");
+        }
+
+        public ActionResult ShareControl(string name)
+        {
+            return PartialView("~/Views/Master/Control-Share-Action.cshtml");
         }
     }
 }
