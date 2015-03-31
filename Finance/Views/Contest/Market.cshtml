@@ -1,1 +1,173 @@
-﻿<p>Market</p>
+﻿<div id="market" class="row horizontal-scroll">
+    
+   
+
+    <div class="col-lg">
+        <h1>Hitta aktier</h1>
+        <br />
+        
+        
+        <div class="block-lg">
+            <div class="clean-content -white">
+
+                <div class="input-text-special-wrap">
+                    <div class="slicer"></div>
+                    <div class="icon"></div>
+                    <input type="text" placeholder="Hitta värdepapper" />
+                </div>
+                
+                <br/>
+                <br/>
+
+                <table id="share-table" class="table-col-4">
+
+                    <tbody>
+                        @for (var x = 0; x < 25; x++)
+                        {
+
+                            <tr data-id="@x">
+                                <td>
+                                    
+                                        
+                                        @if (x == 4 || x == 6)
+                                        {
+                                            <p class="">
+                                                @x
+                                                Africa Oil Corp
+                                            </p>
+                                        }
+                                        else
+                                        {
+                                            <p class="">
+                                                @x
+                                               Arocell
+                                            </p>
+                                        }
+                                        
+                                </td>
+                                <td>
+                                    <p class="">
+                                        5.00
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="">
+                                        5.55
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="color-green">
+                                       + 2%
+                                    </p>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+
+                    
+
+                </table>
+
+                <div class="table-pagination">
+                    
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+    
+    <div class="col-lg">
+        <h1>Arocell</h1>
+        <br />
+
+
+        <div class="block-lg">
+            <div class="clean-content -white">
+                
+                
+
+
+                <div class="account-summary">
+
+                    <div class="col-s">
+                        <p class="-capitalize"> Köp</p>
+                        <h1>5.00</h1>
+                    </div>
+                    <div class="col-s">
+                        <p class="-capitalize"> Sälj</p>
+                        <h1>5.50</h1>
+                    </div>
+                    <div class="col-s">
+                        <p class="-capitalize"> idag %</p>
+                        <h1 class="color-red">-5.0</h1>
+                    </div>
+                    <div class="col-s">
+                        <p class="-capitalize"> idag </p>
+                        <h1 class="color-red">-5.25</h1>
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="col-lg">
+        <h1>Utveckling</h1>
+        <br />
+
+
+        <div class="block-lg">
+            <div class="clean-content -white">
+
+                <div class="share-development"></div>
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+    
+    
+    <div class="col-lg">
+        <h1>Diskussioner</h1>
+        <br />
+
+        <div class="block-lg">
+
+            <div class="block-lg vertical-scroll">
+
+
+                @for (var x = 0; x < 2; x++)
+                {
+                    <div class="rectangular-block">
+                       
+                        <p>Diskussioner</p>
+
+                    </div>
+                }
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

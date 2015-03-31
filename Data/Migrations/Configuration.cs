@@ -1,5 +1,3 @@
-using Data.Entities;
-
 namespace Data.Migrations
 {
     using System;
@@ -28,19 +26,6 @@ namespace Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
-            var contest = new Contest()
-            {
-                Name = "Official Investment Contest"
-            };
-
-            var contest2 = new Contest()
-            {
-                Name = "Sesams aktietävling"
-            };
-
-            context.Contests.Add(contest); 
-            context.Contests.Add(contest2); 
         }
     }
 }

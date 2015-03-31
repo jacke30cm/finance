@@ -24,7 +24,8 @@ namespace Finance
 
             // Master-js
             bundles.Add(new ScriptBundle("~/bundles/master").Include(
-                        "~/Scripts/Master/master.js",
+                        "~/Scripts/Master/spin-configuration.js",
+                         "~/Scripts/Master/master.js",
                         "~/Scripts/Master/control-panel.js"));
 
                                     
@@ -32,12 +33,13 @@ namespace Finance
             bundles.Add(new ScriptBundle("~/bundles/anchor-routing").Include(
                         "~/Scripts/Master/anchor-route.js"));
 
-            // Custody-account
-            bundles.Add(new ScriptBundle("~/bundles/custody-account").Include(
-                        "~/Scripts/Contest/custody-account.js"));
+            // Portfolio
+            bundles.Add(new ScriptBundle("~/bundles/portfolio").Include(
+                        "~/Scripts/Contest/portfolio.js"));
 
-
-
+            // Market
+            bundles.Add(new ScriptBundle("~/bundles/market").Include(
+                       "~/Scripts/Contest/market.js"));
 
 
 
@@ -59,9 +61,13 @@ namespace Finance
             bundles.Add(new StyleBundle("~/CssBundle/about").Include(
                       "~/Content/Css/About.css"));
 
-            //Custody Account -> Default startpage when in contest
-            bundles.Add(new StyleBundle("~/CssBundle/custody-account").Include(
-                      "~/Content/Css/Custody-Account.css"));
+            //Portfolio
+            bundles.Add(new StyleBundle("~/CssBundle/portfolio").Include(
+                      "~/Content/Css/Portfolio.css"));
+
+            //Market
+            bundles.Add(new StyleBundle("~/CssBundle/market").Include(
+                      "~/Content/Css/Market.css"));
         }
     }
 }

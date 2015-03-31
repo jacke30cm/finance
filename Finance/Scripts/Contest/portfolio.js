@@ -1,29 +1,14 @@
 ﻿$(document).ready(function () {
 
 
-    //PROTOTYPES
-
-    if (typeof String.prototype.startsWith != 'function') {
-        String.prototype.startsWith = function (str) {
-
-            return this.slice(0, str.length) == str;
-        };
-    }
-
-    if (typeof String.prototype.endsWith != 'function') {
-        String.prototype.endsWith = function (str) {
-            return this.slice(-str.length) == str;
-        };
-    }
-
     // Search for transactions 
 
-    $(document).on('keyup', '#custody-account  .col-lg  .block-lg  .rectangular-block  .col-lg  .input-text-special-wrap  input[type="text"]', function () {
+    $(document).on('keyup', '#portfolio  .col-lg  .block-lg  .rectangular-block  .col-lg  .input-text-special-wrap  input[type="text"]', function () {
 
         var searchString = $(this).val().toLowerCase();
 
 
-        $('#custody-account .col-lg  .block-lg .block-lg .rectangular-block').each(function () {
+        $('#portfolio .col-lg  .block-lg .block-lg .rectangular-block').each(function () {
 
             var value = $(this).find('.block-s:nth-of-type(2)').find('p').text().toLowerCase();
 
@@ -138,7 +123,7 @@
                 pie: {
                     show: true,
                     //innerRadius: .4,
-                    innerRadius: 0.64,
+                    innerRadius: 0.66,
                     stroke: {
                         width: 2,
                         color: "#F9F9F9"
@@ -185,12 +170,12 @@
     if ($(window).width() >= 1366) {
 
         options.size = 180;
-        options.lineWidth = 12;
+        options.lineWidth = 8;
 
     } else {
 
         options.size = 150;
-        options.lineWidth = 10;
+        options.lineWidth = 6;
     }
 
     $('.pie-chart').each(function () {

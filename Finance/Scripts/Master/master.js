@@ -9,7 +9,7 @@
             scrollbarPosition: "outside",
             alwaysShowScrollbar: 0,
             advanced: { autoExpandHorizontalScroll: true },
-            mouseWheel: { scrollAmount: 300 },
+            mouseWheel: { scrollAmount: 500 },
             keyboard: { scrollAmount: 15 },
             scrollInertia: 800,
         });

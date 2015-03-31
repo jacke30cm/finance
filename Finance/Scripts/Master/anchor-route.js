@@ -4,6 +4,8 @@
     // Scan the posted url for anchor-link
     var initialUrl = window.location.hash.slice(2);
 
+    
+
     // If anchor-link is not found on page, fallback to this
     var fallBack = 'Overview';
 
@@ -47,6 +49,8 @@
         // If the anchor is matched with a action -> Bring that section, else, fall back to default-view
         if (isValidAnchor(hash)) {
 
+            // Because scrollbar in some cases are being disabled, when user leaves tab width disabled scrollbar, it must be updated
+            $('.horizontal-scroll').mCustomScrollbar("update");
             getSection(hash);
 
         } else {
@@ -76,7 +80,7 @@
             if (anchor == request) {
 
                 $(this).css('display', 'initial');
-                $(this).animate({ opacity: 1.0, top: '0px' }, 1000, 'easeOutExpo');
+                $(this).animate({ opacity: 1.0, top: '0px' }, 500);
 
                 pageTitle($(this));
                 return false;

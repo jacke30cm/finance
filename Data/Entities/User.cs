@@ -27,6 +27,8 @@ namespace Data.Entities
         public DateTime SignUp { get; set; }
         public DateTime? SignOut { get; set; }
         public DateTime? BirthDate { get; set; }
+        public Ranking Ranking { get; set; }
+    
 
     }
 }
