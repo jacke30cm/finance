@@ -11,24 +11,26 @@ namespace Data.Entities
 
        public string Name { get; set; }
        public string Balance { get; set; }
-       public User PortfolioOwner { get; set; }
+       public virtual ICollection<PortfolioHistory> History { get; set; } 
 
-      
     }
 
     public class PortfolioHistory : RelationalBase
     {
 
         public double Change { get; set; }
-        public double NetWorth { get; set; }
+        public decimal NetWorth { get; set; }
         public DateTime Time { get; set; }
 
         
     }
 
-    public class Portfolioassociation : RelationalBase
+    public class Transaction : RelationalBase
     {
-        
+        public string Type { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public decimal Value { get; set; }
+        public decimal Price { get; set; }
         public virtual Portfolio Portfolio { get; set; }
         public virtual Share Share { get; set; }
         
@@ -40,8 +42,6 @@ namespace Data.Entities
         public virtual User User { get; set; }
         public virtual Contest Contest { get; set; }
         public virtual Portfolio Portfolio { get; set; }
-
-        public virtual User Admin { get; set; }
 
 
     }
