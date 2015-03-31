@@ -5,63 +5,47 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web;
-using System.Web.Mvc;
+using System.Threading.Tasks;
 using Data.Entities;
-using Services;
 
-namespace Finance.Controllers
+namespace Data.Models
 {
-    public class HomeController : BaseController
+   public class AddStock
     {
-        public ActionResult Index()
-        {
-            LocationHelper.Location = "Home"; 
-            return View();
-        }
 
-        public ActionResult About()
-        {
+       public void AddStockToDatabase(Share share)
+       {
 
-            SplitCSV();
-            LocationHelper.Location = "About"; 
-            return View();
-        }
+           SqlConnection cn = new SqlConnection(@"Data Source=(LocalDb)\v11.0;AttachDbFilename=C:\Finance\finance\Finance\App_Data\Finance.mdf;Initial Catalog=Finance;Integrated Security=True");
 
+           
 
-        public void AddStockToDatabase(Share share)
-        {
+           SqlCommand cmd1 = new SqlCommand("INSERT INTO Shares VALUES ("+ share.Name +", "+share.Ticker+", "+share.Market+", "+share.Description+", "+share.Country+"", cn);
+           
+             cn.Open();
+             cmd1.ExecuteNonQuery();
+             cn.Close();
+          
+           
+       }
 
-            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDb)\v11.0;AttachDbFilename=C:\Finance\finance\Finance\App_Data\Finance.mdf;Initial Catalog=Finance;Integrated Security=True");
+       public static string GetCSV(string url)
+       {
 
+           HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+           HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
 
-            int a = 1;
-            SqlCommand cmd1 = new SqlCommand(@"INSERT INTO Shares(Name,Ticker,Market,Description) VALUES ('" + share.Name + "', '" + share.Ticker + "', '" + share.Market + "', '" + share.Description + "')", cn);
+           StreamReader sr = new StreamReader(resp.GetResponseStream());
+           string results = sr.ReadToEnd();
+           sr.Close();
 
-            cn.Open();
-            cmd1.ExecuteNonQuery();
-            cn.Close();
+           return results;
+       }
 
-
-        }
-
-        public static string GetCSV(string url)
-        {
-
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
-            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-
-            StreamReader sr = new StreamReader(resp.GetResponseStream());
-            string results = sr.ReadToEnd();
-            sr.Close();
-
-            return results;
-        }
-
-        public void SplitCSV()
+       public void SplitCSV()
         {
 
-            string[] lines = System.IO.File.ReadAllLines(@"C:\StockTickersSverige.txt");
+            string[] lines = File.ReadAllLines(@"C:\StockTickersSverige.txt");
 
             string builder = "";
 
@@ -72,15 +56,15 @@ namespace Finance.Controllers
 
             }
 
-
+           
 
 
             int counter = 0;
-
+            
             string fileList = GetCSV("http://finance.yahoo.com/d/quotes.csv?s=" + builder + "&f=sn");
             string[] tempStr;
             var Share = new Share();
-            var ShareHistory = new ShareHistory();
+           var ShareHistory = new ShareHistory();
             tempStr = fileList.Split(',', '\n');
 
             for (int i = 0; i < tempStr.Length; i++)
@@ -106,15 +90,15 @@ namespace Finance.Controllers
                     }
                     else if (counter == 2)
                     {
-                        Share.Market = "LargeCap";
+                        Share.Market = "Large Cap";
                         Share.Description = "Cool aktie som går att köpa dyrt";
-                        Share.Country = new Country() { Id = 1 };
+                        Share.Country = new Country(){Id = 1};
                         AddStockToDatabase(Share);
                     }
+                    
 
-
-
-
+                    
+               
 
                 }
                 if (counter == 2)
@@ -130,8 +114,9 @@ namespace Finance.Controllers
 
             }
 
-
+           
         }
-       
+
+     
     }
 }
