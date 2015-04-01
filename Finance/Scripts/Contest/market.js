@@ -239,11 +239,11 @@
 
     }
 
-
+    
     $(this).on('click', '#clicks', function() {
 
-       
-        $(this).closest('.anchor-section').find('.row').animate({ top: '-100%' }, 500, 'easeOutQuint'); 
+        var rowHeight = 900; 
+        $(this).closest('.anchor-section').find('.row').animate({ top: '-' + rowHeight + 'px' }, 500, 'easeOutQuint'); 
 
     });
 

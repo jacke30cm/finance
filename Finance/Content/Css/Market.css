@@ -1,21 +1,47 @@
 ﻿
+.anchor-section .market-navigator {
+    position: absolute;
+    top: 200px;
+    left: -20px;
+    width: 80px;
+    height: 240px;
+    background: #FFF;
+    transform: translate(-0%, -0%);
+    z-index: 10;
+}
+
+    .anchor-section .market-navigator .navigation-item {
+        width: 50px;
+        height: 50px;
+        padding: 15px;
+        border-bottom: 1px solid #EBEBEB;
+    }
+
+    .anchor-section .market-navigator .navigation-item i {
+
+        font-size: 14px;
+
+    }
+        .anchor-section .market-navigator .navigation-item:last-of-type {
+            border: none;
+        }
+
 #market > .col-lg {
     visibility: hidden;
     opacity: 0.0;
     left: -30px;
 }
 
-#market > .col-lg:first-of-type {
-    visibility: visible;
-    opacity: 1.0;
-    left: 0px;  
-}
+    #market > .col-lg:first-of-type {
+        visibility: visible;
+        opacity: 1.0;
+        left: 0px;
+    }
 
-#market > .col-lg > .block-lg {
-    height: 100%;
-    width: 100%;
-    
-}
+    #market > .col-lg > .block-lg {
+        height: 100%;
+        width: 100%;
+    }
 
 #market .col-lg > #daily-winners {
     overflow: hidden;

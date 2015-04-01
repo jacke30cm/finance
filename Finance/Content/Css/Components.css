@@ -1,6 +1,8 @@
 ﻿
 @media screen and (min-width: 1366px) {
 
+    
+
     .main-content {
         width: 92%;
         height: 92%;
@@ -8,6 +10,14 @@
         overflow: hidden;
     }
 
+    .anchor-section {
+        display: none;
+        opacity: 0.0;
+        top: -10px;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
         .main-content .right-ghost {
             position: absolute;
             right: 4%;
@@ -31,7 +41,7 @@
         margin-bottom: 100px;
     }
 
-    .col-s, col-m, .col-lg {
+    .col-s, .col-m, .col-lg {
         height: 100%;
         margin: 0 15px 0 0;
         background: transparent;
@@ -159,24 +169,24 @@
         }
 
         .table-col-4 tbody > .selected {
-            background: #FAFAFA; 
-
+            background: #FAFAFA;
         }
-            .table-col-4 tbody tr:hover {
-                background: #FAFAFA;
-            }
 
-            .table-col-4 tbody tr td {
-                width: 20%;
-                min-height: 15px;
-                padding: 10px;
-                display: table-cell;
-                border-bottom: 1px solid #EBEBEB;
-            }
+        .table-col-4 tbody tr:hover {
+            background: #FAFAFA;
+        }
 
-                .table-col-4 tbody tr td:first-of-type {
-                    width: 40%;
-                }
+        .table-col-4 tbody tr td {
+            width: 20%;
+            min-height: 15px;
+            padding: 10px;
+            display: table-cell;
+            border-bottom: 1px solid #EBEBEB;
+        }
+
+            .table-col-4 tbody tr td:first-of-type {
+                width: 40%;
+            }
 
     .table-pagination {
         position: absolute;
@@ -195,19 +205,12 @@
             width: 35px;
             height: 25px;
             border-right: 1px solid #EBEBEB;
-            cursor: pointer; 
+            cursor: pointer;
         }
 
-        .table-pagination > .pagination-item:last-of-type {
-            border-right: none;
-        }
-
-    .anchor-section {
-        display: none;
-        opacity: 0.0;
-        top: -10px;
-        overflow: hidden;
-    }
+            .table-pagination > .pagination-item:last-of-type {
+                border-right: none;
+            }
 }
 
 
