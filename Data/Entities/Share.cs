@@ -14,7 +14,8 @@ namespace Data.Entities
         public string Market { get; set; }
         public string Description { get; set; }
 
-        public ICollection<ShareHistory> Prices { get; set; } 
+        
+        
 
     }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,5 +17,8 @@ namespace Data.Entities
         public decimal Highest { get; set; }
         public decimal Lowest { get; set; }
         public DateTime TimeStamp { get; set; }
+
+        public Share Share { get; set; }
+
     }
 }
