@@ -32,7 +32,7 @@ namespace Finance.Controllers
         public void AddStockToDatabase(Share share)
         {
 
-            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDb)\v11.0;AttachDbFilename=C:\Finance\finance\Finance\App_Data\Finance.mdf;Initial Catalog=Finance;Integrated Security=True");
+            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDb)\v11.0;AttachDbFilename=K:\Finance\finance\Finance\App_Data\Finance.mdf;Initial Catalog=Finance;Integrated Security=True");
 
 
             int a = 1;

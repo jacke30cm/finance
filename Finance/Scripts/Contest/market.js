@@ -67,7 +67,7 @@
     // These calls are made to hide col-lg except first one, to make animation fancy,
     // and also to disable the otherwise enabled scroll-functionality, becase there's nothing to scroll
 
-    $('#market .col-lg').not('#market .col-lg:first-of-type').css({
+    $('#market .col-lg').not('#market .col-lg:first-of-type, #market .col-lg:nth-of-type(2)').css({
         'visibility': 'hidden',
         'opacity': '0.0',
         'left': '-30px'
@@ -82,7 +82,7 @@
     $(this).on('click', '#share-table tbody tr', function () {
 
 
-        var $columns = $('#market .col-lg').not('#market .col-lg:first-of-type');
+        var $columns = $('#market .col-lg').not('#market .col-lg:first-of-type, #market .col-lg:nth-of-type(2)');
         var share = $(this).attr('data-id');
 
 
@@ -95,6 +95,9 @@
                 $columns.css({ 'visibility': 'hidden' });
                 $('.horizontal-scroll').mCustomScrollbar("disable");
 
+                $('#market .col-lg:nth-of-type(2)').css({ 'visibility': 'visible', 'width' : '' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
+
+
             });
 
             activeView = undefined;
@@ -102,10 +105,18 @@
 
         } else {
 
+            $('#market .col-lg:nth-of-type(2)').animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function() {
 
-            $columns.css({ 'visibility': 'visible' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
-            activeView = share;
-            $('.horizontal-scroll').mCustomScrollbar("update");
+                $(this).css('width', '0');
+
+                $columns.css({ 'visibility': 'visible' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
+                activeView = share;
+                $('.horizontal-scroll').mCustomScrollbar("update");
+
+            });
+
+
+            
         }
 
 
