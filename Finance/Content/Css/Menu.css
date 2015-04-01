@@ -194,21 +194,26 @@
 
     .control-panel .level-2 {
         position: absolute;
-        left: 15%;
+        left: 250px;
         display: none;
         opacity: 0.0;
     }
 
     .control-panel .level-3 {
         position: absolute;
-        left: 30%;
+        left: 500px;
         display: none;
         opacity: 0.0;
     }
 
-    .control-panel .level-4 {
+    .control-panel .explanatory-column {
         position: absolute;
-        left:15%;
+        width: 300px;
+        height: calc(100% - 100px);
+        padding: 50px;
+        right: 300px;
+        top: 0px;
+        z-index: 12;
     }
 
     .control-panel .column ul {

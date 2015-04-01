@@ -80,15 +80,43 @@
 
     });
 
+    
+
+    $(this).on('mouseenter', '.control-panel ul li', function() {
+
+        var description = $(this).attr('data-description');
+
+        $('.control-panel .explanatory-column p').animate({ opacity: '0.0' }, 100, function() {
+
+            $(this).text(description);
+
+            $(this).animate({ opacity: '1.0' }, 100); 
+
+        });
+
+    });
+
+    //var initialText = $('.control-panel .explanatory-column p').text();
+
+    //$(this).on('mouseleave', '.control-panel ul li', function () {
+
+
+    //    $('.control-panel .explanatory-column p').animate({ opacity: '0.0' }, 100, function () {
+
+    //        $(this).text(initialText);
+
+    //        $(this).animate({ opacity: '1.0' }, 100);
+
+    //    });
+
+    //});
+
     // Bring correct column to show
 
     $(this).on('click', '.control-panel .column ul li', function () {
 
         var destination = $(this).attr('data-href');
-        var found = false; 
         
-        
-
         $('.control-panel .column').each(function() {
 
             
@@ -98,20 +126,20 @@
             
 
             if (level == 2) {
-                distances = ['220px', '250px'];
+                distances = [220, 250];
             }
             if (level == 3) {
-                distances = ['470px', '500px'];
+                distances = [470, 500];
             }
 
             if ($(this).attr('data-target') == destination) {
 
-                found = true; 
                 var correctTab = $(this); 
                
                 if (level == 2) {
 
                     $('.control-panel .level-3').stop().animate({ opacity: 0.0, left: '500px' }, 250, 'easeOutQuint');
+                    
 
                     $('.control-panel .level-2').each(function() {
 
@@ -121,15 +149,15 @@
 
                 }
 
+                
                 $('.control-panel .level-' + level).stop().animate({ opacity: 0.0, left: distances[0] }, 250, 'easeOutQuint', function () {
 
                     $(this).css({ 'display': 'none' });
 
-                    
+                    var explanatoryColumn = distances[1] + 400; 
 
-                    correctTab.css({ 'display': 'initial', 'left': distances[0] });
-                    correctTab.stop().animate({ opacity: 1.0, left: distances[1] }, 500, 'easeOutQuint');
-                    
+                    correctTab.css({ 'display': 'initial', 'left': distances[0] + 'px' });
+                    correctTab.stop().animate({ opacity: 1.0, left: distances[1] + 'px' }, 500, 'easeOutQuint');
 
                     
                 });
@@ -140,11 +168,6 @@
 
         });
 
-        if (!found) {
-            
-
-
-        }
 
     });
 

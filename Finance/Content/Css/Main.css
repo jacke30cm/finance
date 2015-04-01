@@ -54,6 +54,12 @@ p
 .-jumbo {
     font-size: 28px;
 }
+.-medium {
+
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 36px;
+}
 
 .-mini {
     font-size: 9px;

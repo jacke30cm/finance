@@ -14,8 +14,13 @@
 #market > .col-lg > .block-lg {
     height: 100%;
     width: 100%;
+    
 }
 
+#market .col-lg > #daily-winners {
+    overflow: hidden;
+    background: #FFF;
+}
 
 #market .col-lg .block-lg > .clean-content {
     width: calc(100% - 100px);

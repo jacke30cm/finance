@@ -28,7 +28,7 @@
     function drawChart() {
 
         var arr = [
-            ['Datum', 'Utveckling', 'Tävlingsgenomsnitt'],
+            ['Datum', 'Min utveckling', 'Tävlingsgenomsnitt'],
             ['1/5', 5, -5],
             ['2/5', 4, -4],
             ['3/5', 7, -3],
@@ -54,7 +54,7 @@
             ['23/5', -5, 9],
             ['24/5', -21, 18],
             ['25/5', -44, 28],
-            ['26/5', 34, 55]
+            ['26/5', -34, 55]
         ];
 
         var data = google.visualization.arrayToDataTable(arr);
@@ -79,7 +79,7 @@
                     color: color
                 },
                 1: {
-                    color: '#EBEBEB'
+                    color: '#9095c3'
                 }
             },
             hAxis: {

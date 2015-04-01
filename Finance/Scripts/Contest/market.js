@@ -20,10 +20,10 @@
     });
 
 
-    
-   
+
+
     var visibleRows = 8;
-    var initialPagination = true; 
+    var initialPagination = true;
     var $rows;
 
     function paginateTable() {
@@ -31,16 +31,16 @@
         $('.table-pagination').empty();
 
         if (initialPagination) {
-        
+
             $rows = $('#market .col-lg .block-lg .clean-content table tbody tr');
-            initialPagination = false; 
+            initialPagination = false;
 
         } else {
 
             $rows = $('#market .col-lg .block-lg .clean-content table tbody tr:visible');
 
         }
-        
+
         var totalRows = $rows.length;
         var numberOfPages = totalRows / visibleRows;
 
@@ -82,7 +82,7 @@
         'visibility': 'hidden',
         'opacity': '0.0',
         'left': '-30px',
-        'width' : '0'
+        'width': '0'
     });
 
 
@@ -98,13 +98,13 @@
 
         if (share == activeView) {
 
-             
+
 
             $columns.animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function () {
 
 
                 $columns.css({ 'visibility': 'hidden', 'width': '0' });
-                $('#market .initial-views').css({ 'visibility': 'visible', 'width' : '', 'margin-left' : '-10px' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
+                $('#market .initial-views').css({ 'visibility': 'visible', 'width': '', 'margin-left': '-10px' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
 
 
             });
@@ -115,18 +115,18 @@
         } else {
 
             $(this).addClass('selected');
-            $('#market .initial-views').animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function() {
+            $('#market .initial-views').animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function () {
 
                 $(this).css('width', '0');
 
-                $columns.css({ 'visibility': 'visible', 'width' : '' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
+                $columns.css({ 'visibility': 'visible', 'width': '' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
                 activeView = share;
-               
+
 
             });
 
 
-            
+
         }
 
 
@@ -135,9 +135,8 @@
 
 
 
-    
+
     var shareDevelopment = new google.visualization.LineChart($('.share-development')[0]);
-    //var dailyWinner = new google.visualization.LineChart($('.share-development')[0]);
 
     var arr = [
           ['Datum', 'Utveckling'],
@@ -202,10 +201,51 @@
             toolTip: { isHtml: true }
         };
 
-        chart.draw(data, options);
+        $chart.draw(data, options);
     }
 
 
     google.setOnLoadCallback(drawChart(shareDevelopment, arr));
+
+
+
+
+
+    var currentPosition = 1;
+    var contentHeight = $('#market .col-lg #daily-winners .clean-content').height() + 100;
+    var rollCount = $('#market .col-lg #daily-winners .clean-content').size();
+    var rollSpeed = 8000;
+
+
+    var runningRoll = setTimeout(blockRoll, rollSpeed);
+
+
+    function blockRoll() {
+
+        if (currentPosition != rollCount) {
+
+            $('#market .col-lg #daily-winners .clean-content').stop(true, true).animate({ top: '-=' + contentHeight + 'px' }, 1500, 'easeOutExpo');
+            currentPosition++;
+            runningRoll = setTimeout(blockRoll, rollSpeed);
+
+        } else {
+
+            $('#market .col-lg #daily-winners .clean-content').css({'top' : '-' + contentHeight + 'px'}).stop(true, true).animate({ top: '0' }, 1500, 'easeOutExpo');
+            currentPosition = 1;
+            runningRoll = setTimeout(blockRoll, rollSpeed);
+
+        }
+
+
+    }
+
+
+    $(this).on('click', '#clicks', function() {
+
+       
+        $(this).closest('.anchor-section').find('.row').animate({ top: '-100%' }, 500, 'easeOutQuint'); 
+
+    });
+
 
 });

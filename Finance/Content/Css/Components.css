@@ -2,9 +2,10 @@
 @media screen and (min-width: 1366px) {
 
     .main-content {
-        width: 90%;
-        height: 90%;
-        padding: 4% 4% 0 4%;
+        width: 92%;
+        height: 92%;
+        padding: 4%;
+        overflow: hidden;
     }
 
         .main-content .right-ghost {
@@ -26,6 +27,8 @@
         max-width: 8000px;
         min-height: 100%;
         overflow: hidden;
+        display: block;
+        margin-bottom: 100px;
     }
 
     .col-s, col-m, .col-lg {
@@ -203,6 +206,7 @@
         display: none;
         opacity: 0.0;
         top: -10px;
+        overflow: hidden;
     }
 }
 
