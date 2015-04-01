@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Tävlingsnamn";
-    @Styles.Render("~/CssBundle/custody-account")
-
+    @Styles.Render("~/CssBundle/portfolio")
+    @Styles.Render("~/CssBundle/market")
 }
 
 
@@ -33,4 +33,5 @@
 @Html.Action("ShareControl", "Master", new { name = "CreateCompetition" })
 
 @Scripts.Render("~/bundles/anchor-routing")
-@Scripts.Render("~/bundles/custody-account")
+@Scripts.Render("~/bundles/portfolio")
+@Scripts.Render("~/bundles/market")

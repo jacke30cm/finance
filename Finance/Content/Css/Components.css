@@ -152,30 +152,58 @@
 
         .table-col-4 tbody tr {
             width: 100%;
-            border-bottom: 1px solid #EBEBEB;
             transition: 0.2s ease-in-out;
         }
 
+        .table-col-4 tbody > .selected {
+            background: #FAFAFA; 
+
+        }
             .table-col-4 tbody tr:hover {
                 background: #FAFAFA;
             }
 
             .table-col-4 tbody tr td {
-                width: 25%;
+                width: 20%;
                 min-height: 15px;
                 padding: 10px;
                 display: table-cell;
                 border-bottom: 1px solid #EBEBEB;
             }
 
-.anchor-section {
+                .table-col-4 tbody tr td:first-of-type {
+                    width: 40%;
+                }
 
-    display: none;
-    opacity: 0.0;
-    top: -30px;
+    .table-pagination {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        width: 515px;
+        height: 35px;
+        transform: translate(-50%, -0%);
+        background: transparent;
+        text-align: center;
+    }
 
-}
+        .table-pagination > .pagination-item {
+            display: inline-block;
+            vertical-align: top;
+            width: 35px;
+            height: 25px;
+            border-right: 1px solid #EBEBEB;
+            cursor: pointer; 
+        }
 
+        .table-pagination > .pagination-item:last-of-type {
+            border-right: none;
+        }
+
+    .anchor-section {
+        display: none;
+        opacity: 0.0;
+        top: -10px;
+    }
 }
 
 

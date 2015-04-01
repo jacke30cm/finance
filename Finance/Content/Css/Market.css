@@ -1,0 +1,72 @@
+﻿
+#market > .col-lg {
+    visibility: hidden;
+    opacity: 0.0;
+    left: -30px;
+}
+
+#market > .col-lg:first-of-type {
+    visibility: visible;
+    opacity: 1.0;
+    left: 0px;  
+}
+
+#market > .col-lg > .block-lg {
+    height: 100%;
+    width: 100%;
+}
+
+
+#market .col-lg .block-lg > .clean-content {
+    width: calc(100% - 100px);
+    min-height: 515px;
+    padding: 50px;
+}
+
+#market .col-lg .block-m > .clean-content {
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    padding: 50px;
+}
+
+
+#market .col-lg .block-lg .clean-content > .account-summary {
+    position: relative;
+    width: 515px;
+    left: 50%;
+    transform: translate(-50%, -0%);
+}
+
+    #market .col-lg .block-lg .clean-content > .account-summary > .col-s {
+        width: 120px;
+        height: 120px;
+        margin: 0 5px 0 0;
+        background: transparent;
+        border-right: 1px solid #EBEBEB;
+        text-align: center;
+    }
+
+        #market .col-lg .block-lg .clean-content > .account-summary > .col-s > p {
+            margin-top: 30%;
+        }
+
+        #market .col-lg .block-lg .clean-content > .account-summary > .col-s:last-of-type {
+            margin: 0;
+            border: none;
+        }
+
+
+#market .col-lg .block-lg .clean-content .share-development {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    width: 615px;
+    height: 615px;
+    transform: translate(-0%, -50%);
+}
+
+#market .col-lg .block-m .block-s {
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+}

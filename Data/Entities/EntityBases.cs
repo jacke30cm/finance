@@ -9,7 +9,7 @@ namespace Data.Entities
 {
     public abstract class RelationalBase
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
     }
 
     public abstract class MongoBase
