@@ -104,21 +104,22 @@ namespace Finance.Controllers
 
                         Share.Name = sb.ToString();
                     }
-                    else if (counter == 2)
-                    {
-                        Share.Market = "LargeCap";
-                        Share.Description = "Cool aktie som går att köpa dyrt";
-                        Share.Country = new Country() { Id = 1 };
-                        AddStockToDatabase(Share);
-                    }
+                    
+                       
+                    
 
 
 
 
 
                 }
-                if (counter == 2)
+                if (counter == 1)
                 {
+
+                    Share.Market = "LargeCap";
+                    Share.Description = "Cool aktie som går att köpa dyrt";
+                    Share.Country = new Country() { Id = 1 };
+                    AddStockToDatabase(Share);
 
                     counter = 0;
                     Share = new Share();
