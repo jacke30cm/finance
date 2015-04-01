@@ -1,6 +1,8 @@
 ﻿$(document).ready(function () {
 
 
+
+
     // Search for transactions 
 
     $(document).on('keyup', '#portfolio  .col-lg  .block-lg  .rectangular-block  .col-lg  .input-text-special-wrap  input[type="text"]', function () {
@@ -12,12 +14,11 @@
 
             var value = $(this).find('.block-s:nth-of-type(2)').find('p').text().toLowerCase();
 
-            $(this)[value.indexOf(searchString) !== -1 ? 'show' : 'hide'](); 
+            $(this)[value.indexOf(searchString) !== -1 ? 'show' : 'hide']();
 
         });
 
     });
-
 
 
     //Account Development chart
@@ -27,34 +28,33 @@
     function drawChart() {
 
         var arr = [
-          ['Datum', 'Utveckling'],
-          ['1/5', 5],
-          ['2/5', 4],
-          ['3/5', 7],
-          ['4/5', 13],
-          ['5/5', 9],
-          ['6/5', 10],
-          ['7/5', 9],
-          ['8/5', 14],
-          ['9/5', 16],
-          ['10/5', 15],
-          ['11/5', 14],
-          ['12/5', 16],
-          ['13/5', 19],
-          ['14/5', 20],
-          ['15/5', 22],
-          ['16/5', 21],
-          ['17/5', 20],
-          ['18/5', 23],
-          ['19/5', 21],
-          ['20/5', 26],
-          ['21/5', 15],
-          ['22/5', 7],
-          ['23/5', -5],
-          ['24/5', -21],
-          ['25/5', -44],
-          ['26/5', 34]
-
+            ['Datum', 'Utveckling', 'Tävlingsgenomsnitt'],
+            ['1/5', 5, -5],
+            ['2/5', 4, -4],
+            ['3/5', 7, -3],
+            ['4/5', 13, -8],
+            ['5/5', 9, -10],
+            ['6/5', 10, -5],
+            ['7/5', 9, -1],
+            ['8/5', 14, 3],
+            ['9/5', 16, 4],
+            ['10/5', 15, 3],
+            ['11/5', 14, 6],
+            ['12/5', 16, 3],
+            ['13/5', 19, 8],
+            ['14/5', 20, 5],
+            ['15/5', 22, 6],
+            ['16/5', 21, 5],
+            ['17/5', 20, 8],
+            ['18/5', 23, 9],
+            ['19/5', 21, 5],
+            ['20/5', 26, 6],
+            ['21/5', 15, 7],
+            ['22/5', 7, 8],
+            ['23/5', -5, 9],
+            ['24/5', -21, 18],
+            ['25/5', -44, 28],
+            ['26/5', 34, 55]
         ];
 
         var data = google.visualization.arrayToDataTable(arr);
@@ -77,8 +77,10 @@
             series: {
                 0: {
                     color: color
+                },
+                1: {
+                    color: '#EBEBEB'
                 }
-
             },
             hAxis: {
                 format: 'dd-MM',
@@ -100,21 +102,12 @@
         chart.draw(data, options);
     }
 
-    function toolTiper(date, value) {
-        return +
-            '<div class="account-development-tooltip">' +
-                '<p>' + date + '</p>' +
-                '<p>' + value + '%</p>' +
-            '</div>';
-
-    };
-
 
     //Donut chart
     if ($('.donut-chart').length > 0) {
         var data = [
-			{ label: "Aktier", data: 65 },
-			{ label: "Fonder", data: 20 },
+            { label: "Aktier", data: 65 },
+            { label: "Fonder", data: 20 },
             { label: "Kapital", data: 20 }
         ];
 
@@ -157,8 +150,6 @@
 
     // Easy pie chart
     var options = {
-
-
         barColor: '#a4c8be',
         lineCap: 'square',
         scaleColor: false,
@@ -191,24 +182,19 @@
         if (percentage > -100 && percentage < -66) {
 
             return '#dd7f7f';
-        }
-        else if (percentage >= -66 && percentage < -33) {
+        } else if (percentage >= -66 && percentage < -33) {
 
             return '#c390b8';
-        }
-        else if (percentage >= -33 && percentage <= -1) {
+        } else if (percentage >= -33 && percentage <= -1) {
 
             return '#c3a690';
-        }
-        else if (percentage >= 0 && percentage < 33) {
+        } else if (percentage >= 0 && percentage < 33) {
 
             return '#9095c3';
-        }
-        else if (percentage >= 33 && percentage < 66) {
+        } else if (percentage >= 33 && percentage < 66) {
 
             return '#90c3c1';
-        }
-        else if (percentage >= 66) {
+        } else if (percentage >= 66) {
 
             return '#90c394';
         }

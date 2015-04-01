@@ -22,10 +22,10 @@
                 <table id="share-table" class="table-col-4">
 
                     <tbody>
-                        @for (var x = 0; x < 25; x++)
+                        @for (var x = 0; x < 100; x++)
                         {
 
-                            <tr data-id="@x">
+                            <tr data-id="@x" class="-cursor">
                                 <td>
                                     
                                         
@@ -56,7 +56,7 @@
                                     </p>
                                 </td>
                                 <td>
-                                    <p class="color-green">
+                                    <p class="color-green -bold">
                                        + 2%
                                     </p>
                                 </td>
@@ -81,30 +81,86 @@
 
     </div>
     
-    <div class="col-lg">
+    <div class="col-lg initial-views">
 
-        <h1>Populärt</h1>
+        <h1>Dagsvinnare</h1>
         <br />
 
         <div class="block-m">
             <div class="clean-content -white">
-                <p>Dagens börsvinnare</p>
+                <p class="-discrete">Dagens börsvinnare</p>
+                <h1> Arocell</h1>
+                <h1 class="color-green">+ 28.8%</h1>
             </div>
 
         </div>
 
         <div class="block-m">
             <div class="clean-content -white">
-                <p>Dagens förlorare</p>
+                <p class="-discrete">Dagens förlorare</p>
+                <h1 > Kingspyre</h1>
+                <h1 class="color-red">-48.2%</h1>
             </div>
         </div>
         
         <div class="block-m">
             <div class="clean-content -white">
-                <p>Mest omsatta aktie</p>
+                <p class="-discrete">Mest omsatta aktie</p>
+                <h1 class=""> Arocell</h1>
+                <h1 class="color-green">150 000 SEK</h1>
+                <p class="-discrete">(spännande ikon)</p>
+            </div>
+        </div>
+        
+        <div class="block-m">
+            <div class="block-s -white">
+                <h3 > Africa Oil</h3>
+                <h3 class="color-green">98 000 SEK</h3>
+
+            </div>
+            
+            <div class="block-s -white">
+                <h3> Arcam</h3>
+                <h3 class="color-green">66 000 SEK</h3>
+            </div>
+            
+            <div class="block-s -white">
+                <h3> Aerocrine Dynamics</h3>
+                <h3 class="color-green">45 000 SEK</h3>
+            </div>
+            
+            <div class="block-s -white">
+                <h3> ABB</h3>
+                <h3 class="color-green">20 000 SEK</h3>
             </div>
         </div>
 
+    </div>
+    
+    
+    <div class="col-lg initial-views">
+
+        <h1>Populära aktier</h1>
+        <br />
+        
+        @for (var z = 0; z < 4; z++)
+        {
+
+            <div class="block-m">
+            
+                @for (var x = 0; x < 4; x++)
+                {
+                    <div class="block-s -white">
+                        <h3 class=""> Africa Oil</h3>
+                        <h1 class="color-green">+2.12%</h1>
+                    </div>
+                }
+            
+
+            
+            </div>
+
+        }
 
     </div>
 

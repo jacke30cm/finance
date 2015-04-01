@@ -64,3 +64,9 @@
     height: 615px;
     transform: translate(-0%, -50%);
 }
+
+#market .col-lg .block-m .block-s {
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+}

@@ -16,8 +16,16 @@ namespace Data
         // RelationalDB
         private RelationalRepository<User> userRepository;
         private RelationalRepository<Contest> contestRepository;
-        // MongoDB
-
+        private RelationalRepository<ContestSettings> contestSettingsRepository;
+        private RelationalRepository<AvailableContestCountries> contestCountriesRepository;
+        private RelationalRepository<Country> countryRepository;
+        private RelationalRepository<Image> imageRepository;
+        private RelationalRepository<Share> shareRepository;
+        private RelationalRepository<ShareHistory> shareHistoryRepository;
+        private RelationalRepository<Portfolio> portfolioRepository;
+        private RelationalRepository<PortfolioHistory> portfolioHistoryRepository;
+        private RelationalRepository<Transaction> transactionRepository;
+        private RelationalRepository<UserContestPortfolioAssociation> portfolioAssociationRepository;
 
 
         // RelationalDB- repositories
@@ -29,9 +37,46 @@ namespace Data
         {
             get { return this.contestRepository ?? new RelationalRepository<Contest>(context); }
         }
-
-
-
+        public RelationalRepository<ContestSettings> ContestSettingsRepository
+        {
+            get { return this.contestSettingsRepository ?? new RelationalRepository<ContestSettings>(context); }
+        }
+        public RelationalRepository<AvailableContestCountries> ContestCountriesRepository
+        {
+            get { return this.contestCountriesRepository ?? new RelationalRepository<AvailableContestCountries>(context); }
+        }
+        public RelationalRepository<Country> CountryRepository
+        {
+            get { return this.countryRepository ?? new RelationalRepository<Country>(context); }
+        }
+        public RelationalRepository<Image> ImageRepository
+        {
+            get { return this.imageRepository ?? new RelationalRepository<Image>(context); }
+        }
+        public RelationalRepository<Share> ShareRepository
+        {
+            get { return this.shareRepository ?? new RelationalRepository<Share>(context); }
+        }
+        public RelationalRepository<ShareHistory> ShareHistoryRepository
+        {
+            get { return this.shareHistoryRepository ?? new RelationalRepository<ShareHistory>(context); }
+        }
+        public RelationalRepository<Portfolio> PortfolioRepository
+        {
+            get { return this.portfolioRepository ?? new RelationalRepository<Portfolio>(context); }
+        }
+        public RelationalRepository<PortfolioHistory> PortfolioHistoryRepository
+        {
+            get { return this.portfolioHistoryRepository ?? new RelationalRepository<PortfolioHistory>(context); }
+        }
+        public RelationalRepository<Transaction> TransactionRepository
+        {
+            get { return this.transactionRepository ?? new RelationalRepository<Transaction>(context); }
+        }
+        public RelationalRepository<UserContestPortfolioAssociation> PortfolioAssociationRepository
+        {
+            get { return this.portfolioAssociationRepository ?? new RelationalRepository<UserContestPortfolioAssociation>(context); }
+        }
 
 
         public void Save()

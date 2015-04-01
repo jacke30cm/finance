@@ -46,17 +46,20 @@
 
         var hash = window.location.hash.slice(2);
 
+
         // If the anchor is matched with a action -> Bring that section, else, fall back to default-view
         if (isValidAnchor(hash)) {
 
-            // Because scrollbar in some cases are being disabled, when user leaves tab width disabled scrollbar, it must be updated
-            $('.horizontal-scroll').mCustomScrollbar("update");
+            
             getSection(hash);
 
         } else {
 
             window.location.hash = '#/' + fallBack;
         }
+
+        // Because scrollbar in some cases are being disabled, when user leaves tab width disabled scrollbar, it must be updated
+        $('.horizontal-scroll').mCustomScrollbar("update");
 
     });
 
@@ -68,7 +71,8 @@
     });
 
 
-     
+
+
     function getSection(request) {
 
         $('.anchor-section').css({ 'display': 'none', 'opacity': '', 'top': '' });

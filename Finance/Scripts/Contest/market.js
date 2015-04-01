@@ -23,13 +23,24 @@
     
    
     var visibleRows = 8;
+    var initialPagination = true; 
     var $rows;
 
     function paginateTable() {
 
         $('.table-pagination').empty();
 
-        $rows = $('#market .col-lg .block-lg .clean-content table tbody tr:visible');
+        if (initialPagination) {
+        
+            $rows = $('#market .col-lg .block-lg .clean-content table tbody tr');
+            initialPagination = false; 
+
+        } else {
+
+            $rows = $('#market .col-lg .block-lg .clean-content table tbody tr:visible');
+
+        }
+        
         var totalRows = $rows.length;
         var numberOfPages = totalRows / visibleRows;
 
@@ -67,35 +78,33 @@
     // These calls are made to hide col-lg except first one, to make animation fancy,
     // and also to disable the otherwise enabled scroll-functionality, becase there's nothing to scroll
 
-    $('#market .col-lg').not('#market .col-lg:first-of-type, #market .col-lg:nth-of-type(2)').css({
+    $('#market .col-lg').not('#market .col-lg:first-of-type, #market .initial-views').css({
         'visibility': 'hidden',
         'opacity': '0.0',
-        'left': '-30px'
+        'left': '-30px',
+        'width' : '0'
     });
-
-    $('.horizontal-scroll').mCustomScrollbar("disable");
-
 
 
     // Animate the columns containing share-data 
     var activeView;
     $(this).on('click', '#share-table tbody tr', function () {
 
-
-        var $columns = $('#market .col-lg').not('#market .col-lg:first-of-type, #market .col-lg:nth-of-type(2)');
+        $('#share-table tbody tr').removeClass('selected');
+        var $columns = $('#market .col-lg').not('#market .col-lg:first-of-type, #market .initial-views');
         var share = $(this).attr('data-id');
 
 
 
         if (share == activeView) {
 
+             
+
             $columns.animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function () {
 
 
-                $columns.css({ 'visibility': 'hidden' });
-                $('.horizontal-scroll').mCustomScrollbar("disable");
-
-                $('#market .col-lg:nth-of-type(2)').css({ 'visibility': 'visible', 'width' : '' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
+                $columns.css({ 'visibility': 'hidden', 'width': '0' });
+                $('#market .initial-views').css({ 'visibility': 'visible', 'width' : '', 'margin-left' : '-10px' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
 
 
             });
@@ -105,13 +114,14 @@
 
         } else {
 
-            $('#market .col-lg:nth-of-type(2)').animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function() {
+            $(this).addClass('selected');
+            $('#market .initial-views').animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function() {
 
                 $(this).css('width', '0');
 
-                $columns.css({ 'visibility': 'visible' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
+                $columns.css({ 'visibility': 'visible', 'width' : '' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
                 activeView = share;
-                $('.horizontal-scroll').mCustomScrollbar("update");
+               
 
             });
 
@@ -125,11 +135,11 @@
 
 
 
-    google.setOnLoadCallback(drawChart);
+    
+    var shareDevelopment = new google.visualization.LineChart($('.share-development')[0]);
+    //var dailyWinner = new google.visualization.LineChart($('.share-development')[0]);
 
-    function drawChart() {
-
-        var arr = [
+    var arr = [
           ['Datum', 'Utveckling'],
           ['1/5', 5],
           ['2/5', 4],
@@ -151,10 +161,12 @@
           ['18/5', 23],
           ['19/5', 21],
           ['20/5', 26]
-        ];
+    ];
 
-        var data = google.visualization.arrayToDataTable(arr);
 
+    function drawChart($chart, baseData) {
+
+        var data = google.visualization.arrayToDataTable(baseData);
         var color = '#90c3c1';
 
         if (arr[arr.length - 1][1] < 0) {
@@ -174,7 +186,6 @@
                 0: {
                     color: color
                 }
-
             },
             hAxis: {
                 format: 'dd-MM',
@@ -191,10 +202,10 @@
             toolTip: { isHtml: true }
         };
 
-        var chart = new google.visualization.LineChart($('.share-development')[0]);
-
         chart.draw(data, options);
     }
 
+
+    google.setOnLoadCallback(drawChart(shareDevelopment, arr));
 
 });

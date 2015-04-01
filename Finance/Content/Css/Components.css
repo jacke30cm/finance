@@ -155,6 +155,10 @@
             transition: 0.2s ease-in-out;
         }
 
+        .table-col-4 tbody > .selected {
+            background: #FAFAFA; 
+
+        }
             .table-col-4 tbody tr:hover {
                 background: #FAFAFA;
             }
