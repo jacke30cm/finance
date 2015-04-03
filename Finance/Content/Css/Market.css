@@ -1,13 +1,14 @@
 ﻿
 .anchor-section .market-navigator {
     position: absolute;
-    top: 200px;
+    top: 47px;
     left: -20px;
     width: 80px;
     height: 240px;
     background: #FFF;
     transform: translate(-0%, -0%);
     z-index: 10;
+    border: 1px solid #EBEBEB;
 }
 
     .anchor-section .market-navigator .navigation-item {
@@ -15,61 +16,68 @@
         height: 50px;
         padding: 15px;
         border-bottom: 1px solid #EBEBEB;
+        text-align: center;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
     }
 
-    .anchor-section .market-navigator .navigation-item i {
+        .anchor-section .market-navigator .navigation-item:hover {
+            background: #FAFAFA;
+        }
 
-        font-size: 14px;
-        color: #EBEBEB; 
+        .anchor-section .market-navigator .navigation-item i {
+            margin-top: 15px;
+            font-size: 24px;
+            color: #DDD;
+        }
 
-    }
         .anchor-section .market-navigator .navigation-item:last-of-type {
             border: none;
         }
 
-#market > .col-lg {
+.row > .col-lg {
     visibility: hidden;
     opacity: 0.0;
     left: -30px;
 }
 
-    #market > .col-lg:first-of-type {
+    .row > .col-lg:first-of-type {
         visibility: visible;
         opacity: 1.0;
         left: 0px;
     }
 
-    #market > .col-lg > .block-lg {
+    .row > .col-lg > .block-lg {
         height: 100%;
         width: 100%;
     }
 
-#market .col-lg > #daily-winners {
+.row .col-lg > #daily-winners {
     overflow: hidden;
     background: #FFF;
 }
 
-#market .col-lg .block-lg > .clean-content {
+.row .col-lg .block-lg > .clean-content {
     width: calc(100% - 100px);
     min-height: 515px;
     padding: 50px;
 }
 
-#market .col-lg .block-m > .clean-content {
+.row .col-lg .block-m > .clean-content {
     width: calc(100% - 100px);
     height: calc(100% - 100px);
     padding: 50px;
 }
 
 
-#market .col-lg .block-lg .clean-content > .account-summary {
+.row .col-lg .block-lg .clean-content > .account-summary {
     position: relative;
     width: 515px;
     left: 50%;
     transform: translate(-50%, -0%);
 }
 
-    #market .col-lg .block-lg .clean-content > .account-summary > .col-s {
+    .row .col-lg .block-lg .clean-content > .account-summary > .col-s {
         width: 120px;
         height: 120px;
         margin: 0 5px 0 0;
@@ -78,27 +86,137 @@
         text-align: center;
     }
 
-        #market .col-lg .block-lg .clean-content > .account-summary > .col-s > p {
+        .row .col-lg .block-lg .clean-content > .account-summary > .col-s > p {
             margin-top: 30%;
         }
 
-        #market .col-lg .block-lg .clean-content > .account-summary > .col-s:last-of-type {
+        .row .col-lg .block-lg .clean-content > .account-summary > .col-s:last-of-type {
             margin: 0;
             border: none;
         }
 
 
-#market .col-lg .block-lg .clean-content .share-development {
+.row .col-lg .block-lg .clean-content .share-development {
     position: absolute;
     left: 0%;
-    top: 50%;
+    top: -25px;
     width: 615px;
-    height: 615px;
-    transform: translate(-0%, -50%);
+    height: 515px;
+    transform: translate(-0%, -0%);
 }
 
-#market .col-lg .block-m .block-s {
+.row .col-lg .block-m .block-s {
     width: 100px;
     height: 100px;
     padding: 25px;
+}
+
+.market-search-share-list {
+    width: 300px;
+    height: 615px;
+    float: left;
+    list-style: none;
+    margin-right: 10px;
+}
+
+    .market-search-share-list li {
+        width: 300px;
+        height: 50px;
+        margin-bottom: 20px;
+        transition: 0.2s ease-in-out;
+    }
+
+        .market-search-share-list li:hover {
+            background: #FAFAFA;
+        }
+
+        .market-search-share-list li .thumb, .data {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .market-search-share-list li .thumb {
+            width: 50px;
+            height: 50px;
+            background: #FFF;
+        }
+
+            .market-search-share-list li .thumb > .recognizer {
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+        .market-search-share-list li .data {
+            width: 230px;
+            margin-left: 10px;
+            height: 50px;
+        }
+
+.col-full h1, .input-text-special-wrap {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.col-full .input-text-special-wrap {
+    width: 300px;
+    top: -5px;
+    margin-left: 40px;
+    background: #ebebeb;
+    border: 1px solid #CCC;
+}
+
+    .col-full .input-text-special-wrap > .slicer {
+        background: #EBEBEB;
+    }
+
+
+.time-filter {
+    position: absolute;
+    bottom: 50px;
+    left: 80px;
+    width: 445px;
+    height: 25px;
+    border: 1px solid #EBEBEB;
+    z-index: 10;
+}
+
+    .time-filter .filter-item {
+        display: inline-block;
+        vertical-align: top;
+        width: 33%;
+        height: calc(100% - 4px);
+        padding: 4px 0 0 0;
+        text-align: center;
+        border-right: 1px solid #EBEBEB;
+        float: left;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+    }
+
+        .time-filter .filter-item:hover {
+            background: #FAFAFA;
+        }
+
+        .time-filter .filter-item:last-of-type {
+            border: none;
+        }
+
+
+#market-share-about > .rectangular-block {
+    width: calc(615px - 100px);
+    min-height: calc(305px - 100px);
+    padding: 50px;
+}
+
+#market-share-about  .block-m {
+    margin-left: -5px;
+}
+
+#market-share-about  .block-m:last-of-type {
+    margin-left: 1px;
 }

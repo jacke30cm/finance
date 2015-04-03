@@ -20,6 +20,7 @@ namespace Finance
                         "~/Scripts/jquery.flot.min.js",
                         "~/Scripts/jquery.flot.pie.min.js",
                         "~/Scripts/jquery-labelauty.js",
+                        "~/Scripts/jquery-easy-list-splitter.js",
                         "~/Scripts/spin.min.js"));
 
             // Master-js

@@ -15,13 +15,22 @@
         opacity: 0.0;
         top: -10px;
         overflow: hidden;
-        width: 100%;
-        height: 100%;
+        
     }
+
+    .anchor-section .sub-section {
+
+        width: auto;
+        height: 100%;
+        margin-bottom: 4%;
+        overflow: hidden;
+
+    }
+
         .main-content .right-ghost {
             position: absolute;
             right: 4%;
-            width: 50px;
+            width: 150px;
             height: 100%;
             z-index: 1;
             background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(235,235,235,1) 100%); /* FF3.6+ */
@@ -35,13 +44,13 @@
 
     .row {
         max-width: 8000px;
-        min-height: 100%;
+        height: 100%;
         overflow: hidden;
         display: block;
         margin-bottom: 100px;
     }
 
-    .col-s, .col-m, .col-lg {
+    .col-s, .col-m, .col-lg, .col-full {
         height: 100%;
         margin: 0 15px 0 0;
         background: transparent;
@@ -50,7 +59,7 @@
     }
 
     .col-s {
-        width: 145px;
+        width: 115px;
     }
 
     .col-m {
@@ -61,6 +70,10 @@
         width: 615px;
     }
 
+    .col-full {
+        width: auto;
+    }
+
     .row .vertical-scroll {
         width: 615px;
         max-height: 800px;
@@ -68,7 +81,7 @@
 
 
 
-    .block-s, .block-m, .block-lg {
+    .block-s, .block-m, .block-lg, .rectangular-block {
         display: inline-block;
         vertical-align: top;
         margin: 0px 0px 5px 0px;
@@ -101,10 +114,10 @@
         }
 
     .rectangular-block {
-        width: 100%;
+        width: calc(100% + 5px);
         min-height: 50px;
         background: #FFF;
-        margin: 0 0 5px 0;
+        margin: 0 0 5px -5px;
     }
 
     .table-col-6 {
@@ -156,10 +169,12 @@
                 padding: 0px 10px 25px 10px;
                 display: table-cell;
                 border-bottom: 1px solid #EBEBEB;
+                text-align: right; 
             }
 
                 .table-col-4 thead tr td:first-of-type {
                     width: 40%;
+                    text-align: left;
                 }
 
 
@@ -182,10 +197,12 @@
             padding: 10px;
             display: table-cell;
             border-bottom: 1px solid #EBEBEB;
+            text-align: right; 
         }
 
             .table-col-4 tbody tr td:first-of-type {
                 width: 40%;
+                text-align: left;
             }
 
     .table-pagination {
@@ -211,6 +228,35 @@
             .table-pagination > .pagination-item:last-of-type {
                 border-right: none;
             }
+
+
+         .pie-chart {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pie-chart-label {
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            left: 25px;
+            bottom: 10px;
+        }
+
+        .pie-chart > .chart-content {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
 }
 
 

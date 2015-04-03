@@ -79,7 +79,7 @@
                     color: color
                 },
                 1: {
-                    color: '#9095c3'
+                    color: '#CCCCCC'
                 }
             },
             hAxis: {
@@ -202,6 +202,56 @@
     };
 
 
+    var visibleRows = 5;
+    var initialPagination = true;
+    var $rows;
 
+    function paginateTable() {
+
+        $('.table-pagination').empty();
+
+        if (initialPagination) {
+
+            $rows = $('#portfolio .col-lg .block-lg .clean-content table tbody tr');
+            initialPagination = false;
+
+        } else {
+
+            $rows = $('#portfolio .col-lg .block-lg .clean-content table tbody tr:visible');
+
+        }
+
+        var totalRows = $rows.length;
+        var numberOfPages = totalRows / visibleRows;
+
+        for (var x = 0; x < numberOfPages; x++) {
+
+            var pageNumber = x + 1;
+            $('.table-pagination').append('<div class="pagination-item" pagination="' + x + '"><p>' + pageNumber + '</p></div>');
+
+        }
+
+        $rows.hide();
+        $rows.slice(0, visibleRows).show();
+        $('.table-pagination .pagination-item:first-of-type').find('p').addClass('color-green');
+    }
+
+    paginateTable();
+
+    $(document).on('click', '.table-pagination .pagination-item', function () {
+
+        $('.table-pagination .pagination-item').find('p').removeClass('color-green');
+        $(this).find('p').addClass('color-green');
+
+
+        var thisPage = $(this).find('p').text();
+        thisPage = parseInt(thisPage) - 1;
+
+        var startItem = thisPage * visibleRows;
+        var endItem = startItem + visibleRows;
+
+        $rows.css('opacity', '0.0').hide().slice(startItem, endItem).css('display', 'table-row').animate({ opacity: 1.0 }, 0);
+
+    });
 
 });

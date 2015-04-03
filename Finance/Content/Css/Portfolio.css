@@ -20,33 +20,7 @@
         padding: 50px;
     }
 
-        #portfolio .col-lg .block-m > .clean-content > .pie-chart {
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        #portfolio .col-lg .block-m > .clean-content > .pie-chart-label {
-            position: absolute;
-            width: 200px;
-            height: 30px;
-            left: 25px;
-            bottom: 10px;
-        }
-
-        #portfolio .col-lg .block-m > .clean-content > .pie-chart > .chart-content {
-            position: absolute;
-            width: 100px;
-            height: 50px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
+        
     #portfolio .col-lg .block-m .clean-content .donut-chart {
         position: absolute;
         width: 250px;

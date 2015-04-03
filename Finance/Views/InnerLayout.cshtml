@@ -1,19 +1,20 @@
 ﻿<!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <head>
 
-    @* Styles *@
-    @Styles.Render("~/CssBundle/css")
-    @Styles.Render("~/CssBundle/fontawesome")
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+
+        @* Styles *@
+        @Styles.Render("~/CssBundle/css")
+        @Styles.Render("~/CssBundle/fontawesome")
     
-    @* Scripts *@
-    @Scripts.Render("~/bundles/jquery")
+        @* Scripts *@
+        @Scripts.Render("~/bundles/jquery")
     
-    <script type="text/javascript"
-            src="https://www.google.com/jsapi?autoload={
+        <script type="text/javascript"
+                src="https://www.google.com/jsapi?autoload={
             'modules':[{
               'name':'visualization',
               'version':'1',
@@ -21,15 +22,16 @@
             }]
           }"></script>
 
-    @Scripts.Render("~/bundles/master")
+        @Scripts.Render("~/bundles/master")
 
-</head>
+    </head>
 <body>
+    <!-- COPYRIGHT (c) Marcus Pihlquist & Jacob Ståhl -->
 
     @Html.Action("Menu", "Master")
 
     <div class="main-content">
-        @*<div class="right-ghost"></div>*@
+        <div class="right-ghost"></div>
         @RenderBody()
     </div>
 
