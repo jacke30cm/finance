@@ -59,6 +59,7 @@ namespace Data
             return dbSet.Find(id);
         }
 
+      
         public virtual TEntity GetSingle(Expression<Func<TEntity, bool>> func)
         {
             return dbSet.FirstOrDefault(func);
