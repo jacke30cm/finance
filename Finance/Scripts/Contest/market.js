@@ -1,78 +1,72 @@
 ﻿$(document).ready(function () {
 
 
+
+
     // Search for shares 
 
-    $(document).on('keyup', '#market  .col-lg  .block-lg .clean-content .input-text-special-wrap  input[type="text"]', function () {
+    $(document).on('keyup', '.sub-section .col-full .input-text-special-wrap  input[type="text"]', function () {
+
+
 
         var searchString = $(this).val().toLowerCase();
 
-        $('#market .col-lg .block-lg .clean-content table tbody tr').each(function () {
+        $('.sub-section .col-full .market-search-share-list li').each(function () {
 
-            var value = $(this).find('td:first-of-type').find('p').text().toLowerCase();
+            var value = $(this).find('.data').find('h4').text().toLowerCase();
 
             $(this)[value.indexOf(searchString) !== -1 ? 'show' : 'hide']();
 
         });
 
-        paginateTable();
 
+        // FORTSÄTT ... 
+
+        //var visibleRows = []; 
+
+        //$('.market-search-share-list li:visible').each(function() {
+
+        //    visibleRows.push($(this)); 
+
+        //});
+
+
+        //var columns = 0; 
+
+        //if (visibleRows.length < 10) {
+
+        //    columns = 1; 
+
+        //} else {
+
+        //    columns = visibleRows.length / 10; 
+
+        //}
+
+        //$('.market-search-share-list').empty().easyListSplitter({
+
+        //    colNumber: columns
+        //});
     });
 
 
+    //$(document).on('keyup', '#market  .col-lg  .block-lg .clean-content .input-text-special-wrap  input[type="text"]', function () {
+
+    //    var searchString = $(this).val().toLowerCase();
+
+    //    $('#market .col-lg .block-lg .clean-content table tbody tr').each(function () {
+
+    //        var value = $(this).find('td:first-of-type').find('p').text().toLowerCase();
+
+    //        $(this)[value.indexOf(searchString) !== -1 ? 'show' : 'hide']();
+
+    //    });
+
+    //    paginateTable();
+
+    //});
 
 
-    var visibleRows = 8;
-    var initialPagination = true;
-    var $rows;
-
-    function paginateTable() {
-
-        $('.table-pagination').empty();
-
-        if (initialPagination) {
-
-            $rows = $('#market .col-lg .block-lg .clean-content table tbody tr');
-            initialPagination = false;
-
-        } else {
-
-            $rows = $('#market .col-lg .block-lg .clean-content table tbody tr:visible');
-
-        }
-
-        var totalRows = $rows.length;
-        var numberOfPages = totalRows / visibleRows;
-
-        for (var x = 0; x < numberOfPages; x++) {
-
-            var pageNumber = x + 1;
-            $('.table-pagination').append('<div class="pagination-item" pagination="' + x + '"><p>' + pageNumber + '</p></div>');
-
-        }
-
-        $rows.hide();
-        $rows.slice(0, visibleRows).show();
-        $('.table-pagination .pagination-item:first-of-type').find('p').addClass('color-green');
-    }
-
-    paginateTable();
-
-    $(document).on('click', '.table-pagination .pagination-item', function () {
-
-        $('.table-pagination .pagination-item').find('p').removeClass('color-green');
-        $(this).find('p').addClass('color-green');
-
-
-        var thisPage = $(this).find('p').text();
-        thisPage = parseInt(thisPage) - 1;
-
-        var startItem = thisPage * visibleRows;
-        var endItem = startItem + visibleRows;
-
-        $rows.css('opacity', '0.0').hide().slice(startItem, endItem).css('display', 'table-row').animate({ opacity: 1.0 }, 0);
-
-    });
 
 
     // These calls are made to hide col-lg except first one, to make animation fancy,
@@ -180,6 +174,7 @@
             legend: { position: 'none' },
             fontName: 'Open Sans',
             fontSize: 12,
+            backgroundColor: 'transparent',
             animation: { startup: true, duration: 500, easing: 'out' },
             series: {
                 0: {
@@ -230,7 +225,7 @@
 
         } else {
 
-            $('#market .col-lg #daily-winners .clean-content').css({'top' : '-' + contentHeight + 'px'}).stop(true, true).animate({ top: '0' }, 1500, 'easeOutExpo');
+            $('#market .col-lg #daily-winners .clean-content').css({ 'top': '-' + contentHeight + 'px' }).stop(true, true).animate({ top: '0' }, 1500, 'easeOutExpo');
             currentPosition = 1;
             runningRoll = setTimeout(blockRoll, rollSpeed);
 
@@ -240,12 +235,62 @@
     }
 
 
-    $(this).on('click', '#clicks', function() {
+    var listColumns = parseInt($('.market-search-share-list li').length) / 10;
 
-       
-        $(this).closest('.anchor-section').find('.row').animate({ top: '-100%' }, 500, 'easeOutQuint'); 
+    $('.market-search-share-list').easyListSplitter({
+
+        colNumber: listColumns
+    });
+
+    
+
+    $(this).on('click', '.navigation-item', function () {
+
+        $('.navigation-item').removeClass('active'); 
+        var destination = $(this).attr('row-location');
+        var rowHeight = $('.sub-section').height() + 72; // Big resolution height
+
+        $(this).addClass('active');
+
+        getShareView(destination, rowHeight); 
+
 
     });
 
+    $(this).on('click', '.market-search-share-list li .data', function () {
+
+        $('.navigation-item').removeClass('active');
+        $('.market-search-share-list li').removeClass('active');
+        var rowHeight = $('.sub-section').height() + 72; // Big resolution height
+
+        $(this).parent().addClass('active');
+        $('.navigation-item:last-of-type').addClass('active');
+
+        getShareView('market-share', rowHeight);
+
+
+    });
+
+
+
+    function getShareView($destination, rowHeight) {
+
+        var i = 0;
+        $('.sub-section').each(function () {
+
+            var distance = i * rowHeight;
+
+            if ($(this).attr('row-location') == $destination) {
+
+
+
+                $('.sub-section').animate({ top: '-' + distance + 'px' }, 500, 'easeOutQuint');
+
+            }
+
+            i++;
+        });
+
+    }
 
 });

@@ -12,6 +12,24 @@
             mouseWheel: { scrollAmount: 500 },
             keyboard: { scrollAmount: 15 },
             scrollInertia: 800,
+            callbacks: {
+                onTotalScroll: function() {
+
+                    $('.right-ghost').animate({ opacity: 0.0 }, 1000); 
+
+                },
+                onTotalScrollBack: function() {
+
+                    $('.market-navigator').stop().animate({ opacity: '1.0' }, 500); 
+
+                },
+                onScrollStart: function() {
+                    
+                    $('.market-navigator').stop().animate({ opacity: '0.0' }, 500);
+                    $('.right-ghost').animate({ opacity: 1.0 }, 200);
+                }
+
+            }
         });
 
 

@@ -1,335 +1,516 @@
-﻿<div id="market" class="row horizontal-scroll">
-    
-   
+﻿<div class="sub-section" row-location="market-overview">
 
-    <div class="col-lg">
-        <h1>Hitta aktier</h1>
-        <br />
-        
-        
-        <div class="block-lg">
-            <div class="clean-content -white">
+    <div id="market" class="row horizontal-scroll">
 
-                <div class="input-text-special-wrap">
-                    <div class="slicer"></div>
-                    <div class="icon"></div>
-                    <input type="text" placeholder="Hitta värdepapper" />
+        @*<div class="col-lg">
+                <h1>Hitta aktier</h1>
+                <br />
+
+
+                <div class="block-lg">
+                    <div class="clean-content -white">
+
+                        <div class="input-text-special-wrap">
+                            <div class="slicer"></div>
+                            <div class="icon"></div>
+                            <input type="text" placeholder="Hitta värdepapper" />
+                        </div>
+
+                        <br/>
+                        <br/>
+
+                        <table id="share-table" class="table-col-4">
+
+                            <tbody>
+                                @for (var x = 0; x < 100; x++)
+                                {
+
+                                    <tr data-id="@x" class="-cursor">
+                                        <td>
+
+
+                                            @if (x == 4 || x == 6)
+                                            {
+                                                <p class="">
+                                                    @x
+                                                    Africa Oil Corp
+                                                </p>
+                                            }
+                                            else
+                                            {
+                                                <p class="">
+                                                    @x
+                                                    Arocell
+                                                </p>
+                                            }
+
+                                        </td>
+                                        <td>
+                                            <p class="">
+                                                5.00
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="">
+                                                5.55
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="color-green -bold">
+                                                + 2%
+                                            </p>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+
+
+
+                        </table>
+
+                        <div class="table-pagination">
+
+                        </div>
+
+
+                    </div>
+
+
                 </div>
-                
-                <br/>
-                <br/>
 
-                <table id="share-table" class="table-col-4">
+            </div>*@
 
-                    <tbody>
-                        @for (var x = 0; x < 100; x++)
-                        {
+        <div class="col-s">
 
-                            <tr data-id="@x" class="-cursor">
-                                <td>
-                                    
-                                        
-                                    @if (x == 4 || x == 6)
-                                    {
-                                        <p class="">
-                                            @x
-                                            Africa Oil Corp
-                                        </p>
-                                    }
-                                    else
-                                    {
-                                        <p class="">
-                                            @x
-                                            Arocell
-                                        </p>
-                                    }
-                                        
-                                </td>
-                                <td>
-                                    <p class="">
-                                        5.00
-                                    </p>
-                                </td>
-                                <td>
-                                    <p class="">
-                                        5.55
-                                    </p>
-                                </td>
-                                <td>
-                                    <p class="color-green -bold">
-                                        + 2%
-                                    </p>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
+        </div>
 
+        <div class="col-lg initial-views">
 
-                    
+            <h1>Dagsvinnare</h1>
+            <br />
 
-                </table>
-
-                <div class="table-pagination">
-                    
+            <div class="block-m" id="daily-winners">
+                <div class="clean-content -white">
+                    <p class="-discrete">Dagens börsvinnare</p>
+                    <h1> Arocell</h1>
+                    <h1 class="color-green">+ 28.8%</h1>
                 </div>
 
+                <div class="clean-content -white">
+                    <p class="-discrete">Dagens börsvinnare</p>
+                    <h1> Svensson AB</h1>
+                    <h1 class="color-green">+ 26.8%</h1>
+                </div>
+
+                <div class="clean-content -white">
+                    <p class="-discrete">Dagens börsvinnare</p>
+                    <h1> Aerocrine Dynamics</h1>
+                    <h1 class="color-green">+ 26.8%</h1>
+                </div>
+
+                <div class="clean-content -white">
+                    <p class="-discrete">Dagens börsvinnare</p>
+                    <h1> ABB</h1>
+                    <h1 class="color-green">+ 26.8%</h1>
+                </div>
+
+                <div class="clean-content -white">
+                    <p class="-discrete">Dagens börsvinnare</p>
+                    <h1> Lundin Petroleum</h1>
+                    <h1 class="color-green">+ 26.8%</h1>
+                </div>
 
             </div>
-
-
-        </div>
-
-    </div>
-    
-    <div class="col-lg initial-views">
-
-        <h1>Dagsvinnare</h1>
-        <br />
-
-        <div class="block-m" id="daily-winners">
-            <div class="clean-content -white">
-                <p class="-discrete">Dagens börsvinnare</p>
-                <h1> Arocell</h1>
-                <h1 class="color-green">+ 28.8%</h1>
-            </div>
-            
-            <div class="clean-content -white">
-                <p class="-discrete">Dagens börsvinnare</p>
-                <h1> Svensson AB</h1>
-                <h1 class="color-green">+ 26.8%</h1>
-            </div>
-            
-            <div class="clean-content -white">
-                <p class="-discrete">Dagens börsvinnare</p>
-                <h1> Aerocrine Dynamics</h1>
-                <h1 class="color-green">+ 26.8%</h1>
-            </div>
-            
-            <div class="clean-content -white">
-                <p class="-discrete">Dagens börsvinnare</p>
-                <h1> ABB</h1>
-                <h1 class="color-green">+ 26.8%</h1>
-            </div>
-            
-            <div class="clean-content -white">
-                <p class="-discrete">Dagens börsvinnare</p>
-                <h1> Lundin Petroleum</h1>
-                <h1 class="color-green">+ 26.8%</h1>
-            </div>
-
-        </div>
-
-        <div class="block-m">
-            <div class="clean-content -white">
-                <p class="-discrete">Dagens förlorare</p>
-                <h1 > Kingspyre</h1>
-                <h1 class="color-red">-48.2%</h1>
-            </div>
-        </div>
-        
-        <div class="block-m">
-            <div class="clean-content -white">
-                <p class="-discrete">Mest omsatta aktie</p>
-                <h1 class=""> Arocell</h1>
-                <h1 class="color-green">150 000 SEK</h1>
-                <p class="-discrete">(spännande ikon)</p>
-            </div>
-        </div>
-        
-        <div class="block-m">
-            <div class="block-s -white">
-                <h3 > Africa Oil</h3>
-                <h3 class="color-green">98 000 SEK</h3>
-
-            </div>
-            
-            <div class="block-s -white">
-                <h3> Arcam</h3>
-                <h3 class="color-green">66 000 SEK</h3>
-            </div>
-            
-            <div class="block-s -white">
-                <h3> Aerocrine Dynamics</h3>
-                <h3 class="color-green">45 000 SEK</h3>
-            </div>
-            
-            <div class="block-s -white">
-                <h3> ABB</h3>
-                <h3 class="color-green">20 000 SEK</h3>
-            </div>
-        </div>
-
-    </div>
-    
-    
-    <div class="col-lg initial-views">
-
-        <h1>Populära aktier</h1>
-        <br />
-        
-        @for (var z = 0; z < 4; z++)
-        {
 
             <div class="block-m">
-            
-                @for (var x = 0; x < 4; x++)
-                {
-                    <div class="block-s -white">
-                        <h3 class=""> Africa Oil</h3>
-                        <h1 class="color-green">+2.12%</h1>
-                    </div>
-                }
-            
-
-            
+                <div class="clean-content -white">
+                    <p class="-discrete">Dagens förlorare</p>
+                    <h1> Kingspyre</h1>
+                    <h1 class="color-red">-48.2%</h1>
+                </div>
             </div>
 
-        }
+            <div class="block-m">
+                <div class="clean-content -white">
+                    <p class="-discrete">Mest omsatta aktie</p>
+                    <h1 class=""> Arocell</h1>
+                    <h1 class="color-green">150 000 SEK</h1>
+                    <p class="-discrete">(spännande ikon)</p>
+                </div>
+            </div>
+
+            <div class="block-m">
+                <div class="block-s -white">
+                    <h3> Africa Oil</h3>
+                    <h3 class="color-green">98 000 SEK</h3>
+
+                </div>
+
+                <div class="block-s -white">
+                    <h3> Arcam</h3>
+                    <h3 class="color-green">66 000 SEK</h3>
+                </div>
+
+                <div class="block-s -white">
+                    <h3> Aerocrine Dynamics</h3>
+                    <h3 class="color-green">45 000 SEK</h3>
+                </div>
+
+                <div class="block-s -white">
+                    <h3> [Reklam]</h3>
+                    <h3 class="color-green">[text]</h3>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-lg initial-views">
+
+            <h1>Världsindex</h1>
+            <br />
+
+            <div class="block-lg -white">
+
+            </div>
+
+
+        </div>
+
+        <div class="col-lg initial-views">
+
+            <h1>Populära aktier</h1>
+            <br />
+
+            @for (var z = 0; z < 4; z++)
+            {
+
+                <div class="block-m">
+
+                    @for (var x = 0; x < 4; x++)
+                    {
+                        <div class="block-s -white">
+                            <h3 class=""> Africa Oil</h3>
+                            <h1 class="color-green">+2.12%</h1>
+                        </div>
+                    }
+
+
+
+                </div>
+
+            }
+
+        </div>
 
     </div>
 
-    <div class="col-lg">
-        <h1>Arocell</h1>
-        <br />
+</div>
+
+<div class="sub-section" row-location="market-search">
+    <div class="row horizontal-scroll">
+
+        <div class="col-s">
+
+        </div>
+
+        <div class="col-full">
+            <h1>Hitta värdepapper</h1>
+            <div class="input-text-special-wrap">
+                <div class="slicer"></div>
+                <div class="icon"></div>
+                <input type="text" placeholder="Hitta värdepapper" />
+            </div>
+
+            <br />
+            <br />
 
 
-        <div class="block-lg">
-            <div class="clean-content -white">
-                
-                
+            <ul class="market-search-share-list">
+
+                @for (var x = 0; x < 300; x++)
+                {
+                    if (x == 2 || x == 6 || x == 10)
+                    {
+                        <li>
+                            <div class="thumb">
+                                @*<div class="recognizer -green"></div>*@
+                            </div>
+                            <div class="data" share-data="">
+                                <h4>Africa Oil Corp.</h4>
+                                <h4 class="color-red">- 21%</h4>
+                            </div>
+
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <div class="thumb">
+                                @*<div class="recognizer -green"></div>*@
+                            </div>
+                            <div class="data" share-data="">
+                                <h4>Arocell</h4>
+                                <h4 class="color-green">+ 25%</h4>
+                            </div>
+
+                        </li>
+                    }
+
+                }
+
+            </ul>
 
 
-                <div class="account-summary">
 
-                    <div class="col-s">
-                        <p class="-capitalize"> Köp</p>
-                        <h1>5.00</h1>
+        </div>
+
+    </div>
+</div>
+
+<div class="sub-section" row-location="market-share">
+    <div class="row horizontal-scroll">
+
+        <div class="col-s">
+
+        </div>
+
+        <div class="col-lg">
+            <h1>Arocell</h1>
+            <br />
+
+
+            <div class="block-lg">
+                <div class="clean-content -white">
+
+
+
+
+                    <div class="account-summary">
+
+                        <div class="col-s">
+                            <p class="-capitalize"> Köp</p>
+                            <h1>5.00</h1>
+                        </div>
+                        <div class="col-s">
+                            <p class="-capitalize"> Sälj</p>
+                            <h1>5.50</h1>
+                        </div>
+                        <div class="col-s">
+                            <p class="-capitalize"> idag %</p>
+                            <h1 class="color-red">-5.0</h1>
+                        </div>
+                        <div class="col-s">
+                            <p class="-capitalize"> idag </p>
+                            <h1 class="color-red">-5.25</h1>
+                        </div>
+
+
                     </div>
-                    <div class="col-s">
-                        <p class="-capitalize"> Sälj</p>
-                        <h1>5.50</h1>
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <table class="table-col-4">
+
+                        <thead>
+                            <tr>
+                                <td>
+                                    <p class="-capitalize -bold">
+                                        Senaste avslut
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="-capitalize -bold">
+                                        Summa
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="-capitalize -bold">
+                                        Köp
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="-capitalize -bold">
+                                        Tid
+                                    </p>
+                                </td>
+
+
+                            </tr>
+
+
+                        </thead>
+
+                        <tbody>
+                            @for (var x = 0; x < 4; x++)
+                            {
+
+                                <tr>
+                                    <td>
+                                        <p class="">
+                                            Sesams aktietävling
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="">
+                                            12 500
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="">
+                                            5.25
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p class="-mini">
+                                            14/5
+                                        </p>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+
+
+
+
+                    </table>
+
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <button class="share-control-action button-primary -green -float-right">
+                        <i class="fa fa-bolt color-white"></i>
+                        @*<p class="-capitalize color-white"> Hantera </p>*@
+                    </button>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-lg">
+            <h1>Utveckling</h1>
+            <br />
+
+
+            <div class="block-lg">
+                <div class="clean-content -white">
+
+
+                    <div class="time-filter">
+
+                        <div class="filter-item">
+                            <p class="-capitalize -discrete">Idag</p>
+                        </div>
+                        <div class="filter-item">
+                            <p class="-capitalize -discrete">1 vecka</p>
+                        </div>
+                        <div class="filter-item active">
+                            <p class="-capitalize ">1 månad</p>
+                        </div>
+
                     </div>
-                    <div class="col-s">
-                        <p class="-capitalize"> idag %</p>
-                        <h1 class="color-red">-5.0</h1>
-                    </div>
-                    <div class="col-s">
-                        <p class="-capitalize"> idag </p>
-                        <h1 class="color-red">-5.25</h1>
-                    </div>
+
+                    <div class="share-development"></div>
+
+
+
 
 
                 </div>
 
 
-
-
             </div>
-        </div>
-
-    </div>
-    
-
-    <div class="col-lg">
-        <h1>Utveckling</h1>
-        <br />
-
-
-        <div class="block-lg">
-            <div class="clean-content -white">
-
-                <div class="share-development"></div>
-
-
-
-
-
-            </div>
-
 
         </div>
 
-    </div>
-    
-    
-    <div class="col-lg">
-        <h1>Diskussioner</h1>
-        <br />
+        <div class="col-lg" id="market-share-about">
+            <h1>Om företaget</h1>
+            <br />
 
-        <div class="block-lg">
+            <div class="rectangular-block">
+                <div class="clean-content -white">
+                    <blockquote>
 
-            <div class="block-lg vertical-scroll">
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        </p>
+
+                    </blockquote>
 
 
-                @for (var x = 0; x < 2; x++)
-                {
-                    <div class="rectangular-block">
-                       
-                        <p>Diskussioner</p>
+                </div>
+            </div>
+            
+            <div class="block-m -white">
+                
+                <div class="pie-chart" data-percent="22">
+                    <div class="chart-content">
+
+                        <h1>22</h1>
+                        <p>%</p>
 
                     </div>
-                }
+                </div>
+
+                <div class="pie-chart-label">
+                    <p class="-capitalize">Popularitet i tävlingen</p>
+                </div>
+                
+
+            </div>
+            
+            <div class="block-m -white">
+                
+                <div class="pie-chart" data-percent="5">
+                    <div class="chart-content">
+
+                        <h1>5</h1>
+                        <p>%</p>
+
+                    </div>
+                </div>
+
+                <div class="pie-chart-label">
+                    <p class="-capitalize">Allmän popularitet</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg">
+            <h1>Diskussioner</h1>
+            <br />
+
+            <div class="block-lg">
+
+                <div class="block-lg vertical-scroll">
 
 
+                    @for (var x = 0; x < 2; x++)
+                    {
+                        <div class="rectangular-block">
+
+                            <p>Diskussioner</p>
+
+                        </div>
+                    }
+
+
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
-    
-    
-
-</div>
-<p id="clicks">Hejsan</p>
-
-<div class="row horizontal-scroll">
-
-    <div class="col-lg">
-        <h1>Snutts</h1>
-        <br />
-
-
-        <div class="block-lg">
-            <div class="clean-content -white">
-
-                <div class="share-development"></div>
-
-
-
-
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="row horizontal-scroll">
-    
-    <div class="col-lg">
-        <h1>Tabbis</h1>
-        <br />
-
-
-        <div class="block-lg">
-            <div class="clean-content -white">
-
-                <div class="share-development"></div>
-
-
-
-
-
-            </div>
-
-
-        </div>
-
-    </div>
-
 </div>

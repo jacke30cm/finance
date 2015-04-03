@@ -1,6 +1,17 @@
 ﻿$(document).ready(function() {
 
 
+
+    //Style link-elements
+    $(this).on('click', '.menu ul li', function() {
+
+        $('.menu ul li').removeClass('active-link');
+        $(this).addClass('active-link'); 
+
+
+    });
+
+
     // Scan the posted url for anchor-link
     var initialUrl = window.location.hash.slice(2);
 
