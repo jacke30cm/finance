@@ -233,6 +233,35 @@ namespace Services
            uow.Save();
        }
 
+       public void UpdateDatbase()
+       {
+           var uow = new DataWorker();
+
+           string[] tickers = File.ReadAllLines(@"C:\StockTickersSverige.txt");
+           string[] names = File.ReadAllLines(@"C:\StockNames.txt");
+           string[] cap = File.ReadAllLines(@"C:\StockCap.txt");
+
+           
+
+           for (int i = 0; i < tickers.Length; i++)
+           {
+
+               var share = uow.ShareRepository.GetSingle(x => x.Ticker.Equals(tickers[i]));
+
+               share.Name = names[i];
+               share.Market = cap[i];
+
+               uow.ShareRepository.Update(share);
+               uow.Save();
+
+
+           }
+
+
+
+
+       }
+
 
 
 
