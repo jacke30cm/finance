@@ -246,7 +246,7 @@ namespace Services
            {
                
                
-             var share = uow.ShareRepository.GetSingle(x => x.Ticker.Equals(tickers[i]));
+             var share = uow.ShareRepository.Get(x => x.Ticker.Equals(tickers[i])).SingleOrDefault();
 
              share.Name = names[i];
              share.Market = cap[i];

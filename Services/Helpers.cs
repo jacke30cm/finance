@@ -3,9 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Services
 {
+    public static class AccessHelper
+    {
+        public static bool HasShare(long id)
+        {
+
+            //foreach stock user owns, is this id one of his? 
+            return true;
+
+        }
+
+
+    }
+
+
+    public static class GfxHelper
+    {
+
+        public static string Gfx
+        {
+            get { return HttpContext.Current.Server.MapPath("/Content/Images/Gfx");  } 
+            
+        }
+
+        public static string User
+        {
+            get { return HttpContext.Current.Server.MapPath("/Content/Images/Users"); }
+
+        }
+
+        public static string Contest
+        {
+            get { return HttpContext.Current.Server.MapPath("/Content/Images/Contests"); }
+
+        }
+
+    }
+
+
     public static class LocationHelper
     {
         public static string Location { get; set; }
@@ -14,7 +53,7 @@ namespace Services
 
     public static class DateHelper
     {
-     
+
         public static string DayMonthNameYear(DateTime time)
         {
             return time.ToString("dd MMMM, yyyy");

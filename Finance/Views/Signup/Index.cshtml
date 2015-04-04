@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "[name] - Start";
+    Layout = "~/Views/OuterLayout.cshtml";
+
+}
+
+
+
+<div class="main-block">
+
+
+
+</div>
+
+
+<div class="right-block" value="@ViewBag.ReturnUrl">
+
+    <h1>Skapa ett konto redan idag </h1>
+    <br/>
+    <h2 class="color-cyan">Det kostar ingenting.</h2>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="half-block">
+        <p class="-mini -capitalize">Förnamn</p>
+        <input type="text" id="sign-up-first-name" />
+    </div>
+
+    <div class="half-block">
+        <p class="-mini -capitalize">Efternamn</p>
+        <input type="text" id="sign-up-last-name"/>
+    </div>
+
+    <div class="half-block">
+        <p class="-mini -capitalize">Stad</p>
+        <input type="text" id="sign-up-city" />
+    </div>
+
+    <div class="half-block">
+        <p class="-mini -capitalize">Email</p>
+        <input type="text" id="sign-up-email"/>
+    </div>
+
+    <div class="half-block">
+        <p class="-mini -capitalize">Välj ett lösenord</p><br />
+        <input type="password" id="sign-up-password1"/>
+    </div>
+
+    <div class="half-block">
+        <p class="-mini -capitalize">Upprepa lösenord</p>
+        <input type="password" id="sign-up-password2"/>
+    </div>
+    
+    <br/>
+    <br/>
+
+    <div class="half-block">
+
+        <input type="checkbox" id="terms-and-conditions" data-labelauty="Jag accepterar inte användarvillkoren|Jag accepterar användarvillkoren" />
+    </div>
+    
+    <div class="half-block">
+
+        <button class="button-primary -green" id="sign-up">
+            <p class="color-white -capitalize -mini">
+                Skapa konto
+            </p>
+        </button>
+    </div>
+
+    
+    
+    
+
+</div>
+
+

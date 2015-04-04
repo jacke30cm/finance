@@ -180,6 +180,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
+    <Compile Include="Controllers\SignupController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,23 +192,26 @@
   <ItemGroup>
     <Content Include="Content\Css\About.css" />
     <Content Include="Content\Css\Components.css" />
+    <Content Include="Content\Css\Front-Page.css" />
+    <Content Include="Content\Css\jquery-labelauty.css" />
     <Content Include="Content\Css\Portfolio.css" />
     <Content Include="Content\Css\Home.css" />
-    <Content Include="Content\Css\jquery-labelauty.css" />
+    <Content Include="Content\Css\jquery-labelauty%28old%29.css" />
     <Content Include="Content\Css\Main.css" />
     <Content Include="Content\Css\Market.css" />
     <Content Include="Content\Css\Menu.css" />
     <Content Include="Content\Css\font-awesome.css" />
     <Content Include="Content\Css\font-awesome.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\Images\Competitions\oldfashioned.jpg" />
-    <Content Include="Content\Images\Competitions\wstreet.jpg" />
+    <Content Include="Content\Images\Contests\oldfashioned.jpg" />
+    <Content Include="Content\Images\Contests\wstreet.jpg" />
     <Content Include="Content\Images\Gfx\button_close_white.png" />
     <Content Include="Content\Images\Gfx\input-checked-grey.png" />
     <Content Include="Content\Images\Gfx\input-checked.png" />
     <Content Include="Content\Images\Gfx\input-unchecked.png" />
     <Content Include="Content\Images\Gfx\logo.png" />
     <Content Include="Content\Images\Gfx\magnifyingglass.png" />
+    <Content Include="Content\Images\Users\default_user.png" />
     <Content Include="Content\Images\Users\sherlock.jpg" />
     <Content Include="Content\Images\Users\jake.jpg" />
     <Content Include="Content\Css\jquery.mCustomScrollbar.css" />
@@ -237,6 +241,7 @@
     <Content Include="Scripts\Master\master.js" />
     <Content Include="Scripts\Master\anchor-route.js" />
     <Content Include="Scripts\Master\spin-configuration.js" />
+    <Content Include="Scripts\Signup\start.js" />
     <Content Include="Scripts\spin.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -279,6 +284,7 @@
     <Content Include="Views\Contest\Market.cshtml" />
     <Content Include="Views\Contest\Details.cshtml" />
     <Content Include="Views\Master\Control-Share-Action.cshtml" />
+    <Content Include="Views\Signup\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

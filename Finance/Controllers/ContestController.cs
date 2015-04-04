@@ -7,6 +7,7 @@ using Services;
 
 namespace Finance.Controllers
 {
+    [Authorize]
     public class ContestController : Controller
     {
         

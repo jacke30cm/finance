@@ -2,12 +2,33 @@
 
 <html>
 <head>
+
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
+    @* Styles *@
+    @Styles.Render("~/CssBundle/css")
+    @Styles.Render("~/CssBundle/fontawesome")
+    @Styles.Render("~/CssBundle/front-page")
+
+    @* Scripts *@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/master")
+    @Scripts.Render("~/bundles/sign-up")
+    
+
 </head>
 <body>
-    <div>
+    <!-- COPYRIGHT (c) Marcus Pihlquist & Jacob Ståhl -->
+    @Html.Action("Menu", "Master")
+
+    <div class="main-content">
+
         @RenderBody()
+    
     </div>
+
+
+
 </body>
 </html>

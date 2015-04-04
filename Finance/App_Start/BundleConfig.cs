@@ -42,6 +42,9 @@ namespace Finance
             bundles.Add(new ScriptBundle("~/bundles/market").Include(
                        "~/Scripts/Contest/market.js"));
 
+            // SignUp
+            bundles.Add(new ScriptBundle("~/bundles/sign-up").Include(
+                       "~/Scripts/Signup/start.js"));
 
 
             //STYLES
@@ -52,6 +55,10 @@ namespace Finance
                       "~/Content/Css/jquery.mCustomScrollbar.css",
                       "~/Content/Css/jquery-labelauty.css",
                       "~/Content/Css/Components.css"));
+
+            //Front-page
+            bundles.Add(new StyleBundle("~/CssBundle/front-page").Include(
+                      "~/Content/Css/Front-Page.css"));
 
             //Home
             bundles.Add(new StyleBundle("~/CssBundle/home").Include(

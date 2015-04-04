@@ -17,14 +17,15 @@ namespace Finance.Controllers
     public class HomeController : BaseController
     {
 
-   
-        
+       
+        [Authorize]
         public ActionResult Index()
         {
             LocationHelper.Location = "Home"; 
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult About()
         {
 
