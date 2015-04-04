@@ -109,4 +109,30 @@ $(document).ready(function () {
     });
 
     
+    // User being able to sign out
+
+
+    $(this).on('click', '#sign-out', function(e) {
+
+        e.preventDefault(); 
+
+        //Ajax sign-in-call
+        $.ajax({
+            url: '/Account/LogOff',
+            type: 'POST',
+            success: function () {
+
+                window.location = '/Home/'; 
+            },
+            error: function (jqXHR, exception) {
+                alert('Error passing data to server.');
+            }
+
+        });
+
+
+
+    }); 
+
+
 });

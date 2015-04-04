@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class Post
+    public class Post : ServiceBase
     {
 
         public void CreateContest()

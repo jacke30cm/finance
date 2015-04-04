@@ -1,0 +1,68 @@
+﻿
+
+.main-block {
+
+    width: 0px;
+    background: #CCC;
+
+
+}
+
+
+.right-block {
+
+    width: calc(38% - 100px);
+    height: 500px;
+    padding: 50px;
+    background: #FFF;
+    float: right;
+
+}
+
+.half-block {
+    display: inline-block;
+    vertical-align: top;
+
+    width: 47%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+
+}
+
+.half-block:nth-of-type(even) {
+
+    margin-right: 0;
+
+
+}
+
+.right-block > .half-block > input[type="text"], input[type="email"] {
+
+    background: #FAFAFA;
+    border: 1px solid #EBEBEB;
+    width: 100%;
+
+}
+
+.right-block > .half-block > input[type="password"] {
+
+    width: 100%;
+
+}
+
+
+.right-block .half-block > button {
+    
+    float: right;
+    margin: 0 -10px 0 0;
+    width: calc(100% + 10px);
+    min-height: 39px;
+}
+
+.right-block .half-block > input[type="checkbox"] {
+
+    float: left;
+    margin: 20px 0 0 0;
+    width: 100%;
+}
+
