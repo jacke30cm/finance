@@ -78,7 +78,7 @@ namespace Services
                    else if (counter == 1)
                    {
 
-                       Share.Ticker = tempStr[i];
+                       Share.Ticker = tempStr[i].Replace("\"","");
                    }
                    else if (counter == 2)
                    {
@@ -189,8 +189,6 @@ namespace Services
 
                       
                    }
-
-
                    
                    
                }
@@ -199,14 +197,13 @@ namespace Services
 
                    Share.Market = "Large Cap";
                    Share.Description = "Bra och stabil aktie";
-                   Share.Country = new Country() { Id = 1 };
+                   var country = new Country() {Id = 1};
+                   Share.Country = country;
                    ShareHistory.TimeStamp = DateTime.Now;
                    AddStockToDatabase(Share, ShareHistory);
 
                    counter = 0;
-                   Share = new Share();
-                   ShareHistory = new ShareHistory();
-               }
+                  }
                else
                {
                    counter++;
@@ -244,9 +241,11 @@ namespace Services
 
            for (int i = 0; i < tickers.Length; i++)
            {
+               var tmp = tickers[i];
                
+             var share = uow.ShareRepository.GetSingle(x => x.Ticker == tmp);
+
                
-             var share = uow.ShareRepository.GetSingle(x => x.Ticker.Equals(tickers[i]));
 
              share.Name = names[i];
              share.Market = cap[i];
@@ -256,15 +255,10 @@ namespace Services
 
          
            }
-
-
-
+           
 
        }
 
-
-
-
-
+       
     }
 }
