@@ -11,47 +11,48 @@
 
         <h1>Mina tävlingar</h1>
         <br />
+        
+        <div id="home-my-contests">
+            <div class="block-m">
 
-        <div class="block-m">
-            
-            <a href="@Url.Action("Index", "Contest")">
-                <div class="competition">
+                <a href="@Url.Action("Index", "Contest")">
+                    <div class="competition -white">
+                        <div class="competition-ghost"></div>
+
+                        <div class="image-wrap">
+                            <img src="@GfxHelper.Contest/wstreet.jpg" />
+                        </div>
+
+                        <div class="content">
+
+                            <h3>Sesams aktietävling</h3>
+                            <p class="-capitalize "> Pågår en vecka till</p>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="block-m">
+
+                <div class="competition -white">
                     <div class="competition-ghost"></div>
 
                     <div class="image-wrap">
-                        <img src="@GfxHelper.Contest/wstreet.jpg" />
+                        <img src="@GfxHelper.Contest/oldfashioned.jpg" />
                     </div>
 
                     <div class="content">
 
-                        <h3>Sesams aktietävling</h3>
+                        <h3>Bästa investeraren</h3>
                         <p class="-capitalize "> Pågår en vecka till</p>
                     </div>
 
-                </div>
-            </a>
-        </div>
-
-        <div class="block-m">
-
-            <div class="competition">
-                <div class="competition-ghost"></div>
-
-                <div class="image-wrap">
-                    <img src="@GfxHelper.Contest/oldfashioned.jpg" />
-                </div>
-
-                <div class="content">
-
-                    <h3>Bästa investeraren</h3>
-                    <p class="-capitalize "> Pågår en vecka till</p>
                 </div>
 
             </div>
 
         </div>
-
-
 
     </div>
 
@@ -60,7 +61,7 @@
         <h1>Mina prestationer</h1>
         <br />
 
-        @for (var c = 0; c < 3; c++)
+        @for (var c = 0; c < 4; c++)
         {
 
             <div class="block-m">
@@ -68,13 +69,13 @@
                 @for (var x = 0; x < 4; x++)
                 {
 
-                    
-
-                    <div class="block-s">
-                        <div class="competition">
-                            @*<div class="competition-ghost"></div>*@
+                   
+                        <div class="block-s">
+                            <div class="competition -white">
+                                @*<div class="competition-ghost"></div>*@
+                            </div>
                         </div>
-                    </div>
+               
 
                 }
             </div>

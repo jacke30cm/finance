@@ -1,17 +1,17 @@
 ﻿$(document).ready(function() {
 
+    // Checkbox styling
     $('#terms-and-conditions').labelauty({
         development: false,
         class: "labelauty",
         label: true,
         separator: "|",
-        checked_label: "Checked",
-        unchecked_label: "Unchecked",
         minimum_width: 'calc(100% - 8px)',
         same_width: false
     });
 
 
+    // Verify whether sign-up-button is available or not
     $(document).on('change', '#terms-and-conditions', function() {
 
         if (this.checked) {
@@ -27,9 +27,10 @@
         }
     }); 
 
-    // SIGN UP
-    $(document).on('click', '#sign-up', function () {
+    // SIGN UP COMMAND
+    $(document).on('click', '#sign-up', function (e) {
 
+        e.preventDefault(); 
 
         if ($(this).hasClass('disabled')) {
 
@@ -38,7 +39,7 @@
         } else {
 
             $(this).find('p').remove();
-            var spinner = new Spinner(smallSpinOptions()).spin($(this)[0]);
+            var spinner = new Spinner(smallSpinOptions('#FFF')).spin($(this)[0]);
 
 
             var model = {
@@ -89,13 +90,13 @@
 
 
 
-    // LOG IN 
+    // LOG IN COMMAND
     $(document).on('click', '#sign-in', function (e) {
 
         e.preventDefault();
 
         $(this).find('p').remove();
-        var spinner = new Spinner(smallSpinOptions()).spin($(this)[0]);
+        var spinner = new Spinner(smallSpinOptions('#FFF')).spin($(this)[0]);
 
 
         var model = {
@@ -140,7 +141,7 @@
         });
     });
 
-
+    // Animate the button that was clicked, to show error-response
     function ajaxFailureResponse($element) {
         
         $($element).removeClass('-green');

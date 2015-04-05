@@ -1,4 +1,4 @@
-﻿function mediumSpinOptions() {
+﻿function mediumSpinOptions(color) {
 
     return {
         lines: 13, // The number of lines to draw
@@ -8,7 +8,7 @@
         corners: 1, // Corner roundness (0..1)
         rotate: 0, // The rotation offset
         direction: 1, // 1: clockwise, -1: counterclockwise
-        color: '#000', // #rgb or #rrggbb or array of colors
+        color: color, // #rgb or #rrggbb or array of colors
         speed: 1, // Rounds per second
         trail: 60, // Afterglow percentage
         shadow: false, // Whether to render a shadow
@@ -23,7 +23,7 @@
 }
 
 
-function smallSpinOptions() {
+function smallSpinOptions(color) {
     
     return {
         lines: 11, // The number of lines to draw
@@ -33,7 +33,7 @@ function smallSpinOptions() {
         corners: 1, // Corner roundness (0..1)
         rotate: 0, // The rotation offset
         direction: 1, // 1: clockwise, -1: counterclockwise
-        color: '#FFF', // #rgb or #rrggbb or array of colors
+        color: color, // #rgb or #rrggbb or array of colors
         speed: 1, // Rounds per second
         trail: 60, // Afterglow percentage
         shadow: false, // Whether to render a shadow

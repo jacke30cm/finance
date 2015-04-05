@@ -1,7 +1,7 @@
 ﻿
 @media screen and (min-width: 1366px) {
 
-    
+
 
     .main-content {
         width: 92%;
@@ -15,32 +15,29 @@
         opacity: 0.0;
         top: -10px;
         overflow: hidden;
-        
     }
 
-    .anchor-section .sub-section {
-
-        width: auto;
-        height: 100%;
-        margin-bottom: 4%;
-        overflow: hidden;
-
-    }
-
-        .main-content .right-ghost {
-            position: absolute;
-            right: 4%;
-            width: 150px;
+        .anchor-section .sub-section {
+            width: auto;
             height: 100%;
-            z-index: 9;
-            background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(235,235,235,1) 100%); 
-            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(235,235,235,1))); 
-            background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(235,235,235,1) 100%); 
-            background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(235,235,235,1) 100%); 
-            background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(235,235,235,1) 100%); 
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(235,235,235,1) 100%); 
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ebebeb',GradientType=1 ); 
+            margin-bottom: 4%;
+            overflow: hidden;
         }
+
+    .main-content .right-ghost {
+        position: absolute;
+        right: 4%;
+        width: 150px;
+        height: 100%;
+        z-index: 9;
+        background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(235,235,235,1) 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(235,235,235,1)));
+        background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(235,235,235,1) 100%);
+        background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(235,235,235,1) 100%);
+        background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(235,235,235,1) 100%);
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(235,235,235,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ebebeb',GradientType=1 );
+    }
 
     .row {
         max-width: 8000px;
@@ -84,8 +81,9 @@
     .block-s, .block-m, .block-lg, .rectangular-block {
         display: inline-block;
         vertical-align: top;
-        margin: 0px 0px 5px 0px;
+        margin: 0px 0px 5px 5px;
         /*overflow: hidden;*/
+        float: left;
     }
 
     .block-s {
@@ -93,7 +91,7 @@
         height: 150px;
     }
 
-        .block-s:nth-of-type(4n) {
+        .block-s:nth-of-type(odd) {
             margin: 0 0 0 0;
         }
 
@@ -101,6 +99,10 @@
         width: 305px;
         height: 305px;
     }
+
+        .block-m:nth-of-type(odd) {
+            margin: 0 0 0 0;
+        }
 
     .block-lg {
         width: 615px;
@@ -169,7 +171,7 @@
                 padding: 0px 10px 25px 10px;
                 display: table-cell;
                 border-bottom: 1px solid #EBEBEB;
-                text-align: right; 
+                text-align: right;
             }
 
                 .table-col-4 thead tr td:first-of-type {
@@ -197,7 +199,7 @@
             padding: 10px;
             display: table-cell;
             border-bottom: 1px solid #EBEBEB;
-            text-align: right; 
+            text-align: right;
         }
 
             .table-col-4 tbody tr td:first-of-type {
@@ -230,33 +232,54 @@
             }
 
 
-         .pie-chart {
+    .pie-chart {
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .pie-chart-label {
+        position: absolute;
+        width: 200px;
+        height: 30px;
+        left: 25px;
+        bottom: 10px;
+    }
+
+    .pie-chart > .chart-content {
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+
+    /*.validation-tool-tip {
+        position: absolute;
+        left: 50%;
+        top: -100px;
+        min-width: 80px;
+        min-height: 15px;
+        padding: 10px;
+        background: #444;
+        transform: translate(-50%, -0%); 
+    }
+
+        .validation-tool-tip > .arrow {
             position: absolute;
-            width: 180px;
-            height: 180px;
+            bottom: 2px;
             left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .pie-chart-label {
-            position: absolute;
-            width: 200px;
-            height: 30px;
-            left: 25px;
-            bottom: 10px;
-        }
-
-        .pie-chart > .chart-content {
-            position: absolute;
-            width: 100px;
-            height: 50px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
+            width: 10px;
+            height: 10px;
+            background: #444;
+            transform: rotate(45deg) translate(-50%, -50%);
+        }*/
 }
 
 
@@ -332,6 +355,10 @@
         vertical-align: top;
         margin: 0px 0px 5px 0px;
         overflow: hidden;
+        -webkit-transition: all 2.5s ease;
+        -moz-transition: all 2.5s ease;
+        -o-transition: all 2.5s ease;
+        transition: all 2.5s ease;
     }
 
     .block-s {

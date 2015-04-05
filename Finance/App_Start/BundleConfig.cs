@@ -26,6 +26,7 @@ namespace Finance
             // Master-js
             bundles.Add(new ScriptBundle("~/bundles/master").Include(
                         "~/Scripts/Master/spin-configuration.js",
+                        "~/Scripts/Master/validation.js",
                          "~/Scripts/Master/master.js",
                         "~/Scripts/Master/control-panel.js"));
 
@@ -76,6 +77,10 @@ namespace Finance
             //Market
             bundles.Add(new StyleBundle("~/CssBundle/market").Include(
                       "~/Content/Css/Market.css"));
+
+            //Validation
+            bundles.Add(new StyleBundle("~/CssBundle/validation").Include(
+                      "~/Content/Css/Validation.css"));
         }
     }
 }

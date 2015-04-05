@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Services.ViewModels;
 
 namespace Finance.Controllers
 {
@@ -32,5 +33,15 @@ namespace Finance.Controllers
         {
             return PartialView("~/Views/Master/Control-Share-Action.cshtml");
         }
+
+        [HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
+        public JsonResult CreateContest(CreateContestViewModel model)
+        {
+
+
+            return Json("", JsonRequestBehavior.AllowGet); 
+        }
+
     }
 }

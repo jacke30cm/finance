@@ -132,6 +132,27 @@ $(document).ready(function () {
 
 
 
+    });
+
+
+    // File upload modification 
+
+    $(document).on('change', ':file', function() {
+
+        if (this.files[0] != undefined) {
+            
+            var fileName = this.files[0].name;
+            $(this).siblings('p').text(fileName).removeClass('color-grey');
+
+        } else {
+            
+            $(this).siblings('p').text('Klicka för att välja en omslagsbild').addClass('color-grey');
+
+        }
+        
+
+
+
     }); 
 
 

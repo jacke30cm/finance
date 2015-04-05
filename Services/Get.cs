@@ -53,8 +53,8 @@ namespace Services
                     result.Add(item);
                 }
 
-                var culture = new CultureInfo("sv-SE");
-                return result.OrderBy(x => x.Share.Name, StringComparer.Create(culture, false)).ToList(); 
+
+                return result.OrderBy(x => x.Share.Name, StringComparer.OrdinalIgnoreCase).ToList(); 
 
             }
 

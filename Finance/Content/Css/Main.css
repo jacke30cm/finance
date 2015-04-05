@@ -5,9 +5,8 @@
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700italic);
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, 
-form, label, legend, input, table, caption, tbody, tfoot, thead, tr, th, td , section
-{
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, input, table, caption, tbody, tfoot, thead, tr, th, td, section {
     margin: 0;
     padding: 0;
     border: 0;
@@ -17,30 +16,27 @@ form, label, legend, input, table, caption, tbody, tfoot, thead, tr, th, td , se
     background: transparent;
 }
 
-body				
-{		
-	background: #EBEBEB;
+body {
+    background: #EBEBEB;
+    /*background: url('../Images/Gfx/montage26.jpg') no-repeat;*/
     overflow: hidden;
 }
 
-div 					
-{		
-	position: relative; 
+div {
+    position: relative;
 }
 
-p, li, a, h1, h2, h3, h4 
-{
-	font-family: 'Open Sans'; 
-	color: #444; 
+p, li, a, h1, h2, h3, h4 {
+    font-family: 'Open Sans';
+    color: #444;
 }
 
-p 
-{
-	font-size: 11px; 
-	letter-spacing: 2px; 
-	font-weight: 400; 
-	text-transform: none; 
-	line-height: 2;
+p {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-transform: none;
+    line-height: 2;
 }
 
 
@@ -51,14 +47,14 @@ p
 }
 
 .-discrete {
-    color: #CCC; 
+    color: #CCC;
 }
 
 .-jumbo {
     font-size: 28px;
 }
-.-medium {
 
+.-medium {
     font-size: 14px;
     font-weight: 300;
     line-height: 36px;
@@ -73,143 +69,141 @@ p
 }
 
 .-cursor {
-    cursor: pointer; 
-}
-
-
-
-em {
-    font-family: 'Playfair Display';
-    font-size: 38px;
-    margin: 0px 10px 0 10px;
-    top: 5px;
-}
-
-
-
-a, li {
-    font-size: 10px; 
-	letter-spacing: 3px; 
-	font-weight: 300; 
-	text-transform: uppercase; 
-	line-height: 2;
     cursor: pointer;
 }
 
 
-a:link {
-    color: initial;
-    text-decoration: none; 
+
+
+
+
+
+a, li {
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 2;
+    cursor: pointer;
 }
 
 
-a:visited {
-    color: initial;
-}
+    a:link {
+        color: initial;
+        text-decoration: none;
+    }
 
 
-a:hover {
-    color: initial;
-}
+    a:visited {
+        color: initial;
+    }
 
-a:active {
-    color: initial;
-}
+
+    a:hover {
+        color: initial;
+    }
+
+    a:active {
+        color: initial;
+    }
 
 h1 {
-
-	font-size: 22px; 
-	letter-spacing: 1px; 
-	font-weight: 300; 
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    vertical-align: middle;
 }
 
 h2 {
-
-	font-size: 14px;
+    font-size: 14px;
     letter-spacing: 2px;
-	font-weight: 700;
+    font-weight: 700;
     line-height: 18px;
     text-transform: uppercase;
-
 }
 
 h3 {
-
-	font-size: 14px;
+    font-size: 14px;
     letter-spacing: 1px;
-	font-weight: 400;
+    font-weight: 400;
     line-height: 18px;
     text-transform: uppercase;
-
 }
 
 h4 {
-
     font-size: 14px;
     letter-spacing: 1px;
     font-weight: 300;
     line-height: 14px;
     text-transform: none;
+}
+
+em {
+    font-family: 'Playfair Display';
+    font-size: 36px;
+    line-height: 50px;
+    vertical-align: baseline;
+    margin: 0 5px 0 5px;
+    text-transform: none;
+    vertical-align: middle;
+}
+
+h1, em {
+
+    line-height: 50px;
+    vertical-align: baseline;
 
 }
 
-
 blockquote {
-
     width: calc(100% - 30px);
     /*border-left: 2px solid #EBEBEB;*/
     /*border-left: 5px solid #90c394;*/
     border-left: 5px solid #ebebeb;
     padding: 15px;
-
 }
 
-blockquote p {
-    font-style: italic;
-}
+    blockquote p {
+        font-style: italic;
+    }
 
 .button-primary {
-
     width: 150px;
     min-height: 36px;
     padding: 10px 10px 10px 10px;
     text-align: center;
     border: none;
     cursor: pointer;
-    transition: 0.2s ease-in-out; 
-
+    transition: 0.2s ease-in-out;
 }
 
 button:focus {
-    outline: 0 !important; 
+    outline: 0 !important;
 }
 
 .active {
-    background: #FAFAFA; 
+    background: #FAFAFA;
 }
 
 
 /* Input styling */
 
 input[type="text"], input[type="email"], input[type="password"] {
-
     position: relative;
     width: calc(100% - 10px);
     height: 35px;
     padding: 0 0 0 10px;
     background: #EBEBEB;
     /*border: 1px solid #EBEBEB;*/
-
     font-family: 'Open Sans';
-    font-size: 11px; 
-	letter-spacing: 1px; 
-	font-weight: 400; 
-	text-transform: none; 
-
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: none;
+    transition: all 0.2s ease;
 }
 
 .input-text-special-wrap {
-
     position: relative;
     width: 100%;
     height: 35px;
@@ -218,69 +212,93 @@ input[type="text"], input[type="email"], input[type="password"] {
     z-index: 1;
 }
 
-.input-text-special-wrap > .icon {
+    .input-text-special-wrap > .icon {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 10px;
+        left: 10px;
+        z-index: 2;
+        background: url("../Images/Gfx/magnifyingglass.png") no-repeat;
+    }
 
-    position: absolute;
-    width: 25px;
-    height: 25px;
+    .input-text-special-wrap > .slicer {
+        position: absolute;
+        width: calc(100% + 2px);
+        left: -1px;
+        top: -1px;
+        background: #FFF;
+        z-index: 2;
+        height: 28px;
+    }
 
-    top: 10px;
-    left: 10px; 
-
-    z-index: 2;
-    background: url("../Images/Gfx/magnifyingglass.png") no-repeat; 
-    
-}
-
-.input-text-special-wrap > .slicer {
-
-    position: absolute;
-    width: calc(100% + 2px);
-    left: -1px;
-    top: -1px;
-    background: #FFF;
-    z-index: 2;
-    height: 28px; 
-}
-
-.input-text-special-wrap > input[type="text"], input[type="email"], input[type="password"] {
-
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0 0 0 60px;
-    width: calc(100% - 60px);
-    background: transparent;
-    z-index: 3;
-}
+    .input-text-special-wrap > input[type="text"], input[type="email"], input[type="password"] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 0 0 0 60px;
+        width: calc(100% - 60px);
+        background: transparent;
+        z-index: 3;
+    }
 
 
 
 textarea {
-
     width: calc(100% - 20px);
     min-height: 100px;
     padding: 10px;
     background: #EBEBEB;
-    border:none;
-
+    border: none;
     font-family: 'Open Sans';
-    font-size: 11px; 
-	letter-spacing: 1px; 
-	font-weight: 400; 
-	text-transform: none; 
-
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: none;
 }
+
+input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.file-upload {
+    position: relative;
+    width: calc(100% - 10px);
+    height: 30px;
+    padding: 5px 0 0 10px;
+    background: #EBEBEB;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+    .file-upload p {
+        font-family: 'Open Sans';
+        font-size: 11px;
+        letter-spacing: 1px;
+        font-weight: 400;
+        text-transform: none;
+        
+    }
+
 
 /*Font colors*/
 
-.color-white
-{
-	color: #EBEBEB; 
+.color-white {
+    color: #EBEBEB;
 }
 
 .color-red {
-    color: #dd7f7f; 
+    color: #dd7f7f;
 }
 
 .color-cyan {
@@ -288,37 +306,45 @@ textarea {
 }
 
 .color-green {
-    color: #90c394; 
+    color: #90c394;
+}
+
+.color-grey {
+    color: #AAA;
 }
 
 /*Background colors*/
+
+.-grey {
+    background: #999;
+}
 
 .-white {
     background: #FFF;
 }
 
 .-green {
-    background: #90c394; 
+    background: #90c394;
 }
 
 .-cyan {
-    background: #90c3c1; 
+    background: #90c3c1;
 }
 
 .-purple {
-    background: #9095c3; 
+    background: #9095c3;
 }
 
 .-yellow {
-    background: #bfc390; 
+    background: #bfc390;
 }
 
 .-red {
-    background: #dd7f7f; 
+    background: #dd7f7f;
 }
 
 .-pink {
-    background: #c390b8; 
+    background: #c390b8;
 }
 
 .-orange {
@@ -326,7 +352,7 @@ textarea {
 }
 
 .-blue {
-    background: #506175; 
+    background: #506175;
 }
 
 .-light-green {
@@ -338,5 +364,5 @@ textarea {
 }
 
 .-float-right {
-    float: right; 
+    float: right;
 }

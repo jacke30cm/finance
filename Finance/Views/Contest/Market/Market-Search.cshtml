@@ -14,19 +14,19 @@
             @foreach (var share in Model)
             {
                 
-                if (!share.Share.Name.Substring(0, 1).Equals(initialLetter))
+                @*if (!share.Share.Name.StartsWith(initialLetter))
                 {
 
 
-                    <li>
+                    <li class="alphabet">
 
-                        <h1 class="-bold -discrete">@share.Share.Name.Substring(0, 1)</h1>
+                        <h1 class="">@initialLetter</h1>
 
                     </li>
 
                     initialLetter = share.Share.Name.Substring(0, 1); 
 
-                }
+                }*@
 
 
 
@@ -37,7 +37,7 @@
                         @*<div class="recognizer -green"></div>*@
                     </div>
                     <div class="data" share-data="@share.Share.Id">
-                        <h4>@share.Share.Name</h4>
+                        <h4 class="">@share.Share.Name</h4>
                         <h4 class="@GfxHelper.UpOrDown(share.LatestData.ChangePercent)">@share.LatestData.ChangePercent%</h4>
                     </div>
 

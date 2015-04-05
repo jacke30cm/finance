@@ -130,6 +130,11 @@
             background: #FAFAFA;
         }
 
+         .market-search-share-list .alphabet {
+             border-bottom: 3px solid #FFF;
+             height: 47px;
+        }
+
         .market-search-share-list li .thumb, .data {
             display: inline-block;
             vertical-align: top;

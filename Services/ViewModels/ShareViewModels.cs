@@ -13,4 +13,21 @@ namespace Services.ViewModels
         public ShareHistory LatestData { get; set; }
 
     }
+
+    public class DetailedShareViewModel
+    {
+        public Share Share { get; set; }
+        public ShareHistory LatestData { get; set; }
+        public List<Transaction> LatestTransactions { get; set; }
+
+        public decimal ContestPopularity { get; set; }
+        public decimal GeneralPopularity { get; set; }
+
+    }
+
+
+    public class ShareDevelopmentViewModel
+    {
+        public List<decimal> DevelopmentSpan { get; set; }
+    }
 }
