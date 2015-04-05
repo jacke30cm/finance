@@ -233,10 +233,10 @@ namespace Services
        public void UpdateDatbase()
        {
            var uow = new DataWorker();
-           
-           string[] tickers = File.ReadAllLines(@"C:\StockTickersSverige.txt");
-           string[] names = File.ReadAllLines(@"C:\StockNames.txt");
-           string[] cap = File.ReadAllLines(@"C:\StockCap.txt");
+
+           string[] tickers = File.ReadAllLines(@"C:\StockTickersSverige.txt", Encoding.GetEncoding("ISO-8859-15"));
+           string[] names = File.ReadAllLines(@"C:\StockNames.txt", Encoding.GetEncoding("ISO-8859-15"));
+           string[] cap = File.ReadAllLines(@"C:\StockCap.txt", Encoding.GetEncoding("ISO-8859-15"));
 
 
            for (int i = 0; i < tickers.Length; i++)
