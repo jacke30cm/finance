@@ -13,10 +13,6 @@ namespace Data.Entities
         public Country Country { get; set; }
         public string Market { get; set; }
         public string Description { get; set; }
-
-        
-        
-
     }
 
 

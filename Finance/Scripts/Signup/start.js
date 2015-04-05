@@ -27,7 +27,7 @@
         }
     }); 
 
-
+    // SIGN UP
     $(document).on('click', '#sign-up', function () {
 
 
@@ -52,14 +52,14 @@
 
             }; 
 
-            //Ajax sign-in-call
+            //Ajax sign-up-call
             $.ajax({
                 url: '/Account/Register',
                 type: 'POST',
                 data: { 'model': model },
                 success: function (data) {
 
-                    if (data == 'Success') {
+                    if (data != 'Failure') {
 
                         window.location = '/Home/'; 
 
@@ -72,7 +72,13 @@
                 },
                 error: function (jqXHR, exception) {
                     alert('Error passing data to server.');
+                },
+                complete: function() {
+
+                    spinner.stop(); 
+
                 }
+
 
             });
 
@@ -81,6 +87,9 @@
 
     });
 
+
+
+    // LOG IN 
     $(document).on('click', '#sign-in', function (e) {
 
         e.preventDefault();
@@ -105,13 +114,13 @@
             data: { 'model': model, 'returnUrl' : returnUrl },
             success: function (data) {
 
-                if (data == 'Success') {
+                // Om ajax-resultatet som kommer tillbaka är returnURL:en, så är det success
+                if (data != 'Failure') {
 
-                    window.location = '/Home/'; 
+                    window.location =  data; 
 
                 } else {
 
-                    spinner.stop();
                     ajaxFailureResponse($('#sign-in')); 
 
                 }
@@ -119,7 +128,14 @@
             },
             error: function (jqXHR, exception) {
                 alert('Ajax-call, or server-code has failed');
+            },
+            complete: function() {
+
+                spinner.stop(); 
+
             }
+
+
 
         });
     });

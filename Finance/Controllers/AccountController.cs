@@ -73,7 +73,7 @@ namespace Finance.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return Json("Success", JsonRequestBehavior.AllowGet);
+                    return Json(returnUrl, JsonRequestBehavior.AllowGet);
                 case SignInStatus.LockedOut:
                     return Json("LockedOut", JsonRequestBehavior.AllowGet);
                 case SignInStatus.Failure:

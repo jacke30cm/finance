@@ -24,21 +24,30 @@ namespace Services
     public static class GfxHelper
     {
 
+        public static string UpOrDown(decimal value)
+        {
+            if (value == 0)
+            {
+                return null;
+            }
+            return value < 0 ? "color-red" : "color-green";
+        }
+
         public static string Gfx
         {
-            get { return HttpContext.Current.Server.MapPath("/Content/Images/Gfx");  } 
+            get { return "/Content/Images/Gfx";  } 
             
         }
 
         public static string User
         {
-            get { return HttpContext.Current.Server.MapPath("/Content/Images/Users"); }
+            get { return "/Content/Images/Users"; }
 
         }
 
         public static string Contest
         {
-            get { return HttpContext.Current.Server.MapPath("/Content/Images/Contests"); }
+            get { return "/Content/Images/Contests"; }
 
         }
 

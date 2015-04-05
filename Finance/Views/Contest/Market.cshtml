@@ -226,43 +226,7 @@
             <br />
             <br />
 
-
-            <ul class="market-search-share-list">
-
-                @for (var x = 0; x < 300; x++)
-                {
-                    if (x == 2 || x == 6 || x == 10)
-                    {
-                        <li>
-                            <div class="thumb">
-                                @*<div class="recognizer -green"></div>*@
-                            </div>
-                            <div class="data" share-data="">
-                                <h4>Africa Oil Corp.</h4>
-                                <h4 class="color-red">- 21%</h4>
-                            </div>
-
-                        </li>
-                    }
-                    else
-                    {
-                        <li>
-                            <div class="thumb">
-                                @*<div class="recognizer -green"></div>*@
-                            </div>
-                            <div class="data" share-data="">
-                                <h4>Arocell</h4>
-                                <h4 class="color-green">+ 25%</h4>
-                            </div>
-
-                        </li>
-                    }
-
-                }
-
-            </ul>
-
-
+            @Html.Action("MarketSearch", "Contest")
 
         </div>
 

@@ -1,5 +1,3 @@
-using Data.Entities;
-
 namespace Data.Migrations
 {
     using System;
@@ -12,6 +10,7 @@ namespace Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true; 
         }
 
         protected override void Seed(Data.DataContext context)
@@ -28,9 +27,6 @@ namespace Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
-            context.Images.Add(new Image() {Url = "default_user.png"}); 
-
         }
     }
 }

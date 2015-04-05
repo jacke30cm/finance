@@ -12,7 +12,7 @@
 .right-block {
 
     width: calc(38% - 100px);
-    height: 500px;
+    height: calc(38% - 100px);
     padding: 50px;
     background: #FFF;
     float: right;

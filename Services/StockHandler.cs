@@ -91,11 +91,11 @@ namespace Services
                            var stockwithcomma = tempStr[i].Replace(".", ",");
                            var newcomma = stockwithcomma.Remove(stockwithcomma.Length - 2).Remove(0,1);
                            
-                          ShareHistory.ChangePercent = Convert.ToDouble(newcomma);
+                          ShareHistory.ChangePercent = Convert.ToDecimal(newcomma);
                        }
                        else
                        {
-                           ShareHistory.ChangePercent = Convert.ToDouble(tempStr[i]);
+                           ShareHistory.ChangePercent = Convert.ToDecimal(tempStr[i]);
                        }
                        
                    }

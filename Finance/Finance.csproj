@@ -285,11 +285,15 @@
     <Content Include="Views\Contest\Details.cshtml" />
     <Content Include="Views\Master\Control-Share-Action.cshtml" />
     <Content Include="Views\Signup\Index.cshtml" />
+    <Content Include="Views\Contest\Market\Market-Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Files\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Contest\Contest\" />
+    <Folder Include="Views\Contest\Overview\" />
+    <Folder Include="Views\Contest\Portfolio\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

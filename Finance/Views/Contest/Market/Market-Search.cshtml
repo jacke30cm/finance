@@ -1,0 +1,54 @@
+﻿@using Services
+@model List<Services.ViewModels.BasicShareViewModel>
+@{
+    var initialLetter = "A";
+}
+
+
+@if (Model != null)
+{
+    if (Model.Count > 0)
+    {
+        <ul class="market-search-share-list">
+
+            @foreach (var share in Model)
+            {
+                
+                if (!share.Share.Name.Substring(0, 1).Equals(initialLetter))
+                {
+
+
+                    <li>
+
+                        <h1 class="-bold -discrete">@share.Share.Name.Substring(0, 1)</h1>
+
+                    </li>
+
+                    initialLetter = share.Share.Name.Substring(0, 1); 
+
+                }
+
+
+
+
+
+                <li class="share">
+                    <div class="thumb">
+                        @*<div class="recognizer -green"></div>*@
+                    </div>
+                    <div class="data" share-data="@share.Share.Id">
+                        <h4>@share.Share.Name</h4>
+                        <h4 class="@GfxHelper.UpOrDown(share.LatestData.ChangePercent)">@share.LatestData.ChangePercent%</h4>
+                    </div>
+
+                </li>
+            }
+
+        </ul>
+    }
+
+
+}
+
+
+

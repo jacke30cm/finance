@@ -9,7 +9,7 @@ namespace Data.Entities
 {
     public class ShareHistory : RelationalBase
     {
-        public double ChangePercent { get; set; }
+        public decimal ChangePercent { get; set; }
         public decimal ChangeCash { get; set; }
         public decimal Bid { get; set; }
         public decimal Ask { get; set; }

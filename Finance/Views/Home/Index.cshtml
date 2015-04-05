@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Services
+@{
     ViewBag.Title = "Start"; 
     @Styles.Render("~/CssBundle/home")
 }
@@ -18,7 +19,7 @@
                     <div class="competition-ghost"></div>
 
                     <div class="image-wrap">
-                        <img src="~/Content/Images/Competitions/wstreet.jpg" />
+                        <img src="@GfxHelper.Contest/wstreet.jpg" />
                     </div>
 
                     <div class="content">
@@ -37,7 +38,7 @@
                 <div class="competition-ghost"></div>
 
                 <div class="image-wrap">
-                    <img src="~/Content/Images/Competitions/oldfashioned.jpg" />
+                    <img src="@GfxHelper.Contest/oldfashioned.jpg" />
                 </div>
 
                 <div class="content">
@@ -56,10 +57,10 @@
 
     <div class="col-lg">
 
-        <h1>Bästa investerarna just nu</h1>
+        <h1>Mina prestationer</h1>
         <br />
 
-        @for (var c = 0; c < 4; c++)
+        @for (var c = 0; c < 3; c++)
         {
 
             <div class="block-m">
@@ -67,6 +68,7 @@
                 @for (var x = 0; x < 4; x++)
                 {
 
+                    
 
                     <div class="block-s">
                         <div class="competition">
@@ -83,7 +85,7 @@
 
     <div class="col-lg vertical-scroll">
 
-        <h1>Feed</h1>
+        <h1>Mina bevakningar</h1>
         <br />
 
         @for (var x = 0; x < 8; x++)
