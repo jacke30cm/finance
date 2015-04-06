@@ -76,15 +76,15 @@
             <p class="color-white -capitalize">Tävlingsnamn</p>
 
             <div class="input-wrap">
-                <input type="text" placeholder="Exempelvis: Aktietävling" class="validation -empty" tooltip-style="dark"/>
+                <input type="text" id="private-contest-name" placeholder="Exempelvis: Aktietävling" class="validation -empty" tooltip-style="dark" />
             </div>
-            
+
 
             <br />
             <br />
 
             <p class="color-white -capitalize">Beskrivning</p>
-            <textarea placeholder="Skriv en kortfattad beskrivning om tävlingen"></textarea>
+            <textarea id="private-contest-description" placeholder="Skriv en kortfattad beskrivning om tävlingen"></textarea>
 
             <br />
             <br />
@@ -92,7 +92,7 @@
             <p class="color-white -capitalize">Omslagsbild</p>
             <div class="file-upload">
                 <p class="color-grey">Klicka för att välja en omslagsbild</p>
-               
+
                 <form name="upload-contest-image" id="upload-contest-image" enctype="multipart/form-data">
                     <input name="file" type="file" accept="image/.jpg, .jpeg, .bmp, .png, .gif" />
                 </form>
@@ -107,30 +107,30 @@
 
         <div class="half-content">
             <p class="color-white -capitalize">Tävlingstyp</p><br />
-            <p class="color-cyan -capitalize"> Privat tävling</p>
+            <p id="private-summary-typeOf" class="color-cyan -capitalize"> Privat tävling</p>
 
             <br />
             <br />
 
             <p class="color-white -capitalize">Tävlingsnamn</p><br />
-            <p class="color-cyan -capitalize"> Sesams Akitetävling</p>
+            <p id="private-summary-name" class="color-cyan -capitalize"> Sesams Akitetävling</p>
 
             <br />
             <br />
 
             <p class="color-white -capitalize">Investerinssumma</p><br />
-            <p class="color-cyan -capitalize"> 100 000</p>
+            <p id="private-summary-cash-limit"class="color-cyan -capitalize"> 100 000</p>
 
             <br />
             <br />
 
             <p class="color-white -capitalize">Tävlingslängd</p><br />
-            <p class="color-cyan -capitalize"> 1 månad</p>
+            <p id="private-summary-contest-length" class="color-cyan -capitalize"> 1 månad</p>
 
             <br />
             <br />
 
-            <button id="create-new-contest" class="button-primary -green">
+            <button id="create-private-contest" class="button-primary -green">
                 <p class="color-white -capitalize">
                     Skapa tävling
                 </p>
@@ -142,19 +142,19 @@
         <div class="half-content">
 
             <p class="color-white -capitalize">Synliga portföljer</p><br />
-            <p class="color-cyan -capitalize"> Nej</p>
+            <p id="private-summary-visible-portfolios"class="color-cyan -capitalize"> Nej</p>
 
             <br />
             <br />
 
             <p class="color-white -capitalize">Synlig topplista</p><br />
-            <p class="color-cyan -capitalize"> Ja</p>
+            <p id="private-summary-visible-scores"class="color-cyan -capitalize"> Ja</p>
 
             <br />
             <br />
 
             <p class="color-white -capitalize">Inbjudningar</p><br />
-            <p class="color-cyan -capitalize"> 3 st</p>
+            <p id="private-summary-invites"class="color-cyan -capitalize"> 3 st</p>
 
             <br />
             <br />
@@ -179,32 +179,85 @@
         <div class="half-content">
 
             <p class="color-white -capitalize">Maximalt antal deltagande</p>
-            <input type="text" placeholder="Exempelvis: 25" />
+
+            <div class="input-wrap">
+
+                <input id="private-contest-participants" type="text" placeholder="Exempelvis: 25" class="validation -numbers" validation="false" tooltip-style="dark" />
+
+            </div>
 
             <br />
             <br />
 
             <p class="color-white -capitalize">Investeringssumma</p>
-            <input id="create-contest-maximum-sum" type="text" placeholder="Exempelvis: 50 000" />
+            <div class="input-wrap">
+
+                <input id="private-contest-cash-limit" type="text" placeholder="Välj en summa" class="no-typing" />
+
+                <div class="drop-down">
+                    <div class="item">
+                        <p>10 000</p>
+                    </div>
+                    <div class="item">
+                        <p>20 000</p>
+                    </div>
+                    <div class="item">
+                        <p>50 000</p>
+                    </div>
+                    <div class="item">
+                        <p>100 000</p>
+                    </div>
+                    <div class="item">
+                        <p>500 000</p>
+                    </div>
+                    <div class="item">
+                        <p>1 000 000</p>
+                    </div>
+                </div>
+
+            </div>
 
             <br />
             <br />
 
             <p class="color-white -capitalize">Längd på tävlingen</p>
-            <input id="create-contest-maximum-sum" type="text" placeholder="Välj en tid" />
+            <div class="input-wrap">
+                
+                <input id="private-contest-length" type="text" placeholder="Välj en tid" class="no-typing" />
 
+                <div class="drop-down">
+                    <div class="item">
+                        <p>2 veckor</p>
+                    </div>
+                    <div class="item">
+                        <p>1 månad</p>
+                    </div>
+                    <div class="item">
+                        <p>2 månader</p>
+                    </div>
+                    <div class="item">
+                        <p>3 månader</p>
+                    </div>
+                    <div class="item">
+                        <p>6 månader</p>
+                    </div>
+                    <div class="item">
+                        <p>1 år</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="half-content">
 
             <p class="color-white -capitalize">Synliga portföljer</p>
-            <input type="checkbox" id="visible-portfolios" data-labelauty="Visa ingen|Visa alla" />
+            <input type="checkbox" id="private-contest-visible-portfolios" data-labelauty="Visa ingen|Visa alla" />
 
             <br />
             <br />
 
             <p class="color-white -capitalize">Synlig topplista</p>
-            <input type="checkbox" id="visible-score-list" data-labelauty="Visa inte topplista|Visa topplista" />
+            <input type="checkbox" id="private-contest-visible-scores" data-labelauty="Visa inte topplista|Visa topplista" />
 
             <br />
             <br />
@@ -216,7 +269,7 @@
     <div class="explanatory-column">
 
         <p class="color-white -medium">
-          Skapa en egen tävling 
+            Skapa en egen tävling
 
         </p>
 

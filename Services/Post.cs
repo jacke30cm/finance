@@ -26,13 +26,12 @@ namespace Services
             {
                 Name = model.Name,
                 Administrator = admin,
-                AmountOfParticipants = 0,
-                Active = false,
+                AmountOfParticipants = model.Participants,
                 CashLimit = model.CashLimit,
                 ContestType = model.ContestType,
                 Description = model.Description,
-                StartDate = Convert.ToDateTime(model.StartDate),
-                EndDate = Convert.ToDateTime(model.EndDate),
+                CreationDate = DateTime.Now,
+                ContestLength = model.ContestLength,
                 Image =  image,
                 Settings = new ContestSettings()
                 {

@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
 
     // Style checkboxes
-    $('#visible-portfolios').labelauty({
+    $('#private-contest-visible-portfolios').labelauty({
         development: false,
         class: 'labelauty',
         label: true,
@@ -11,7 +11,7 @@
         force_random_id: true
     });
 
-    $('#visible-score-list').labelauty({
+    $('#private-contest-visible-scores').labelauty({
         development: false,
         class: 'labelauty',
         label: true,
@@ -177,7 +177,7 @@
 
     // Create new constest-call
 
-    $(document).on('click', '#create-new-contest', function () {
+    $(document).on('click', '#create-private-contest', function () {
 
         // if all is valid
 
@@ -193,17 +193,33 @@
        
         var image = new FormData($('#upload-contest-image')[0]);
 
+
         var model = {
-            ContestType: 'private',
-            Name: 'Babbens livs',
-            Description: 'En beskrivning',
-            StartDate: '2015-05-05',
-            EndDate: '2015-06-05',
-            CashLimit: 10000,
-            VisiblePortfolios: false,
-            VisibleScores: true,
+            ContestType: 'Private', // Hard code
+            Name: $('#private-contest-name').val(),
+            Description: $('#private-contest-description').val(),
+            ContestLength: $('#private-contest-length').val(),
+            Participants : parseInt($('#private-contest-participants').val()),
+            CashLimit: parseInt($('#private-contest-cash-limit').val().replace(/ /g, '')),
+            VisiblePortfolios: $('#private-contest-visible-portfolios').is(':checked') ? 0 : 1,
+            VisibleScores: $('#private-contest-visible-scores').is(':checked') ? 0 : 1
 
         };
+
+        
+
+        alert(
+            model.ContestType + '\n' +
+            model.Name + '\n' +
+            model.Description + '\n' +
+            model.ContestLength + '\n' +
+            model.CashLimit + '\n' +
+            model.Participants + '\n' +
+            model.VisiblePortfolios + '\n' +
+            model.VisibleScores + '\n' 
+
+        );
+        return false;
 
         // Create-contest-call
         // First - try to upload the image that was chosen, because the ajax can't handle both object and image at same time ...
@@ -270,10 +286,6 @@
             $(this).parent().siblings('p').text('Klicka för att välja en omslagsbild').addClass('color-grey');
 
         }
-
-
-
-
     });
 
 

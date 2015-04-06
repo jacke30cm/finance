@@ -108,9 +108,10 @@
         };
 
         function isNumber($element) {
-            var result = parseInt($element.val()) || 0;
 
-            if (result === 0) {
+            var result = /^\d+$/; 
+
+            if (!result.test($element.val())) {
 
                 errorStyle($element, 'Fältet får bara innehålla siffror');
                 bringToolTip($element);

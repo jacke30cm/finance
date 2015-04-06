@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201504061945357_FreshUpdate.Designer.cs">
       <DependentUpon>201504061945357_FreshUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504062226137_ContestUpdates.cs" />
+    <Compile Include="Migrations\201504062226137_ContestUpdates.Designer.cs">
+      <DependentUpon>201504062226137_ContestUpdates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AddStock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504061945357_FreshUpdate.resx">
       <DependentUpon>201504061945357_FreshUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504062226137_ContestUpdates.resx">
+      <DependentUpon>201504062226137_ContestUpdates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

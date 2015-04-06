@@ -95,6 +95,10 @@
             });
 
 
+        } else {
+            
+            ajaxFailureResponse($('#sign-up'));
+
         }
 
     });
@@ -105,8 +109,6 @@
     $(document).on('click', '#sign-in', function (e) {
 
         e.preventDefault();
-
-        $(this).find('p').remove();
         var spinner = new Spinner(smallSpinOptions('#FFF')).spin($(this)[0]);
 
 
@@ -155,15 +157,17 @@
     // Animate the button that was clicked, to show error-response
     function ajaxFailureResponse($element) {
 
-        $($element).removeClass('-green');
-        $($element).addClass('-red');
-        $($element).append('<p class="color-white -capitalize -mini"> Misslyckades </p>');
+        $element.removeClass('-green');
+        $element.addClass('-red');
+        //$element.append('<p class="color-white -capitalize -mini"> Misslyckades </p>');
 
-        $($element).animate({ top: '0px' }, 2000, function () {
+        $element.find('p').text('Misslyckades'); 
 
-            $($element).addClass('-green');
-            $($element).removeClass('-red');
-            $($element).find('p').text('Logga in');
+        $element.animate({ top: '0px' }, 2000, function () {
+
+            $element.addClass('-green');
+            $element.removeClass('-red');
+            $element.find('p').text($element.find('p').attr('value'));
 
         });
 
