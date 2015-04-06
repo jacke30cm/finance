@@ -10,6 +10,9 @@ namespace Finance.Controllers
 {
     public class MasterController : BaseController
     {
+        public static string UploadedFileUrl; 
+
+
         [AllowAnonymous]
         public ActionResult Menu()
         {
@@ -36,12 +39,46 @@ namespace Finance.Controllers
 
         [HttpPost]
         [AcceptVerbs(HttpVerbs.Post)]
-        public JsonResult CreateContest(CreateContestViewModel model)
+        public ActionResult CreateContest(CreateContestPostModel model)
         {
-
-
-            return Json("", JsonRequestBehavior.AllowGet); 
+            // Create contest first, then return html-view containing the contest-object
+            var contestId = PostService.CreateContest(model, UploadedFileUrl, User.Identity.GetUserId());
+            var viewmodel = GetService.GetBasicContestData(contestId); 
+            return PartialView("~/Views/Home/MyContests/SingleContest.cshtml", viewmodel);
         }
+
+
+        [HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
+        public JsonResult ContestImage()
+        {
+            // Try to save file 
+            var file = Request.Files[0];
+            var url = ImageService.UploadImage(file, "Contest");
+
+            // If it was successful, the name(url) must be saved and attached to next following ajax-call to "CreateContest". 
+            if (url != null)
+            {
+                UploadedFileUrl = url; 
+            }
+
+            return Json(url != null ? "Success" : "Failure", JsonRequestBehavior.AllowGet);
+        }
+
+        //HelperCalls
+
+        [HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
+        [AllowAnonymous]
+        public JsonResult EmailAvailability(string email)
+        {
+            var json = ""; 
+            //Json-code, returnera antingen true eller false
+
+            return Json(json, JsonRequestBehavior.AllowGet);
+        }
+
+
 
     }
 }

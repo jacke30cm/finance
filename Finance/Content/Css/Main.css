@@ -18,7 +18,7 @@ form, label, legend, input, table, caption, tbody, tfoot, thead, tr, th, td, sec
 
 body {
     background: #EBEBEB;
-    /*background: url('../Images/Gfx/montage26.jpg') no-repeat;*/
+    /*background: url('../Images/Gfx/montage27.jpg') no-repeat;*/
     overflow: hidden;
 }
 
@@ -62,6 +62,13 @@ p {
 
 .-mini {
     font-size: 9px;
+
+}
+
+.-mini-compressed {
+    font-size: 11px;
+    letter-spacing: 0;
+
 }
 
 .-bold {
@@ -111,7 +118,7 @@ h1 {
     font-size: 22px;
     letter-spacing: 1px;
     font-weight: 300;
-    vertical-align: middle;
+    vertical-align: baseline;
 }
 
 h2 {
@@ -185,6 +192,13 @@ button:focus {
     background: #FAFAFA;
 }
 
+.hidden {
+    visibility: hidden; 
+}
+
+.visible {
+    visibility: visible; 
+}
 
 /* Input styling */
 

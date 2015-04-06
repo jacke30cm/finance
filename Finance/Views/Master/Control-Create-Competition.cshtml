@@ -28,7 +28,7 @@
                 <i class="fa fa-database fa-2x color-white"></i>
                 <p class="color-white -capitalize">Information</p>
             </li>
-            <li data-href="filter-column" data-description="Ställ in vilka regler som gäller, samt monetär storlek på portföljer som alla deltagare har att tillgå.">
+            <li data-href="filter-column" data-description="Ställ in vilka regler som gäller, samt monetär storlek på portföljer som alla deltagare har att tillgå. Vissa regler kan ändras under spelets gång.">
                 <i class="fa fa-cogs fa-2x color-white"></i>
                 <p class="color-white -capitalize">Inställningar</p>
             </li>
@@ -52,7 +52,7 @@
                 <i class="fa fa-database fa-2x color-white"></i>
                 <p class="color-white -capitalize">Information</p>
             </li>
-            <li data-href="private-competition-settings" data-description="Ställ in vilka regler som gäller, samt monetär storlek på portföljer som alla deltagare har att tillgå.">
+            <li data-href="private-competition-settings" data-description="Ställ in vilka regler som gäller, samt monetär storlek på portföljer som alla deltagare har att tillgå. Vissa regler kan ändras under spelets gång.">
                 <i class="fa fa-cogs fa-2x color-white"></i>
                 <p class="color-white -capitalize">Inställningar</p>
             </li>
@@ -74,7 +74,11 @@
         <div class="full-content">
 
             <p class="color-white -capitalize">Tävlingsnamn</p>
-            <input type="text" placeholder="Exempelvis: Aktietävling" />
+
+            <div class="input-wrap">
+                <input type="text" placeholder="Exempelvis: Aktietävling" class="validation -empty" tooltip-style="dark"/>
+            </div>
+            
 
             <br />
             <br />
@@ -88,8 +92,9 @@
             <p class="color-white -capitalize">Omslagsbild</p>
             <div class="file-upload">
                 <p class="color-grey">Klicka för att välja en omslagsbild</p>
-                <form enctype="multipart/form-data">
-                    <input id="upload-contest-image" type="file" accept="image/.jpg, .jpeg, .bmp, .png, .gif" value="12" />
+               
+                <form name="upload-contest-image" id="upload-contest-image" enctype="multipart/form-data">
+                    <input name="file" type="file" accept="image/.jpg, .jpeg, .bmp, .png, .gif" value="12" />
                 </form>
             </div>
 
@@ -211,7 +216,7 @@
     <div class="explanatory-column">
 
         <p class="color-white -medium">
-            Här kan du göra saker
+          Skapa en egen tävling 
 
         </p>
 

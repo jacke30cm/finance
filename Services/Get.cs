@@ -13,6 +13,20 @@ namespace Services
     public class Get : ServiceBase
     {
 
+        public BasicContestViewModel GetBasicContestData(long id)
+        {
+            var contest = uow.ContestRepository.GetSingle(x => x.Id == id);
+            
+            return new BasicContestViewModel()
+            {
+                Name = contest.Name,
+                EndTime = contest.EndDate,
+                Image = uow.ImageRepository.GetSingle(x => x.Id == contest.Image.Id)
+            }; 
+
+        }
+
+
         public UserViewModel GetUser(string userId)
         {
             var user = uow.UserRepository.GetSingle(x => x.Id.Equals(userId));
@@ -54,7 +68,7 @@ namespace Services
                 }
 
 
-                return result.OrderBy(x => x.Share.Name, StringComparer.OrdinalIgnoreCase).ToList(); 
+                return result.OrderBy(x => x.Share.Name, StringComparer.CurrentCulture).Take(100).ToList(); 
 
             }
 

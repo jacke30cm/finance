@@ -11,12 +11,13 @@ namespace Finance.Controllers
     {
         internal Get GetService;
         internal Post PostService;
-
+        internal ImageService ImageService;
 
         public BaseController()
         {
             GetService = new Get();
             PostService = new Post();
+            ImageService = new ImageService();
         }
 
     }

@@ -14,13 +14,14 @@ namespace Finance
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-2.1.3.min.js",
                         "~/Scripts/jqueryEase.js",
+                        "~/Scripts/jquery.animate-enhanced.js",
                          "~/Scripts/jquery.mousewheel.min.js",
                         "~/Scripts/jquery.mCustomScrollbar.js",
                         "~/Scripts/jquery.easypiechart.min.js",
                         "~/Scripts/jquery.flot.min.js",
                         "~/Scripts/jquery.flot.pie.min.js",
                         "~/Scripts/jquery-labelauty.js",
-                        "~/Scripts/jquery-easy-list-splitter.js",
+                        "~/Scripts/jquery.viewportchecker.js",
                         "~/Scripts/spin.min.js"));
 
             // Master-js

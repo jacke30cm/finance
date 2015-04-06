@@ -112,18 +112,27 @@
 }
 
 .market-search-share-list {
-    width: 300px;
+    position: relative;
+    width: 600px;
     height: 615px;
-    float: left;
     list-style: none;
     margin-right: 10px;
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px;
+    column-count: 2;
+    column-gap: 10px;
 }
 
     .market-search-share-list li {
         width: 300px;
         height: 50px;
         margin-bottom: 20px;
-        transition: 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
 
         .market-search-share-list .share:hover {

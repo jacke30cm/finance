@@ -2,6 +2,9 @@
 
 
 
+    
+
+    //alert($('.market-search-share-list li').length); 
 
     // Search for shares 
 
@@ -19,34 +22,6 @@
 
         });
 
-
-        // FORTSÄTT ... 
-
-        //var visibleRows = []; 
-
-        //$('.market-search-share-list li:visible').each(function() {
-
-        //    visibleRows.push($(this)); 
-
-        //});
-
-
-        //var columns = 0; 
-
-        //if (visibleRows.length < 10) {
-
-        //    columns = 1; 
-
-        //} else {
-
-        //    columns = visibleRows.length / 10; 
-
-        //}
-
-        //$('.market-search-share-list').empty().easyListSplitter({
-
-        //    colNumber: columns
-        //});
     });
 
 
@@ -235,12 +210,12 @@
     }
 
 
-    var listColumns = parseInt($('.market-search-share-list li').length) / 10;
+    //var listColumns = parseInt($('.market-search-share-list li').length) / 10;
 
-    $('.market-search-share-list').easyListSplitter({
+    //$('.market-search-share-list').easyListSplitter({
 
-        colNumber: listColumns
-    });
+    //    colNumber: listColumns
+    //});
 
     
 
@@ -272,7 +247,6 @@
     });
 
 
-
     function getShareView($destination, rowHeight) {
 
         var i = 0;
@@ -284,7 +258,7 @@
 
 
 
-                $('.sub-section').animate({ top: '-' + distance + 'px' }, 500, 'easeOutQuint');
+                $('.sub-section').stop().animate({ top: '-' + distance + 'px' }, 500, 'easeOutQuint');
 
             }
 

@@ -37,7 +37,7 @@ namespace Finance.Controllers
         {
             return PartialView("~/Views/Contest/Market.cshtml");
         }
-
+        // MARKET -> MARKKET-SEARCH
         public ActionResult MarketSearch()
         {
             var model = GetService.GetBasicShareData(); 

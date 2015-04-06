@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function () {
 
     // Checkbox styling
     $('#terms-and-conditions').labelauty({
@@ -11,32 +11,43 @@
     });
 
 
-    // Verify whether sign-up-button is available or not
-    $(document).on('change', '#terms-and-conditions', function() {
+    //Validaton-check if all fields are valid 
+    function signUpValidation() {
 
-        if (this.checked) {
+        var isValid = true;
 
-            $('#sign-up').removeClass('disabled');
-  
+        $('#sign-up-form input').each(function () {
 
-        } else {
-            
-            $('#sign-up').addClass('disabled');
-            
+            if ($(this).is(':checkbox')) {
 
-        }
-    }); 
+                // If false, (not checked) 
+                if (!$(this).is(':checked')) {
+
+                    isValid = false;
+                }
+
+            }
+            // Validation-method uses html-attribute "validation" to see if element is good or not 
+            // The value-assignment is handled by "validation.js"
+            if ($(this).attr('validation') == 'false') {
+
+                isValid = false;
+
+            }
+
+
+        });
+
+        return isValid;
+    }
+
+
 
     // SIGN UP COMMAND
     $(document).on('click', '#sign-up', function (e) {
 
-        e.preventDefault(); 
-
-        if ($(this).hasClass('disabled')) {
-
-            return false;
-
-        } else {
+        e.preventDefault();
+        if (signUpValidation()) {
 
             $(this).find('p').remove();
             var spinner = new Spinner(smallSpinOptions('#FFF')).spin($(this)[0]);
@@ -51,7 +62,7 @@
                 Password: $('#sign-up-password1').val(),
                 ConfirmPassword: $('#sign-up-password2').val()
 
-            }; 
+            };
 
             //Ajax sign-up-call
             $.ajax({
@@ -62,10 +73,10 @@
 
                     if (data != 'Failure') {
 
-                        window.location = '/Home/'; 
+                        window.location = '/Home/';
 
                     } else {
-                        
+
                         ajaxFailureResponse($('#sign-up'));
 
                     }
@@ -74,9 +85,9 @@
                 error: function (jqXHR, exception) {
                     alert('Error passing data to server.');
                 },
-                complete: function() {
+                complete: function () {
 
-                    spinner.stop(); 
+                    spinner.stop();
 
                 }
 
@@ -101,8 +112,8 @@
 
         var model = {
 
-            Email : $('#sign-in-email').val(),
-            Password : $('#sign-in-password').val(),
+            Email: $('#sign-in-email').val(),
+            Password: $('#sign-in-password').val(),
             RememberMe: false
         };
 
@@ -112,17 +123,17 @@
         $.ajax({
             url: '/Account/Login',
             type: 'POST',
-            data: { 'model': model, 'returnUrl' : returnUrl },
+            data: { 'model': model, 'returnUrl': returnUrl },
             success: function (data) {
 
                 // Om ajax-resultatet som kommer tillbaka är returnURL:en, så är det success
                 if (data != 'Failure') {
 
-                    window.location =  data; 
+                    window.location = data;
 
                 } else {
 
-                    ajaxFailureResponse($('#sign-in')); 
+                    ajaxFailureResponse($('#sign-in'));
 
                 }
 
@@ -130,9 +141,9 @@
             error: function (jqXHR, exception) {
                 alert('Ajax-call, or server-code has failed');
             },
-            complete: function() {
+            complete: function () {
 
-                spinner.stop(); 
+                spinner.stop();
 
             }
 
@@ -143,7 +154,7 @@
 
     // Animate the button that was clicked, to show error-response
     function ajaxFailureResponse($element) {
-        
+
         $($element).removeClass('-green');
         $($element).addClass('-red');
         $($element).append('<p class="color-white -capitalize -mini"> Misslyckades </p>');
@@ -158,4 +169,4 @@
 
     }
 
-}); 
+});

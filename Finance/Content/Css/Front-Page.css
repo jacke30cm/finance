@@ -38,7 +38,7 @@
 
 }
 
-.right-block > .half-block > input[type="text"], input[type="email"] {
+.right-block > form .half-block > .input-wrap input[type="text"], input[type="email"] {
 
     background: #FAFAFA;
     border: 1px solid #EBEBEB;
@@ -46,14 +46,16 @@
 
 }
 
-.right-block > .half-block > input[type="password"] {
+
+
+.right-block > form .half-block >  .input-wrap input[type="password"] {
 
     width: 100%;
 
 }
 
 
-.right-block .half-block > button {
+.right-block form .half-block >  button {
     
     float: right;
     margin: 0 -10px 0 0;
@@ -61,7 +63,7 @@
     min-height: 39px;
 }
 
-.right-block .half-block > input[type="checkbox"] {
+.right-block form .half-block >  input[type="checkbox"] {
 
     float: left;
     margin: 20px 0 0 0;

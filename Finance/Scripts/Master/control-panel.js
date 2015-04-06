@@ -190,43 +190,89 @@
     });
 
 
-
     // Create new constest-call
 
     $(document).on('click', '#create-new-contest', function () {
 
         // if all is valid
-        
+
         $('#home-my-contests').prepend('<div class="block-m"><div class="competition"></div></div>');
-        
+
         //var spinner = new Spinner(smallSpinOptions('#444')).spin($('#home-my-contests .block-m:first-of-type')[0]);
         closeDown();
 
-        var image = new FormData();
+        //var image = new FormData();
 
-        $.each($('#upload-contest-image')[0].files, function (i, file) {
+        //$.each($('#upload-contest-image')[0].files, function (i, file) {
 
-            image.append('image', file);
+        //    image.append('image', file);
 
-        });
-        
+        //});
+
+
+
+
+
+
+        var image = new FormData($('#upload-contest-image')[0]);
 
         var model = {
             ContestType: 'private',
             Name: 'Babbens livs',
-            Length: '2015-05-05',
-            InvestmentSize: 1000,
+            Description: 'En beskrivning',
+            StartDate: '2015-05-05',
+            EndDate: '2015-06-05',
+            CashLimit: 10000,
             VisiblePortfolios: false,
-            VisibleScores: true
+            VisibleScores: true,
+
         };
 
+
+        //public string ContestType { get; set; }
+        //public string Name { get; set; }
+        //public string Description { get; set; }
+        //public string StartDate { get; set; }
+        //public string EndDate { get; set; }
+        //public int CashLimit { get; set; }
+        
+        //public bool VisiblePortfolios { get; set; }
+        //public bool VisibleScores { get; set; }
+
         // Create-contest-call
+        // First - try to upload the image that was chosen, because the ajax can't handle both object and image at same time ...
         $.ajax({
-            url: '/Master/CreateContest',
+            url: '/Master/ContestImage',
             type: 'POST',
             processData: false,
-            data: { 'model': model, 'image': image },
-            success: function () {
+            contentType: false,
+            cache: false,
+            data: image,
+            success: function (data) {
+
+                // If the uploading-process on server was successful, continue with creation of contest-data
+                if (data == 'Success') {
+                    
+                    $.ajax({
+                        url: '/Master/CreateContest',
+                        type: 'POST',
+                        cache: false,
+                        data: model,
+                        success: function (data) {
+
+                        //If the creation was successful, server return html-string containing markup for new contest    
+
+
+
+
+                        },
+                        error: function (jqXHR, exception) {
+                            alert('Error passing data to server.');
+                        }
+                    });
+
+                }
+                
 
             },
             error: function (jqXHR, exception) {
@@ -236,12 +282,17 @@
 
 
 
+
+
+
+
+
         //$('#home-my-contests').animate({ top: 0 }, 2000, function () {
 
-            
+
         //    $('#home-my-contests .block-m:first-of-type').find('.competition').addClass('-white').css({ 'top': '-30px', 'opacity': '0.0', 'margin-right' : '5px' }).animate({ top: '0', opacity: 1.0 }, 500, 'easeOutQuint', function() {
         //    });
-            
+
         //    spinner.stop();
         //});
 

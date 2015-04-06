@@ -14,66 +14,88 @@
 
 
 <div class="right-block" value="@ViewBag.ReturnUrl">
-    
+
 
     <h1>Skapa ett <em class="color-cyan">konto</em> redan idag </h1>
-    <br/>
+    <br />
     <h4 class="">Det kostar ingenting.</h4>
 
     <br />
     <br />
     <br />
+    <form id="sign-up-form">
+        <div class="half-block">
+            <p class="-mini -capitalize">Förnamn</p>
+            <div class="input-wrap">
 
-    <div class="half-block">
-        <p class="-mini -capitalize">Förnamn</p>
-        <input type="text" id="sign-up-first-name" class="field-error" />
-    </div>
+                <input type="text" id="sign-up-first-name" class="validation -empty" validation="false" tooltip-style="light" />
+            </div>
+        </div>
 
-    <div class="half-block">
-        <p class="-mini -capitalize">Efternamn</p>
-        <input type="text" id="sign-up-last-name"/>
-    </div>
+        <div class="half-block">
+            <p class="-mini -capitalize">Efternamn</p>
+            <div class="input-wrap">
 
-    <div class="half-block">
-        <p class="-mini -capitalize">Stad</p>
-        <input type="text" id="sign-up-city" />
-    </div>
+                <input type="text" id="sign-up-last-name" class="validation -empty" validation="false" tooltip-style="light" />
+            </div>
+        </div>
 
-    <div class="half-block">
-        <p class="-mini -capitalize">Email</p>
-        <input type="text" id="sign-up-email"/>
-    </div>
+        <div class="half-block">
+            <p class="-mini -capitalize">Stad</p>
 
-    <div class="half-block">
-        <p class="-mini -capitalize">Välj ett lösenord</p><br />
-        <input type="password" id="sign-up-password1"/>
-    </div>
+            <div class="input-wrap">
 
-    <div class="half-block">
-        <p class="-mini -capitalize">Upprepa lösenord</p>
-        <input type="password" id="sign-up-password2"/>
-    </div>
-    
-    <br/>
-    <br/>
+                <input type="text" id="sign-up-city" class="validation -empty" validation="false" tooltip-style="light" />
+            </div>
+        </div>
 
-    <div class="half-block">
+        <div class="half-block">
+            <p class="-mini -capitalize">Email</p>
 
-        <input type="checkbox" id="terms-and-conditions" data-labelauty="Jag accepterar inte användarvillkoren|Jag accepterar användarvillkoren" />
-    </div>
-    
-    <div class="half-block">
+            <div class="input-wrap">
 
-        <button class="button-primary -cyan" id="sign-up">
-            <p class="color-white -capitalize -mini">
-                Skapa konto
-            </p>
-        </button>
-    </div>
+                <input type="text" id="sign-up-email" class="validation -empty -email" validation="false" tooltip-style="light" />
 
-    
-    
-    
+            </div>
+
+        </div>
+
+        <div class="half-block">
+            <p class="-mini -capitalize">Välj ett lösenord</p><br />
+            <div class="input-wrap">
+
+                <input type="password" id="sign-up-password1" class="validation -empty -password-relation" validation="false" tooltip-style="light" />
+            </div>
+        </div>
+
+        <div class="half-block">
+            <p class="-mini -capitalize">Upprepa lösenord</p>
+            <div class="input-wrap">
+
+                <input type="password" id="sign-up-password2" class="validation -password-relation" validation="false" tooltip-style="light" />
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="half-block">
+
+            <input type="checkbox" id="terms-and-conditions" data-labelauty="Jag accepterar inte användarvillkoren|Jag accepterar användarvillkoren" />
+        </div>
+
+        <div class="half-block">
+
+            <button class="button-primary -cyan" id="sign-up">
+                <p class="color-white -capitalize -mini">
+                    Skapa konto
+                </p>
+            </button>
+        </div>
+    </form>
+
+
+
 
 </div>
 

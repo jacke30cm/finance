@@ -68,7 +68,8 @@
     }
 
     .col-full {
-        width: auto;
+        width: 11500px;
+        /*width: auto;*/ 
     }
 
     .row .vertical-scroll {
@@ -259,27 +260,36 @@
         text-align: center;
     }
 
+    .input-wrap {
 
-    /*.validation-tool-tip {
+       
+
+    }
+
+
+    .validation-tool-tip {
         position: absolute;
         left: 50%;
-        top: -100px;
-        min-width: 80px;
+        top: -30px;
+        min-width: 180px;
         min-height: 15px;
         padding: 10px;
-        background: #444;
-        transform: translate(-50%, -0%); 
+        background: #FFF;
+        /*box-shadow: 0px 2px 15px #CCC;*/
+        transform: translate(-50%, -0%);
+        text-align: center;
+        z-index: 1; 
     }
 
         .validation-tool-tip > .arrow {
             position: absolute;
-            bottom: 2px;
+            bottom: -5px;
             left: 50%;
             width: 10px;
             height: 10px;
-            background: #444;
-            transform: rotate(45deg) translate(-50%, -50%);
-        }*/
+            background: #FFF;
+            transform: rotate(45deg) translate(-50%, -0%);
+        }
 }
 
 

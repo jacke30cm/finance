@@ -105,7 +105,6 @@
         });
     };
 
-    //Untested
     function pageTitle($element) {
 
         var title = $element.attr('anchor-title');

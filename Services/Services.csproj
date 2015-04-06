@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileServices.cs" />
     <Compile Include="Get.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Post.cs" />
