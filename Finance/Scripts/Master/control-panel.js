@@ -114,21 +114,6 @@
 
     });
 
-    //var initialText = $('.control-panel .explanatory-column p').text();
-
-    //$(this).on('mouseleave', '.control-panel ul li', function () {
-
-
-    //    $('.control-panel .explanatory-column p').animate({ opacity: '0.0' }, 100, function () {
-
-    //        $(this).text(initialText);
-
-    //        $(this).animate({ opacity: '1.0' }, 100);
-
-    //    });
-
-    //});
-
     // Bring correct column to show
 
     $(this).on('click', '.control-panel .column ul li', function () {
@@ -268,21 +253,25 @@
             }
         });
 
+    });
 
 
+    // File upload modification 
+    $(document).on('change', '#upload-contest-image :file', function () {
+
+       
+        if (this.files[0] != undefined) {
+
+            var fileName = this.files[0].name;
+            $(this).parent().siblings('p').text(fileName).removeClass('color-grey');
+
+        } else {
+
+            $(this).parent().siblings('p').text('Klicka för att välja en omslagsbild').addClass('color-grey');
+
+        }
 
 
-
-
-
-        //$('#home-my-contests').animate({ top: 0 }, 2000, function () {
-
-
-        //    $('#home-my-contests .block-m:first-of-type').find('.competition').addClass('-white').css({ 'top': '-30px', 'opacity': '0.0', 'margin-right' : '5px' }).animate({ top: '0', opacity: 1.0 }, 500, 'easeOutQuint', function() {
-        //    });
-
-        //    spinner.stop();
-        //});
 
 
     });
