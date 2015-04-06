@@ -244,11 +244,16 @@
     <Content Include="Scripts\jquery.mousewheel.min.js" />
     <Content Include="Scripts\jquery.viewportchecker.js" />
     <Content Include="Scripts\jqueryEase.js" />
+    <Content Include="Scripts\livestamp.min.js" />
     <Content Include="Scripts\Master\control-panel.js" />
     <Content Include="Scripts\Master\master.js" />
     <Content Include="Scripts\Master\anchor-route.js" />
     <Content Include="Scripts\Master\spin-configuration.js" />
     <Content Include="Scripts\Master\validation.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\Signup\start.js" />
     <Content Include="Scripts\spin.min.js" />
     <Content Include="Scripts\_references.js" />

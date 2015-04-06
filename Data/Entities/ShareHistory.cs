@@ -18,7 +18,7 @@ namespace Data.Entities
         public decimal Lowest { get; set; }
         public DateTime TimeStamp { get; set; }
 
-        public Share Share { get; set; }
+        public virtual Share Share { get; set; }
 
     }
 }

@@ -137,13 +137,16 @@ namespace Data.Migrations
                         Active = c.Boolean(nullable: false),
                         AmountOfParticipants = c.Int(nullable: false),
                         CashLimit = c.Int(nullable: false),
-                        Admin_Id = c.String(maxLength: 128),
+                        Administrator_Id = c.String(maxLength: 128),
+                        Image_Id = c.Int(),
                         Settings_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.Admin_Id)
+                .ForeignKey("dbo.AspNetUsers", t => t.Administrator_Id)
+                .ForeignKey("dbo.Images", t => t.Image_Id)
                 .ForeignKey("dbo.ContestSettings", t => t.Settings_Id)
-                .Index(t => t.Admin_Id)
+                .Index(t => t.Administrator_Id)
+                .Index(t => t.Image_Id)
                 .Index(t => t.Settings_Id);
             
             CreateTable(
@@ -152,7 +155,7 @@ namespace Data.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         VisiblePortfolios = c.Boolean(nullable: false),
-                        VisibleTrades = c.Boolean(nullable: false),
+                        VisibleScore = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -282,7 +285,8 @@ namespace Data.Migrations
             DropForeignKey("dbo.Transactions", "Portfolio_Id", "dbo.Portfolios");
             DropForeignKey("dbo.PortfolioHistories", "Portfolio_Id", "dbo.Portfolios");
             DropForeignKey("dbo.Contests", "Settings_Id", "dbo.ContestSettings");
-            DropForeignKey("dbo.Contests", "Admin_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Contests", "Image_Id", "dbo.Images");
+            DropForeignKey("dbo.Contests", "Administrator_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AchievementAssociations", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUsers", "Ranking_Id", "dbo.Rankings");
@@ -301,7 +305,8 @@ namespace Data.Migrations
             DropIndex("dbo.Transactions", new[] { "Share_Id" });
             DropIndex("dbo.Transactions", new[] { "Portfolio_Id" });
             DropIndex("dbo.Contests", new[] { "Settings_Id" });
-            DropIndex("dbo.Contests", new[] { "Admin_Id" });
+            DropIndex("dbo.Contests", new[] { "Image_Id" });
+            DropIndex("dbo.Contests", new[] { "Administrator_Id" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });

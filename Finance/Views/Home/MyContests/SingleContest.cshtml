@@ -3,17 +3,21 @@
 
 @if (Model != null)
 {
-    <div class="competition -white">
+    <div class="competition">
         <div class="competition-ghost"></div>
 
         <div class="image-wrap">
-            <img src="@GfxHelper.Contest/@Model.Image.Url" />
+            @if (Model.Image != null)
+            {
+                <img src="@GfxHelper.Contest/@Model.Image.Url" />
+            }
+            
         </div>
 
         <div class="content">
 
             <h3>@Model.Name</h3>
-            <p class="-capitalize ">@Model.EndTime</p>
+            <p class="-capitalize" data-livestamp="@Model.EndTime"></p>
         </div>
 
     </div>

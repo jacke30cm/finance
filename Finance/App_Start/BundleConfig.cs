@@ -21,6 +21,8 @@ namespace Finance
                         "~/Scripts/jquery.flot.min.js",
                         "~/Scripts/jquery.flot.pie.min.js",
                         "~/Scripts/jquery-labelauty.js",
+                        "~/Scripts/moment-with-locales.min.js",
+                        "~/Scripts/livestamp.min.js",
                         "~/Scripts/jquery.viewportchecker.js",
                         "~/Scripts/spin.min.js"));
 

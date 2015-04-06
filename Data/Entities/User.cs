@@ -22,12 +22,12 @@ namespace Data.Entities
         public string City { get; set; }
         public string Gender { get; set; }
 
-        public Image Image { get; set; }
+        public virtual Image Image { get; set; }
 
         public DateTime? SignUp { get; set; }
         public DateTime? SignOut { get; set; }
         public DateTime? BirthDate { get; set; }
-        public Ranking Ranking { get; set; }
+        public  virtual Ranking Ranking { get; set; }
     
 
     }

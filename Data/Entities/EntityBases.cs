@@ -11,9 +11,4 @@ namespace Data.Entities
     {
         public int Id { get; set; }
     }
-
-    public abstract class MongoBase
-    {
-        public ObjectId Id { get; set; }
-    }
 }

@@ -53,6 +53,11 @@
 
 $(document).ready(function () {
 
+    //Moment lang
+
+    
+    moment.locale('sv'); 
+    alert(moment.locale());
 
     //Input- focus- actions
 

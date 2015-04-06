@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +17,12 @@ namespace Data.Entities
         public bool Active { get; set; }
         public int AmountOfParticipants { get; set; }
         public int CashLimit { get; set; }
-        public User Admin { get; set; }
-        public ContestSettings Settings { get; set; }
-        public Image Image { get; set; }
+
+        public virtual User Administrator { get; set; }
+
+        public virtual ContestSettings Settings { get; set; }
+
+        public virtual Image Image { get; set; }
     }
 
 

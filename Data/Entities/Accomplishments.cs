@@ -10,7 +10,7 @@ namespace Data.Entities
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public Image Image { get; set; }
+        public virtual Image Image { get; set; }
     }
 
     public class Ranking : RelationalBase

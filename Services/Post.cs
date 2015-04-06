@@ -25,7 +25,7 @@ namespace Services
             var contest = new Contest()
             {
                 Name = model.Name,
-                Admin = admin,
+                Administrator = admin,
                 AmountOfParticipants = 0,
                 Active = false,
                 CashLimit = model.CashLimit,
@@ -33,7 +33,12 @@ namespace Services
                 Description = model.Description,
                 StartDate = Convert.ToDateTime(model.StartDate),
                 EndDate = Convert.ToDateTime(model.EndDate),
-                Image = image
+                Image =  image,
+                Settings = new ContestSettings()
+                {
+                    VisiblePortfolios = model.VisiblePortfolios,
+                    VisibleScore = model.VisibleScores
+                }
 
             }; 
 
