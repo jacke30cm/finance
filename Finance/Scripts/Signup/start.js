@@ -49,7 +49,7 @@
         e.preventDefault();
         if (signUpValidation()) {
 
-            $(this).find('p').remove();
+            $(this).find('p').hide();
             var spinner = new Spinner(smallSpinOptions('#FFF')).spin($(this)[0]);
 
 
@@ -109,54 +109,64 @@
     $(document).on('click', '#sign-in', function (e) {
 
         e.preventDefault();
-        var spinner = new Spinner(smallSpinOptions('#FFF')).spin($(this)[0]);
+
+        if ($('#sign-in-email').val() != '' && $('#sign-in-password').val() != '') {
 
 
-        var model = {
+            $(this).find('p').hide();
+            var spinner = new Spinner(smallSpinOptions('#FFF')).spin($(this)[0]);
 
-            Email: $('#sign-in-email').val(),
-            Password: $('#sign-in-password').val(),
-            RememberMe: false
-        };
 
-        var returnUrl = $('.right-block').attr('value');
+            var model = {
+                Email: $('#sign-in-email').val(),
+                Password: $('#sign-in-password').val(),
+                RememberMe: false
+            };
 
-        //Ajax sign-in-call
-        $.ajax({
-            url: '/Account/Login',
-            type: 'POST',
-            data: { 'model': model, 'returnUrl': returnUrl },
-            success: function (data) {
+            var returnUrl = $('.right-block').attr('value');
 
-                // Om ajax-resultatet som kommer tillbaka är returnURL:en, så är det success
-                if (data != 'Failure') {
+            //Ajax sign-in-call
+            $.ajax({
+                url: '/Account/Login',
+                type: 'POST',
+                data: { 'model': model, 'returnUrl': returnUrl },
+                success: function(data) {
 
-                    window.location = data;
+                    // Om ajax-resultatet som kommer tillbaka är returnURL:en, så är det success
+                    if (data != 'Failure') {
 
-                } else {
+                        window.location = data;
 
-                    ajaxFailureResponse($('#sign-in'));
+                    } else {
+
+                        ajaxFailureResponse($('#sign-in'));
+
+                    }
+
+                },
+                error: function(jqXHR, exception) {
+                    alert('Ajax-call, or server-code has failed');
+                },
+                complete: function() {
+
+                    spinner.stop();
 
                 }
 
-            },
-            error: function (jqXHR, exception) {
-                alert('Ajax-call, or server-code has failed');
-            },
-            complete: function () {
 
-                spinner.stop();
+            });
+        } else {
 
-            }
+            ajaxFailureResponse($('#sign-in')); 
 
+        }
 
-
-        });
     });
 
     // Animate the button that was clicked, to show error-response
     function ajaxFailureResponse($element) {
 
+        $($element).find('p').show();
         $element.removeClass('-green');
         $element.addClass('-red');
         //$element.append('<p class="color-white -capitalize -mini"> Misslyckades </p>');

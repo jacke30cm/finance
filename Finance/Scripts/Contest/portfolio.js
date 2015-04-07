@@ -226,26 +226,26 @@
 
         for (var x = 0; x < numberOfPages; x++) {
 
-            var pageNumber = x + 1;
-            $('.table-pagination').append('<div class="pagination-item" pagination="' + x + '"><p>' + pageNumber + '</p></div>');
+            $('.table-pagination').append('<div class="pagination-item" pagination="' + x + '"></div>');
 
         }
 
         $rows.hide();
         $rows.slice(0, visibleRows).show();
-        $('.table-pagination .pagination-item:first-of-type').find('p').addClass('color-green');
+        $('.table-pagination .pagination-item:first-of-type').addClass('-cyan');
     }
 
     paginateTable();
 
     $(document).on('click', '.table-pagination .pagination-item', function () {
 
-        $('.table-pagination .pagination-item').find('p').removeClass('color-green');
-        $(this).find('p').addClass('color-green');
+        $('.table-pagination .pagination-item').removeClass('-cyan');
+        $(this).addClass('-cyan');
 
 
-        var thisPage = $(this).find('p').text();
-        thisPage = parseInt(thisPage) - 1;
+        var thisPage = $(this).attr('pagination'); 
+        //thisPage = parseInt(thisPage) - 1;
+        thisPage = parseInt(thisPage); 
 
         var startItem = thisPage * visibleRows;
         var endItem = startItem + visibleRows;

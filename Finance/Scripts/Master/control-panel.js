@@ -8,7 +8,6 @@
         separator: '|',
         minimum_width: '100%',
         same_width: false,
-        force_random_id: true
     });
 
     $('#private-contest-visible-scores').labelauty({
@@ -18,7 +17,6 @@
         separator: '|',
         minimum_width: '100%',
         same_width: false,
-        force_random_id: true
     });
 
 
@@ -201,25 +199,25 @@
             ContestLength: $('#private-contest-length').val(),
             Participants : parseInt($('#private-contest-participants').val()),
             CashLimit: parseInt($('#private-contest-cash-limit').val().replace(/ /g, '')),
-            VisiblePortfolios: $('#private-contest-visible-portfolios').is(':checked') ? 0 : 1,
-            VisibleScores: $('#private-contest-visible-scores').is(':checked') ? 0 : 1
+            VisiblePortfolios: $('#private-contest-visible-portfolios').is(':checked') ? true : false,
+            VisibleScores: $('#private-contest-visible-scores').is(':checked') ? true : false
 
         };
 
         
 
-        alert(
-            model.ContestType + '\n' +
-            model.Name + '\n' +
-            model.Description + '\n' +
-            model.ContestLength + '\n' +
-            model.CashLimit + '\n' +
-            model.Participants + '\n' +
-            model.VisiblePortfolios + '\n' +
-            model.VisibleScores + '\n' 
+        //alert(
+        //    model.ContestType + '\n' +
+        //    model.Name + '\n' +
+        //    model.Description + '\n' +
+        //    model.ContestLength + '\n' +
+        //    model.CashLimit + '\n' +
+        //    model.Participants + '\n' +
+        //    model.VisiblePortfolios + '\n' +
+        //    model.VisibleScores + '\n' 
 
-        );
-        return false;
+        //);
+
 
         // Create-contest-call
         // First - try to upload the image that was chosen, because the ajax can't handle both object and image at same time ...
