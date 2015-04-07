@@ -330,47 +330,51 @@ input[type="file"] {
 /*Background colors*/
 
 .-grey {
-    background: #999;
+    background: #999 !important;
+}
+
+.-light-grey {
+    background: #EBEBEB !important;
 }
 
 .-white {
-    background: #FFF;
+    background: #FFF !important;
 }
 
 .-green {
-    background: #90c394;
+    background: #90c394 !important;
 }
 
 .-cyan {
-    background: #90c3c1;
+    background: #90c3c1 !important;
 }
 
 .-purple {
-    background: #9095c3;
+    background: #9095c3 !important;
 }
 
 .-yellow {
-    background: #bfc390;
+    background: #bfc390 !important;
 }
 
 .-red {
-    background: #dd7f7f;
+    background: #dd7f7f !important;
 }
 
 .-pink {
-    background: #c390b8;
+    background: #c390b8 !important;
 }
 
 .-orange {
-    background: #c3a690;
+    background: #c3a690 !important;
 }
 
 .-blue {
-    background: #506175;
+    background: #506175 !important;
 }
 
 .-light-green {
-    background: #69a293;
+    background: #69a293 !important;
 }
 
 .-float-left {

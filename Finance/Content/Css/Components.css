@@ -222,15 +222,17 @@
         .table-pagination > .pagination-item {
             display: inline-block;
             vertical-align: top;
-            width: 35px;
-            height: 25px;
-            border-right: 1px solid #EBEBEB;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 0 10px 0 10px;
+            background: #EBEBEB;
             cursor: pointer;
         }
 
-            .table-pagination > .pagination-item:last-of-type {
+            /*.table-pagination > .pagination-item:last-of-type {
                 border-right: none;
-            }
+            }*/
 
 
     .pie-chart {
