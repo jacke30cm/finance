@@ -13,8 +13,8 @@ namespace Services.ViewModels
         public string ContestType { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string StartDate { get; set; }
-        public string EndDate { get; set; }
+        public string ContestLength { get; set; }
+        public int Participants { get; set; }
         public int CashLimit { get; set; }
         
         public bool VisiblePortfolios { get; set; }
@@ -27,7 +27,7 @@ namespace Services.ViewModels
     public class BasicContestViewModel
     {
         public string Name { get; set; }
-        public DateTime EndTime { get; set; }
+        public DateTime? EndTime { get; set; }
         public Image Image { get; set; }
 
         // maybe more stuff later

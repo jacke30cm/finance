@@ -1,7 +1,7 @@
 ﻿(function ($) {
     $(window).load(function () {
 
-        
+
 
         $('.horizontal-scroll').mCustomScrollbar({
             axis: "x",
@@ -20,13 +20,13 @@
                 //    $('.right-ghost').animate({ opacity: 0.0 }, 1000); 
 
                 //},
-                onTotalScrollBack: function() {
+                onTotalScrollBack: function () {
 
-                    $('.market-navigator').stop().animate({ opacity: '1.0' }, 500); 
+                    $('.market-navigator').stop().animate({ opacity: '1.0' }, 500);
 
                 },
-                onScrollStart: function() {
-                    
+                onScrollStart: function () {
+
                     $('.market-navigator').stop().animate({ opacity: '0.0' }, 500);
                     //$('.right-ghost').animate({ opacity: 1.0 }, 200);
                 }
@@ -54,15 +54,15 @@
 $(document).ready(function () {
 
     //Moment language must be set
-    moment.locale('sv'); 
+    moment.locale('sv');
 
     //Input- focus- actions
 
-    $('input[type="text"]').on('keyup', function(e) {
+    $('input[type="text"]').on('keyup', function (e) {
 
         if (e.keyCode == 27) {
 
-            $(this).val(''); 
+            $(this).val('');
 
         }
 
@@ -80,8 +80,8 @@ $(document).ready(function () {
         minimum_width: false,
         same_width: true
     });
-    
-        // Bring user-options
+
+    // Bring user-options
 
     $(this).on('click', '.user-panel', function () {
 
@@ -112,13 +112,11 @@ $(document).ready(function () {
 
     });
 
-    
+
     // User being able to sign out
+    $(this).on('click', '#sign-out', function (e) {
 
-
-    $(this).on('click', '#sign-out', function(e) {
-
-        e.preventDefault(); 
+        e.preventDefault();
 
         //Ajax sign-in-call
         $.ajax({
@@ -126,7 +124,7 @@ $(document).ready(function () {
             type: 'POST',
             success: function () {
 
-                window.location = '/Home/'; 
+                window.location = '/Home/';
             },
             error: function (jqXHR, exception) {
                 alert('Error passing data to server.');
@@ -135,6 +133,44 @@ $(document).ready(function () {
         });
 
 
+
+    });
+
+
+    // Drop-down-listeners
+    $(document).on('focus', '.input-wrap input', function () {
+
+        $(this).siblings('.drop-down').css({
+
+            'display': 'initial',
+
+        }).stop().animate({opacity: 1.0}, 500, 'easeOutQuint');
+
+    });
+
+
+    $(document).on('focusout', '.input-wrap input', function () {
+
+        $(this).siblings('.drop-down').stop().animate({ opacity: 0.0 }, 500, 'easeOutQuint', function() {
+
+            $(this).css('display', 'none'); 
+
+        });
+
+    });
+
+    //Disable real input and force user to choose from dropdown alternatives
+    $(document).on('keydown', '.input-wrap .no-typing', function (e) {
+
+        e.preventDefault();
+        return false; 
+
+    });
+
+    $(document).on('click', '.input-wrap .drop-down .item', function (e) {
+
+        var value = $(this).find('p').text();
+        $(this).parent().siblings('input').val(value); 
 
     });
 
