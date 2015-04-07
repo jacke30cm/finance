@@ -102,15 +102,15 @@
     <EmbeddedResource Include="Migrations\201504061945357_FreshUpdate.resx">
       <DependentUpon>201504061945357_FreshUpdate.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< .mine
+
     <EmbeddedResource Include="Migrations\201504062044064_last.resx">
       <DependentUpon>201504062044064_last.cs</DependentUpon>
     </EmbeddedResource>
-=======
+
     <EmbeddedResource Include="Migrations\201504062226137_ContestUpdates.resx">
       <DependentUpon>201504062226137_ContestUpdates.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> .theirs
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

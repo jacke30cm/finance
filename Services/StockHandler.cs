@@ -56,6 +56,10 @@ namespace Services
            var Share = new Share();
            var ShareHistory = new ShareHistory();
            tempStr = fileList.Split(',', '\n');
+           var uow = new DataWorker();
+           var coun = new Country() { Name = "Sverige" };
+           uow.CountryRepository.Add(coun);
+           uow.Save();
 
            for (int i = 0; i < tempStr.Length; i++)
            {
@@ -145,6 +149,7 @@ namespace Services
                        }
 
                        
+
                    }
                    else if (counter == 7)
                    {
@@ -194,11 +199,9 @@ namespace Services
                }
                if (counter == 9)
                {
-
+                   
                    Share.Market = "Large Cap";
                    Share.Description = "Bra och stabil aktie";
-                   var country = new Country() {Id = 1};
-                   Share.Country = country;
                    ShareHistory.TimeStamp = DateTime.Now;
                    AddStockToDatabase(Share, ShareHistory);
 
@@ -218,7 +221,8 @@ namespace Services
        {
 
            var uow = new DataWorker();
-           
+
+           share.Country = uow.CountryRepository.GetSingle(x => x.Name.Equals("Sverige"));
            uow.ShareRepository.Add(share);
            uow.Save();
 
