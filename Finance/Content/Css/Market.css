@@ -229,8 +229,9 @@
 
 #market-share-about  .block-m {
     margin-left: -5px;
+    margin-right: 10px;
 }
 
 #market-share-about  .block-m:last-of-type {
-    margin-left: 1px;
+    margin-right: 0px;
 }

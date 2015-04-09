@@ -37,6 +37,15 @@ namespace Finance.Controllers
             return PartialView("~/Views/Master/Control-Share-Action.cshtml");
         }
 
+
+
+        [Authorize]
+        public ActionResult RightControl()
+        {
+            return PartialView("~/Views/Master/Control-Right.cshtml"); 
+
+        }
+
         [HttpPost]
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult CreateContest(CreateContestPostModel model)
