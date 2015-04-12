@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Finance.Models
 {
@@ -59,6 +60,7 @@ namespace Finance.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string City { get; set; }
+        [Remote("CheckIfEmailExists", "Account", HttpMethod = "POST", ErrorMessage = "Denna epost är redan registrerad")]
         public string Email { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
@@ -79,7 +81,7 @@ namespace Finance.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }

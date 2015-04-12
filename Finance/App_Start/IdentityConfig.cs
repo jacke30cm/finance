@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -20,7 +22,41 @@ namespace Finance
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
+            var mailMessage = new MailMessage
+            {
+                IsBodyHtml = true
+            };
+
+            //Subject
+            mailMessage.Subject = message.Subject;
+            mailMessage.Body = message.Body;
+
+            try
+            {
+
+                // Use this for localhost
+                var smtp = new SmtpClient();
+
+                // Use this for azure. This will still work in localhost mode but we don't want gmail to block us as a spammer
+                #region SMTP for Azure
+                //var smtp = new SmtpClient("smtp.gmail.com")
+                //{
+                //    UseDefaultCredentials = false,
+                //    Port = 587,
+                //    DeliveryMethod = SmtpDeliveryMethod.Network,
+                //    Credentials = new NetworkCredential("sendservice@wiccon.se", "0f686d17c958880709a49303af662e6b"),
+                //    EnableSsl = true
+                //};
+                #endregion
+
+                //Send to the member's email address
+                mailMessage.To.Add(message.Destination);
+                smtp.Send(mailMessage);
+            }
+            catch (Exception ex)
+            {
+
+            }
             return Task.FromResult(0);
         }
     }
