@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -12,23 +13,40 @@ using Data.Entities;
 namespace Services
 {
    public class StockHandler
-    {
+   {
 
-
-
-
+    
        
-       public static string GetStockQuotes(string url)
+       public string GetStockQuotes(string url)
        {
 
-           HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
-           HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+           string results = "";
 
-           StreamReader sr = new StreamReader(resp.GetResponseStream());
-           string results = sr.ReadToEnd();
-           sr.Close();
+           try
+           {
+
+               HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+               HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+
+               StreamReader sr = new StreamReader(resp.GetResponseStream());
+               results = sr.ReadToEnd();
+               sr.Close();
+
+               
+           }
+           catch (WebException e)
+           {
+               if (e.Status == WebExceptionStatus.ProtocolError)
+               {
+                  
+                   RequestStockQuotes();
+                   
+               }
+           }
+
 
            return results;
+           
        }
 
        public void PopulateStockQuotes()
@@ -94,12 +112,12 @@ namespace Services
                        {
                            var stockwithcomma = tempStr[i].Replace(".", ",");
                            var newcomma = stockwithcomma.Remove(stockwithcomma.Length - 2).Remove(0,1);
-                           
-                          ShareHistory.ChangePercent = Convert.ToDecimal(newcomma);
+
+                           ShareHistory.ChangePercent = Convert.ToDouble(newcomma);
                        }
                        else
                        {
-                           ShareHistory.ChangePercent = Convert.ToDecimal(tempStr[i]);
+                           ShareHistory.ChangePercent = Convert.ToDouble(tempStr[i]);
                        }
                        
                    }
@@ -109,11 +127,11 @@ namespace Services
                        if (tempStr[i].Contains("."))
                        {
                            var stockwithcomma = tempStr[i].Replace(".", ",");
-                           ShareHistory.ChangeCash = Convert.ToDecimal(stockwithcomma);
+                           ShareHistory.ChangeCash = Convert.ToDouble(stockwithcomma);
                        }
                        else
                        {
-                           ShareHistory.ChangeCash = Convert.ToDecimal(tempStr[i]);
+                           ShareHistory.ChangeCash = Convert.ToDouble(tempStr[i]);
                        }
                        
                    }
@@ -123,11 +141,11 @@ namespace Services
                        if (tempStr[i].Contains("."))
                        {
                            var stockwithcomma = tempStr[i].Replace(".", ",");
-                           ShareHistory.Bid = Convert.ToDecimal(stockwithcomma);
+                           ShareHistory.Bid = Convert.ToDouble(stockwithcomma);
                        }
                        else
                        {
-                           ShareHistory.Bid = Convert.ToDecimal(tempStr[i]);
+                           ShareHistory.Bid = Convert.ToDouble(tempStr[i]);
                        }
                        
                    }
@@ -137,7 +155,7 @@ namespace Services
                        if (tempStr[i].Contains("."))
                        {
                            var stockwithcomma = tempStr[i].Replace(".", ",");
-                           ShareHistory.Ask = Convert.ToDecimal(stockwithcomma);
+                           ShareHistory.Ask = Convert.ToDouble(stockwithcomma);
                        }
                        else if (tempStr[i].Equals("N/A"))
                        {
@@ -145,7 +163,7 @@ namespace Services
                        }
                        else
                        {
-                           ShareHistory.Ask = Convert.ToDecimal(tempStr[i]);
+                           ShareHistory.Ask = Convert.ToDouble(tempStr[i]);
                        }
 
                        
@@ -156,11 +174,11 @@ namespace Services
                        if (tempStr[i].Contains("."))
                        {
                            var stockwithcomma = tempStr[i].Replace(".", ",");
-                           ShareHistory.Latest = Convert.ToDecimal(stockwithcomma);
+                           ShareHistory.Latest = Convert.ToDouble(stockwithcomma);
                        }
                        else
                        {
-                           ShareHistory.Latest = Convert.ToDecimal(tempStr[i]);
+                           ShareHistory.Latest = Convert.ToDouble(tempStr[i]);
                        }
                        
                    }
@@ -170,11 +188,11 @@ namespace Services
                        if (tempStr[i].Contains("."))
                        {
                            var stockwithcomma = tempStr[i].Replace(".", ",");
-                           ShareHistory.Highest = Convert.ToDecimal(stockwithcomma);
+                           ShareHistory.Highest = Convert.ToDouble(stockwithcomma);
                        }
                        else
                        {
-                           ShareHistory.Highest = Convert.ToDecimal(tempStr[i]);
+                           ShareHistory.Highest = Convert.ToDouble(tempStr[i]);
                        }
 
                        
@@ -185,11 +203,11 @@ namespace Services
                        if (tempStr[i].Contains("."))
                        {
                            var stockwithcomma = tempStr[i].Replace(".", ",");
-                           ShareHistory.Lowest = Convert.ToDecimal(stockwithcomma);
+                           ShareHistory.Lowest = Convert.ToDouble(stockwithcomma);
                        }
                        else
                        {
-                           ShareHistory.Lowest = Convert.ToDecimal(tempStr[i]);
+                           ShareHistory.Lowest = Convert.ToDouble(tempStr[i]);
                        }
 
                       
@@ -213,6 +231,129 @@ namespace Services
                }
 
            }
+
+
+       }
+
+       public void RequestStockQuotes()
+       {
+
+           string[] lines = File.ReadAllLines(@"C:\StockTickersSverige.txt");
+
+
+           string builder = "";
+
+               //lines.Aggregate("", (current, line) => current + (line + "+"));
+
+           for (int i = 0; i < lines.Length; i++)
+           {
+
+               if (i < lines.Length - 1)
+               {
+
+                   builder += lines[i] + "+";
+
+               }
+               else
+               {
+                   builder += lines[i];
+               }
+               
+
+           }
+
+           var b = "sd";
+            //StockSymbols
+            //s = ticker, p2 = changeinpercent, c1 = changeincash, b = bid, a = ask, l1 = lasttrade, h = dayshighest, g=dayslowest 
+
+           string fileList = GetStockQuotes("http://finance.yahoo.com/d/quotes.csv?s=" + builder + "&f=sp2c1bal1hg");
+           var share = new Share();
+           var shareHistory = new ShareHistory(){TimeStamp = DateTime.Now};
+           string[] tempStr = fileList.Split(',', '\n');
+          
+           int counter = 0;
+
+           foreach (string t in tempStr)
+           {
+               if (!string.IsNullOrWhiteSpace(t))
+               {
+                   if (counter == 0)
+                   {
+
+                       share.Ticker = t.Replace("\"", "");
+                       
+
+                   }
+                   else if (counter == 1)
+                   {
+                       var temp = t.Remove(t.Length - 2).Remove(0, 1).Replace(".", ",");
+                       shareHistory.ChangePercent = Convert.ToDouble(temp);
+
+                   }
+                   else if (counter == 2)
+                   {
+                       var temp = t.Replace(".", ",");
+                       shareHistory.ChangeCash = Convert.ToDouble(temp);
+                   }
+                   else if (counter == 3)
+                   {
+                       var temp = t.Replace(".", ",");
+                       shareHistory.Bid = Convert.ToDouble(temp);
+                       
+                   }
+                   else if (counter == 4)
+                   {
+                       var temp = t.Replace(".", ",");
+                       shareHistory.Ask = Convert.ToDouble(temp);
+                       
+                   }
+                   else if (counter == 5)
+                   {
+                       var temp = t.Replace(".", ",");
+                       shareHistory.Latest = Convert.ToDouble(temp);
+                       
+                   }
+                   else if (counter == 6)
+                   {
+                       var temp = t.Replace(".", ",");
+                       shareHistory.Highest = Convert.ToDouble(temp);
+
+                   }
+                   else if (counter == 7)
+                   {
+                       var temp = t.Replace(".", ",");
+                       shareHistory.Lowest = Convert.ToDouble(temp);
+                       
+                   }
+                
+                   
+               }
+               if (counter == 7)
+               {
+               
+                   InsertNewStockHistory(share, shareHistory);
+
+                   counter = 0;
+               }
+               else
+               {
+                   counter++;
+               }
+           }
+           
+       
+       }
+
+       public void InsertNewStockHistory(Share share, ShareHistory history)
+       {
+
+           var uow = new DataWorker();
+
+           history.Share = uow.ShareRepository.GetSingle(x => x.Ticker.Equals(share.Ticker));
+           
+           uow.ShareHistoryRepository.Add(history);
+
+           uow.Save();
 
 
        }

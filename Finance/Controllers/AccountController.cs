@@ -5,6 +5,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
+using Data;
 using Data.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -145,7 +147,16 @@ namespace Finance.Controllers
 
             if (result.Succeeded)
             {
-                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                string callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code },
+                    Request.Url.Scheme);
+
+                UserManager.SendEmail(user.Id, "Välkommen som medlem!",
+                        "Bekräfta ditt konto genom att klicka <a href=\"" + callbackUrl + "\">här</a>");
+
+
                 return Json("Success", JsonRequestBehavior.AllowGet);
 
             }
@@ -162,8 +173,9 @@ namespace Finance.Controllers
             {
                 return View("Error");
             }
-            var result = await UserManager.ConfirmEmailAsync(userId, code);
-            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+            await UserManager.ConfirmEmailAsync(userId, code);
+            //return View(result.Succeeded ? "ConfirmEmail" : "Error");
+            return RedirectToAction("Index", "Signup", new { returnUrl = "/"});
         }
 
         //
@@ -398,6 +410,22 @@ namespace Finance.Controllers
             }
 
             base.Dispose(disposing);
+        }
+        public JsonResult CheckIfEmailExists(string Email)
+        {
+
+            var uow = new DataWorker();
+
+
+            if (uow.UserRepository.GetSingle(x => x.Email.Equals(Email)) == null)
+            {
+
+                return Json(false);
+
+            }
+
+            return Json(true);
+
         }
 
         #region Helpers
