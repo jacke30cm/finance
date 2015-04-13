@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Data;
 using Microsoft.AspNet.Identity;
 using Services.ViewModels;
 
@@ -72,9 +73,12 @@ namespace Finance.Controllers
         [AllowAnonymous]
         public JsonResult EmailAvailability(string email)
         {
-            var json = ""; 
-            //Json-code, returnera antingen true eller false
+            var json = "";
+            var uow = new DataWorker();
 
+
+            json = uow.UserRepository.GetSingle(x => x.Email.Equals(email)) == null ? "false" : "true";
+            
             return Json(json, JsonRequestBehavior.AllowGet);
         }
 
