@@ -60,7 +60,6 @@ namespace Finance.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string City { get; set; }
-        [Remote("CheckIfEmailExists", "Account", HttpMethod = "POST", ErrorMessage = "Denna epost är redan registrerad")]
         public string Email { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
