@@ -24,7 +24,7 @@ namespace Services
     public static class GfxHelper
     {
 
-        public static string UpOrDown(decimal value)
+        public static string UpOrDown(double value)
         {
             if (value == 0)
             {

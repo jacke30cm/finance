@@ -13,6 +13,11 @@ namespace Services
     public class Get : ServiceBase
     {
 
+        public bool EmailAvailability(string email)
+        {
+           return uow.UserRepository.GetSingle(x => x.Email.Equals(email)) == null;
+        }
+
         public BasicContestViewModel GetBasicContestData(long id)
         {
             var contest = uow.ContestRepository.GetSingle(x => x.Id == id);

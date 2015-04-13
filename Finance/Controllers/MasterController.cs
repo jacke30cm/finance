@@ -77,18 +77,12 @@ namespace Finance.Controllers
 
         //HelperCalls
 
-        [HttpPost]
-        [AcceptVerbs(HttpVerbs.Post)]
         [AllowAnonymous]
+        [HttpGet]
+        [AcceptVerbs(HttpVerbs.Get)]
         public JsonResult EmailAvailability(string email)
         {
-            var json = "";
-            var uow = new DataWorker();
-
-
-            json = uow.UserRepository.GetSingle(x => x.Email.Equals(email)) == null ? "false" : "true";
-            
-            return Json(json, JsonRequestBehavior.AllowGet);
+            return Json(GetService.EmailAvailability(email).ToString(), JsonRequestBehavior.AllowGet);
         }
 
 

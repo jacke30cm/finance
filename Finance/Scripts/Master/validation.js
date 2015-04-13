@@ -77,34 +77,33 @@
         };
 
         function isAvailableEmail($element) {
-
             var result = false;
+            var email = $element.val(); 
 
             $.ajax({
                 url: '/Master/EmailAvailability',
                 type: 'GET',
-                processData: false,
-                async: false,
-                data: $element.val(),
+                contentType: 'application/json',
+                data: { email: email },
+                async: true,
                 success: function (data) {
 
+                    if (data == 'False') {
 
-                    if (data == 'true') {
+                        errorStyle($element, 'Emailadressen är upptagen');
+                        bringToolTip($element);
+                        return false;
+                        
 
-                        result = true;
-
-                    } else {
-
-                        result = false;
-
-                    }
+                    } 
+                        
+                    return true;
+                    
                 },
                 error: function (jqXHR, exception) {
                     alert('Ajax-request failed, or server caused internal error.');
                 }
             });
-
-            return result;
         };
 
         function isNumber($element) {
