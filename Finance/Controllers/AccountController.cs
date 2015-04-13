@@ -411,22 +411,7 @@ namespace Finance.Controllers
 
             base.Dispose(disposing);
         }
-        public JsonResult CheckIfEmailExists(string Email)
-        {
-
-            var uow = new DataWorker();
-
-
-            if (uow.UserRepository.GetSingle(x => x.Email.Equals(Email)) == null)
-            {
-
-                return Json(false);
-
-            }
-
-            return Json(true);
-
-        }
+     
 
         #region Helpers
         // Used for XSRF protection when adding external logins
