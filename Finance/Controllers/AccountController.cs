@@ -71,13 +71,19 @@ namespace Finance.Controllers
         public async Task<JsonResult> Login(LoginViewModel model, string returnUrl)
         {
 
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
+
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: true);
+            var usr = UserManager.FindByEmail(model.Email).Id;
+            
             switch (result)
             {
+                    
                 case SignInStatus.Success:
                     return Json(returnUrl, JsonRequestBehavior.AllowGet);
                 case SignInStatus.LockedOut:
-                    return Json("LockedOut", JsonRequestBehavior.AllowGet);
+                    UserManager.SendEmail(usr, "Ditt konto har blivit låst", "Du/någon har skrivit fel lösenord 5 eller fler gånger och nu är ditt konto låst fram till " + UserManager.GetLockoutEndDate(usr).ToString("f") + "");
+                   return Json("/", JsonRequestBehavior.AllowGet);
                 case SignInStatus.Failure:
                     return Json("Failure", JsonRequestBehavior.AllowGet);
                 default:

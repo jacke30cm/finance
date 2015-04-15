@@ -30,7 +30,7 @@ namespace Finance.Controllers
         {
 
             var serv = new StockHandler();
-            //serv.RequestStockQuotes();
+            serv.RequestStockQuotes();
             //serv.UpdateDatbase();
             //serv.AddUSAStock();
 
