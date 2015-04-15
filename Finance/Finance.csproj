@@ -306,8 +306,8 @@
     <Content Include="Views\Contest\Market\Market-Search.cshtml" />
     <Content Include="Views\Home\MyContests\SingleContest.cshtml" />
     <Content Include="Views\Home\MyContests\AllContests.cshtml" />
-    <Content Include="Views\Master\Control-Right.cshtml" />
     <Content Include="Views\Contest\Announcements.cshtml" />
+    <Content Include="Views\Master\Control-Share-Filter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

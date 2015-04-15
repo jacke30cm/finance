@@ -41,9 +41,9 @@ namespace Finance.Controllers
 
 
         [Authorize]
-        public ActionResult RightControl()
+        public ActionResult ShareFilter()
         {
-            return PartialView("~/Views/Master/Control-Right.cshtml"); 
+            return PartialView("~/Views/Master/Control-Share-Filter.cshtml"); 
 
         }
 

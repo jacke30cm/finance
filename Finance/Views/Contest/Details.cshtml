@@ -100,12 +100,20 @@
 
             <ul class="details-members-list">
 
-                @for (var x = 0; x < 50; x++)
+                @for (var x = 0; x < 5; x++)
                 {
                     <li>
                         <div class="block-m -white">
                             <div class="image-wrap">
-                                <img src="~/Content/Images/Users/sherlock.jpg" />
+                                @if (x == 3)
+                                {
+                                    <img src="~/Content/Images/Users/jake.jpg" />
+                                }
+                                else
+                                {
+                                    <img src="~/Content/Images/Users/sherlock.jpg" />
+                                }
+                                
                             </div>
                             <div class="blob">
                                 

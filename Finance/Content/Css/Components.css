@@ -200,6 +200,7 @@
             display: table-cell;
             border-bottom: 1px solid #EBEBEB;
             text-align: right;
+            overflow: hidden; 
         }
 
             .table-col-4 tbody tr td:first-of-type {

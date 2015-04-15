@@ -199,7 +199,17 @@ $(document).ready(function () {
             var distance = i * rowHeight;
 
             if ($(this).attr('row-location') == $destination) {
+
                 $section.closest('.anchor-section').find('.sub-section').stop().animate({ top: '-' + distance + 'px' }, 500, 'easeOutQuint');
+
+                if ($destination == 'market-search') {
+
+                    showShareFilter(); 
+                } else {
+
+                    hideShareFilter(); 
+                }
+
             }
 
             i++;
@@ -207,5 +217,17 @@ $(document).ready(function () {
 
     }
 
+    // Bring search-area
+    function showShareFilter() {
 
+        $('#search-control').animate({ bottom: '0%' }, 500, 'easeOutQuint');
+
+    }
+
+    // Hide search-area
+    function hideShareFilter() {
+
+        $('#search-control').animate({ bottom: '-50%' }, 500, 'easeOutQuint');
+
+    }
 });

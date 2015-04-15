@@ -206,21 +206,27 @@
 
 
    
-    $(this).on('click', '.market-search-share-list li', function () {
+    //$(this).on('click', '.market-search-share-list li', function () {
 
-        $('.navigation-item').removeClass('active');
-        $('.market-search-share-list li').removeClass('active');
-        var rowHeight = $('.sub-section').height() + 72; // Big resolution height
+    //    $('.navigation-item').removeClass('active');
+    //    $('.market-search-share-list li').removeClass('active');
+    //    var rowHeight = $('.sub-section').height() + 72; // Big resolution height
 
-        $(this).addClass('active');
-        $('.navigation-item:last-of-type').addClass('active');
+    //    $(this).addClass('active');
+    //    $('.navigation-item:last-of-type').addClass('active');
 
-        getSectionView($(this), 'market-share', rowHeight);
-
-
-    });
+    //    getSectionView($(this), 'market-share', rowHeight);
 
 
-    
+    //});
+
+
+    //$(this).on('click', '.market-search-share-list li', function () {
+
+    //    showUp(); 
+
+
+    //});
+
 
 });
