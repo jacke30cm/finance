@@ -77,7 +77,7 @@
         };
 
         function isAvailableEmail($element) {
-            var result = false;
+
             var email = $element.val(); 
 
             $.ajax({

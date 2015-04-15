@@ -33,57 +33,11 @@ p, li, a, h1, h2, h3, h4 {
 
 p {
     font-size: 11px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: 400;
     text-transform: none;
     line-height: 2;
 }
-
-
-
-.-capitalize {
-    text-transform: uppercase;
-    font-size: 9px;
-}
-
-.-discrete {
-    color: #CCC;
-}
-
-.-jumbo {
-    font-size: 28px;
-}
-
-.-medium {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 36px;
-}
-
-.-mini {
-    font-size: 9px;
-
-}
-
-.-mini-compressed {
-    font-size: 11px;
-    letter-spacing: 0;
-
-}
-
-.-bold {
-    font-weight: 700;
-}
-
-.-cursor {
-    cursor: pointer;
-}
-
-
-
-
-
-
 
 a, li {
     font-size: 10px;
@@ -113,6 +67,60 @@ a, li {
     a:active {
         color: initial;
     }
+
+.texts {
+    letter-spacing: 0; 
+}
+
+.-capitalize {
+    text-transform: uppercase;
+    font-size: 9px;
+}
+
+.-decapitalize {
+    text-transform: none !important; 
+}
+
+.-discrete {
+    color: #CCC;
+}
+
+.-jumbo {
+    font-size: 28px;
+}
+
+.-medium {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 36px;
+}
+
+.-mini {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.-mini-compressed {
+    font-size: 11px;
+    letter-spacing: 0px !important;
+
+}
+
+.-bold {
+    font-weight: 700;
+}
+
+.-cursor {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
 
 h1 {
     font-size: 22px;

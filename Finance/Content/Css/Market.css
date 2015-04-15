@@ -1,40 +1,4 @@
 ﻿
-.anchor-section .market-navigator {
-    position: absolute;
-    top: 47px;
-    left: -20px;
-    width: 80px;
-    height: 240px;
-    background: #FFF;
-    transform: translate(-0%, -0%);
-    z-index: 10;
-    border: 1px solid #EBEBEB;
-}
-
-    .anchor-section .market-navigator .navigation-item {
-        width: 50px;
-        height: 50px;
-        padding: 15px;
-        border-bottom: 1px solid #EBEBEB;
-        text-align: center;
-        transition: 0.2s ease-in-out;
-        cursor: pointer;
-    }
-
-        .anchor-section .market-navigator .navigation-item:hover {
-            background: #FAFAFA;
-        }
-
-        .anchor-section .market-navigator .navigation-item i {
-            margin-top: 15px;
-            font-size: 24px;
-            color: #DDD;
-        }
-
-        .anchor-section .market-navigator .navigation-item:last-of-type {
-            border: none;
-        }
-
 .row > .col-lg {
     visibility: hidden;
     opacity: 0.0;
@@ -111,6 +75,14 @@
     padding: 25px;
 }
 
+.search-field {
+
+    width: 450px;
+    height: 30px;
+    padding: 25px;
+    background: #FFF;
+}
+
 .market-search-share-list {
     position: relative;
     width: 600px;
@@ -129,10 +101,10 @@
         width: 300px;
         height: 50px;
         margin-bottom: 20px;
-        -webkit-transition: all 0.2s ease-in-out;
+        /*-webkit-transition: all 0.2s ease-in-out;
         -moz-transition: all 0.2s ease-in-out;
         -o-transition: all 0.2s ease-in-out;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;*/
     }
 
         .market-search-share-list .share:hover {
@@ -235,3 +207,92 @@
 #market-share-about  .block-m:last-of-type {
     margin-right: 0px;
 }
+
+.world-map {
+    position: absolute;
+    width: 615px;
+    height: 615px;
+    z-index: 0;
+}
+
+.point {
+
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #90c3c1;
+    transition: all .3s ease;
+    z-index: 1;
+}
+
+.point:hover {
+
+    background: #9cd5d3;
+}
+
+.point > .validation-tool-tip {
+
+    box-shadow: 0px -0px 15px #b0b0b0;
+    width: 50px !important;
+    min-height: 70px;
+    top: 50px;
+    text-align: left;
+    
+    
+}
+
+.point > .validation-tool-tip .arrow {
+
+    top: -2px;
+    
+}
+
+.point > .validation-tool-tip .canvas {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    
+}
+
+.point > .validation-tool-tip .block {
+
+    display: inline-block;
+    vertical-align: top;
+    float: left; 
+    width: 90px;
+    height: 70px;
+    z-index: 2;
+}
+
+.point > .validation-tool-tip .block:first-of-type {
+
+    width: 89px;
+    border-right: 1px solid #ebebeb !important; 
+
+
+}
+
+.point > .validation-tool-tip .block h1 {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+
+#sweden {
+    position: absolute;
+    right: 110px;
+    top: 100px;
+}
+
+#usa {
+    position: absolute;
+    left: 100px;
+    top: 200px;
+}
+
+
