@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -20,8 +21,15 @@ namespace Finance
 {
     public class EmailService : IIdentityMessageService
     {
+
+        
+
         public Task SendAsync(IdentityMessage message)
         {
+
+            var uow = new DataWorker();
+            var usr = uow.UserRepository.GetSingle(x => x.Email.Equals(message.Destination));
+           
             var mailMessage = new MailMessage
             {
                 IsBodyHtml = true
@@ -29,8 +37,8 @@ namespace Finance
 
             //Subject
             mailMessage.Subject = message.Subject;
-            mailMessage.Body = message.Body;
-
+            mailMessage.Body = ReturnMailBody(usr.FirstName, usr.LastName, message.Body);
+            
             try
             {
 
@@ -59,8 +67,28 @@ namespace Finance
             }
             return Task.FromResult(0);
         }
+
+        public string ReturnMailBody(string firstname, string lastname, string description)
+        {
+            
+
+            string body = string.Empty;
+            using (StreamReader reader = new StreamReader(Path.Combine(HttpRuntime.AppDomainAppPath,"Content/EmailTemplate.html")))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("{FirstName}", firstname);
+            body = body.Replace("{LastName}", lastname);
+            body = body.Replace("{Description}", description);
+            body = body.Replace("{Url}", Path.Combine(HttpRuntime.AppDomainAppPath, "Content/Images/fiskarn.bmp"));
+
+            return body;
+        }
+
     }
 
+
+  
     public class SmsService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)

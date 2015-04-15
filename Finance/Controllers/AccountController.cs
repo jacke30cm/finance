@@ -71,13 +71,19 @@ namespace Finance.Controllers
         public async Task<JsonResult> Login(LoginViewModel model, string returnUrl)
         {
 
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
+
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: true);
+            var usr = UserManager.FindByEmail(model.Email).Id;
+            
             switch (result)
             {
+                    
                 case SignInStatus.Success:
                     return Json(returnUrl, JsonRequestBehavior.AllowGet);
                 case SignInStatus.LockedOut:
-                    return Json("LockedOut", JsonRequestBehavior.AllowGet);
+                    UserManager.SendEmail(usr, "Ditt konto har blivit låst", "Du/någon har skrivit fel lösenord 5 eller fler gånger och nu är ditt konto låst fram till " + UserManager.GetLockoutEndDate(usr).ToString("f") + "");
+                   return Json("/", JsonRequestBehavior.AllowGet);
                 case SignInStatus.Failure:
                     return Json("Failure", JsonRequestBehavior.AllowGet);
                 default:
@@ -204,10 +210,10 @@ namespace Finance.Controllers
 
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, "Återställ lösenord", "Återställ ditt lösenord genom att klicka <a href=\"" + callbackUrl + "\">här</a>");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form

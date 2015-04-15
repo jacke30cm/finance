@@ -204,9 +204,11 @@
     <Content Include="Content\Css\font-awesome.css" />
     <Content Include="Content\Css\font-awesome.min.css" />
     <Content Include="Content\Css\Validation.css" />
+    <Content Include="Content\EmailTemplate.html" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Images\Contests\oldfashioned.jpg" />
     <Content Include="Content\Images\Contests\wstreet.jpg" />
+    <Content Include="Content\Images\fiskarn.bmp" />
     <Content Include="Content\Images\Gfx\button_close_white.png" />
     <Content Include="Content\Images\Gfx\input-checked-grey.png" />
     <Content Include="Content\Images\Gfx\input-checked.png" />

@@ -32,6 +32,9 @@ namespace Finance.Controllers
             var serv = new StockHandler();
             serv.PopulateStockQuotes();
             serv.UpdateDatbase();
+            serv.RequestStockQuotes();
+            //serv.UpdateDatbase();
+            //serv.AddUSAStock();
 
             LocationHelper.Location = "About"; 
             return View();

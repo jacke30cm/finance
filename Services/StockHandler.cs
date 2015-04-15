@@ -96,6 +96,7 @@ namespace Services
 
 
                        Share.Name = sb.ToString();
+                       
                    }
                    else if (counter == 1)
                    {
@@ -238,7 +239,7 @@ namespace Services
        public void RequestStockQuotes()
        {
 
-           string[] lines = File.ReadAllLines(@"C:\StockTickersSverige.txt");
+           string[] lines = File.ReadAllLines(@"C:\StockTickersUSA.txt");
 
 
            string builder = "";
@@ -404,6 +405,31 @@ namespace Services
 
        }
 
-       
-    }
+       public void AddUSAStock()
+       {
+           var uow = new DataWorker();
+
+           string[] tickers = File.ReadAllLines(@"C:\StockTickersUSA.txt", Encoding.GetEncoding("ISO-8859-15"));
+           string[] names = File.ReadAllLines(@"C:\StockNamesUSA.txt", Encoding.GetEncoding("ISO-8859-15"));
+           string[] cap = File.ReadAllLines(@"C:\StockCapUSA.txt", Encoding.GetEncoding("ISO-8859-15"));
+
+           var share = new Share();
+
+           for (int i = 0; i < tickers.Length; i++)
+           {
+               var tmp = tickers[i];
+
+
+               share.Name = names[i];
+               share.Ticker = tmp;
+               share.Market = cap[i];
+               share.Country = uow.CountryRepository.GetSingle(x => x.Name.Equals("USA"));
+               uow.ShareRepository.Add(share);
+               uow.Save();
+           }
+
+       }
+
+
+   }
 }
