@@ -80,7 +80,7 @@ namespace Finance
             body = body.Replace("{FirstName}", firstname);
             body = body.Replace("{LastName}", lastname);
             body = body.Replace("{Description}", description);
-            body = body.Replace("{Url}", Path.Combine(HttpRuntime.AppDomainAppPath, "Content/Images/fiskarn.bmp"));
+            body = body.Replace("{Url}", Path.Combine(HttpRuntime.AppDomainAppPath, "Content/Images/karsten.jpg"));
 
             return body;
         }

@@ -207,7 +207,6 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Images\Contests\oldfashioned.jpg" />
     <Content Include="Content\Images\Contests\wstreet.jpg" />
-    <Content Include="Content\Images\fiskarn.bmp" />
     <Content Include="Content\Images\Gfx\button_close_white.png" />
     <Content Include="Content\Images\Gfx\input-checked-grey.png" />
     <Content Include="Content\Images\Gfx\input-checked.png" />
@@ -218,6 +217,7 @@
     <Content Include="Content\Images\Gfx\montage26.jpg" />
     <Content Include="Content\Images\Gfx\stock-illu.jpg" />
     <Content Include="Content\Images\Gfx\stock-market-chart.jpg" />
+    <Content Include="Content\Images\karsten.jpg" />
     <Content Include="Content\Images\Users\default_user.png" />
     <Content Include="Content\Images\Users\sherlock.jpg" />
     <Content Include="Content\Images\Users\jake.jpg" />
