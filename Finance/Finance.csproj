@@ -192,6 +192,7 @@
   <ItemGroup>
     <Content Include="Content\Css\About.css" />
     <Content Include="Content\Css\Components.css" />
+    <Content Include="Content\Css\Details.css" />
     <Content Include="Content\Css\Front-Page.css" />
     <Content Include="Content\Css\jquery-labelauty.css" />
     <Content Include="Content\Css\Portfolio.css" />
@@ -213,6 +214,7 @@
     <Content Include="Content\Images\Gfx\input-unchecked.png" />
     <Content Include="Content\Images\Gfx\logo.png" />
     <Content Include="Content\Images\Gfx\magnifyingglass.png" />
+    <Content Include="Content\Images\Gfx\map.png" />
     <Content Include="Content\Images\Gfx\montage27.jpg" />
     <Content Include="Content\Images\Gfx\montage26.jpg" />
     <Content Include="Content\Images\Gfx\stock-illu.jpg" />
@@ -230,6 +232,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="favicon.ico" />
+    <Content Include="Scripts\Contest\announcements.js" />
     <Content Include="Scripts\Contest\market.js" />
     <Content Include="Scripts\Contest\portfolio.js" />
     <Content Include="Scripts\custom.js" />
@@ -303,13 +306,13 @@
     <Content Include="Views\Contest\Market\Market-Search.cshtml" />
     <Content Include="Views\Home\MyContests\SingleContest.cshtml" />
     <Content Include="Views\Home\MyContests\AllContests.cshtml" />
-    <Content Include="Views\Master\Control-Right.cshtml" />
+    <Content Include="Views\Contest\Announcements.cshtml" />
+    <Content Include="Views\Master\Control-Share-Filter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Files\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Contest\Contest\" />
     <Folder Include="Views\Contest\Overview\" />
     <Folder Include="Views\Contest\Portfolio\" />
   </ItemGroup>

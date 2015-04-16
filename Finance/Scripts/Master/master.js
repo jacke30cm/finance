@@ -175,4 +175,59 @@ $(document).ready(function () {
     });
 
 
+
+
+    //Sections in market and details
+    $(this).on('click', '.navigation-item', function () {
+
+        $('.navigation-item').removeClass('active');
+        var destination = $(this).attr('row-location');
+        var rowHeight = $(this).parent().parent().find('.sub-section').height() + 72; // Big resolution height
+
+        $(this).addClass('active');
+
+        getSectionView($(this), destination, rowHeight);
+
+
+    });
+
+    function getSectionView($section, $destination, rowHeight) {
+
+        var i = 0;
+        $section.closest('.anchor-section').find('.sub-section').each(function () {
+
+            var distance = i * rowHeight;
+
+            if ($(this).attr('row-location') == $destination) {
+
+                $section.closest('.anchor-section').find('.sub-section').stop().animate({ top: '-' + distance + 'px' }, 500, 'easeOutQuint');
+
+                if ($destination == 'market-search') {
+
+                    showShareFilter(); 
+                } else {
+
+                    hideShareFilter(); 
+                }
+
+            }
+
+            i++;
+        });
+
+    }
+
+    // Bring search-area
+    function showShareFilter() {
+
+        $('#search-control').animate({ bottom: '0%' }, 500, 'easeOutQuint');
+
+    }
+
+    // Hide search-area
+    function hideShareFilter() {
+
+        $('#search-control').animate({ bottom: '-50%' }, 500, 'easeOutQuint');
+
+    }
 });

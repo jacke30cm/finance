@@ -73,11 +73,46 @@ namespace Services
                 }
 
 
-                return result.OrderBy(x => x.Share.Name, StringComparer.CurrentCulture).Take(100).ToList(); 
+                return result.OrderBy(x => x.Share.Name, StringComparer.CurrentCulture).ToList(); 
 
             }
 
             return null; 
+        }
+
+
+        public DetailedShareViewModel GetDetailedShareData(long id)
+        {
+            var share = uow.ShareRepository.GetSingle(x => x.Id == id);
+            if (share == null) return null;
+
+            // Get 5 latest transactions
+            var transactions =
+                uow.TransactionRepository.Get(x => x.Share.Id == share.Id).OrderByDescending(x => x.TimeStamp).Take(5).ToList();
+
+
+            // Get latest bid & ask
+            var data = uow.ShareHistoryRepository.Get(x => x.Share.Id == share.Id).OrderByDescending(x => x.TimeStamp).SingleOrDefault();
+
+            return new DetailedShareViewModel()
+            {
+                Share = share,
+                LatestData = data,
+                LatestTransactions = transactions
+
+            };
+
+
+        }
+
+        public int CalculateLocalPopularity(long contestId, long shareId)
+        {
+            return 0; 
+        }
+
+        public int CalculcateGeneralPopularity()
+        {
+            return 0; 
         }
 
 

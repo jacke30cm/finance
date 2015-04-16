@@ -69,7 +69,6 @@
 
     .col-full {
         width: 11500px;
-        /*width: auto;*/ 
     }
 
     .row .vertical-scroll {
@@ -201,6 +200,7 @@
             display: table-cell;
             border-bottom: 1px solid #EBEBEB;
             text-align: right;
+            overflow: hidden; 
         }
 
             .table-col-4 tbody tr td:first-of-type {
@@ -230,7 +230,7 @@
             cursor: pointer;
         }
 
-            /*.table-pagination > .pagination-item:last-of-type {
+    /*.table-pagination > .pagination-item:last-of-type {
                 border-right: none;
             }*/
 
@@ -274,7 +274,7 @@
         /*box-shadow: 0px 2px 15px #CCC;*/
         transform: translate(-50%, -0%);
         text-align: center;
-        z-index: 1; 
+        z-index: 1;
     }
 
         .validation-tool-tip > .arrow {
@@ -289,38 +289,70 @@
 
 
 
-        .input-wrap  .drop-down {
+    .input-wrap .drop-down {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        right: calc(-100% - 20px);
+        top: 50%;
+        background: #FFF;
+        box-shadow: 0px 2px 15px #444;
+        transform: translate(-0%, -50%);
+        z-index: 2;
+        display: none;
+        opacity: 0.0;
+    }
 
-            position: absolute;
-            width: 100%;
-            height: auto;
-
-            right: calc(-100% - 20px); 
-            top: 50%;
-            background: #FFF;
-            box-shadow: 0px 2px 15px #444;
-            transform: translate(-0%, -50%); 
-            z-index: 2;
-            display: none;
-            opacity: 0.0; 
-
-        }
-
-        .input-wrap  .drop-down .item {
-
+        .input-wrap .drop-down .item {
             min-height: 15px;
             padding: 10px;
             width: calc(100% - 20px);
             border-bottom: 1px solid #EBEBEB;
             transition: all 0.2s ease-in-out;
             cursor: pointer;
-
         }
 
-        .input-wrap  .drop-down .item:hover {
+            .input-wrap .drop-down .item:hover {
+                background: #FAFAFA;
+            }
 
-            background: #FAFAFA; 
+    .anchor-section .navigator {
+        position: absolute;
+        top: 68px;
+        left: -20px;
+        width: 80px;
+        height: 240px;
+        background: #FFF;
+        transform: translate(-0%, -0%);
+        z-index: 10;
+        border: 1px solid #EBEBEB;
+    }
+
+        .anchor-section .navigator .navigation-item {
+            width: 50px;
+            height: 50px;
+            padding: 15px;
+            border-bottom: 1px solid #EBEBEB;
+            text-align: center;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
         }
+
+            .anchor-section .navigator .navigation-item:hover {
+                background: #FAFAFA;
+            }
+
+            .anchor-section .navigator .navigation-item i {
+                margin-top: 15px;
+                font-size: 24px;
+                color: #DDD;
+            }
+
+            .anchor-section .navigator .navigation-item:last-of-type {
+                border: none;
+            }
+
+
 }
 
 

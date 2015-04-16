@@ -254,4 +254,20 @@
 
     });
 
+    // Animate action-icon on table
+    $(document).on('mouseenter', '#portfolio .col-lg .block-lg .clean-content table tbody tr td:first-of-type', function() {
+
+        $(this).find('.action').stop().animate({ left: 0 }, 750, 'easeOutQuint');
+        $(this).find('p').stop().animate({ 'margin-left' : '55px' }, 750, 'easeOutQuint');
+
+    });
+
+    $(document).on('mouseleave', '#portfolio .col-lg .block-lg .clean-content table tbody tr td:first-of-type', function () {
+
+        $(this).find('.action').stop().animate({ left: '-56px' }, 750, 'easeOutQuint');
+        $(this).find('p').stop().animate({ 'margin-left': '0px' }, 750, 'easeOutQuint');
+
+    });
+
+
 });

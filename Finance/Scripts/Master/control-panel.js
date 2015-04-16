@@ -37,6 +37,12 @@
         showUp();
     });
 
+    $(this).on('click', '#portfolio .col-lg .block-lg .clean-content table tbody tr td .td-wrap .action', function (e) {
+
+        e.preventDefault();
+        showUp();
+    });
+
     // Click, and button-actions
     $(document).on('click', '.control-panel .button-close', function () {
 

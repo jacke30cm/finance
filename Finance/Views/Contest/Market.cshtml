@@ -6,7 +6,7 @@
 
         </div>
 
-        <div class="col-lg initial-views">
+        <div class="col-lg">
 
             <h1>Dagsvinnare</h1>
             <br />
@@ -87,19 +87,87 @@
         </div>
 
 
-        <div class="col-lg initial-views">
+        <div class="col-lg">
 
             <h1>Världsindex</h1>
             <br />
 
             <div class="block-lg -white">
 
+                <img class="world-map" src="~/Content/Images/Gfx/map.png" />
+
+                <div id="sweden" class="point" data-id="sweden">
+
+                    <div class="validation-tool-tip">
+                        
+
+                        @*<p>OMX Stockholm</p>
+                        <p class="color-green">0.2%</p>
+                        <br/>
+                        <br />
+                        <br />
+                        <br />
+                        <p class="color-green">320</p>
+                        <p class="-mini-compressed">tillgängliga aktier att handla</p>*@
+                        
+                        
+                        <div class="block">
+                            <h1 class="-medium">OMX</h1>
+                        </div>
+                        <div class="block">
+                            <h1 class="color-red -medium">-0.55%</h1>
+                        </div>
+                        <div class="arrow"></div>
+                    </div>
+
+                </div>
+
+                <div id="usa" class="point" data-id="usa">
+                    <div class="validation-tool-tip">
+                        
+                        
+                        @*<p>Nasdaq</p>
+                        <p class="color-red">-0.2%</p>
+                        <br/>
+                        <p>S&P-500</p>
+                        <p class="color-red">-0.15%</p>
+                        <br />
+                        <p>Dow Jones</p>
+                        <p class="color-green">1.5%</p>
+                        <br/>
+                        <br/>
+                        <p class="color-green">100</p>
+                        <p class="-mini-compressed">tillgängliga aktier att handla</p>*@
+                        
+                        <div class="canvas">
+                            <div class="block">
+                                <h1 class="-medium">NASDAQ</h1>
+                            </div>
+                            <div class="block">
+                                <h1 class="-medium color-red">-0.12%</h1>
+                            </div>
+                            <div class="block">
+                                <h1 class="-medium">SP-500</h1>
+                            </div>
+                            <div class="block">
+                                <h1 class="-medium color-red">-0.12%</h1>
+                            </div>
+                        </div>
+
+                        <div class="arrow"></div>
+                    
+                    </div>
+
+                </div>
+
+
+
             </div>
 
 
         </div>
 
-        <div class="col-lg initial-views">
+        <div class="col-lg popular-shares">
 
             <h1>Populära aktier</h1>
             <br />
@@ -137,21 +205,23 @@
         </div>
 
         <div class="col-full">
-            <h1>Hitta värdepapper</h1>
-            <div class="input-text-special-wrap">
-                <div class="slicer"></div>
-                <div class="icon"></div>
-                <input type="text" placeholder="Hitta värdepapper" />
-            </div>
+            <h1>Hitta värdepapper</h1><br/>
+            <p>Alla värdepapper</p>
 
             <br />
             <br />
+            
+            @*<div class="search-field">
+                <div class="input-text-special-wrap">
+                    <div class="slicer"></div>
+                    <div class="icon"></div>
+                    <input type="text" placeholder="Hitta värdepapper" />
+                </div>
+            </div>*@
 
             @Html.Action("MarketSearch", "Contest")
 
         </div>
-
-        @*<div class="col-lg"></div>*@
 
     </div>
 </div>

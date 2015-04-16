@@ -81,6 +81,11 @@ namespace Finance
             bundles.Add(new StyleBundle("~/CssBundle/market").Include(
                       "~/Content/Css/Market.css"));
 
+            //Front-page
+            bundles.Add(new StyleBundle("~/CssBundle/details").Include(
+                      "~/Content/Css/Details.css"));
+
+
             //Validation
             bundles.Add(new StyleBundle("~/CssBundle/validation").Include(
                       "~/Content/Css/Validation.css"));

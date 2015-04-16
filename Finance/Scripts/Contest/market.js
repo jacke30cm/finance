@@ -2,7 +2,6 @@
 
 
 
-    
 
     //alert($('.market-search-share-list li').length); 
 
@@ -47,62 +46,49 @@
     // These calls are made to hide col-lg except first one, to make animation fancy,
     // and also to disable the otherwise enabled scroll-functionality, becase there's nothing to scroll
 
-    $('#market .col-lg').not('#market .col-lg:first-of-type, #market .initial-views').css({
-        'visibility': 'hidden',
-        'opacity': '0.0',
-        'left': '-30px',
-        'width': '0'
-    });
+    //$('#market .popular-shares').css({
+    //    'visibility': 'hidden',
+    //    'opacity': '0.0',
+    //    'left': '-30px',
+    //    'width': '0'
+    //});
 
 
     // Animate the columns containing share-data 
-    var activeView;
-    $(this).on('click', '#share-table tbody tr', function () {
+    //var activeView;
+    //$(this).on('click', '.point', function () {
 
-        $('#share-table tbody tr').removeClass('selected');
-        var $columns = $('#market .col-lg').not('#market .col-lg:first-of-type, #market .initial-views');
-        var share = $(this).attr('data-id');
+    //    var $columns = $('.popular-shares');
+    //    var country = $(this).attr('data-id');
 
+    //    if (country == activeView) {
 
-
-        if (share == activeView) {
-
+    //        $columns.animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function () {
 
 
-            $columns.animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function () {
+    //            $columns.css({ 'visibility': 'hidden', 'width': '0' });
+    //            $('#market .popular-shares').css({ 'visibility': 'visible', 'width': '', 'margin-left': '-10px' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
 
 
-                $columns.css({ 'visibility': 'hidden', 'width': '0' });
-                $('#market .initial-views').css({ 'visibility': 'visible', 'width': '', 'margin-left': '-10px' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
+    //        });
+
+    //        activeView = undefined;
 
 
-            });
+    //    } else {
 
-            activeView = undefined;
+    //        $('#market .initial-views').animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function () {
 
+    //            $(this).css('width', '0');
 
-        } else {
-
-            $(this).addClass('selected');
-            $('#market .initial-views').animate({ left: '-30px', opacity: 0.0 }, 300, 'easeOutQuint', function () {
-
-                $(this).css('width', '0');
-
-                $columns.css({ 'visibility': 'visible', 'width': '' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
-                activeView = share;
+    //            $columns.css({ 'visibility': 'visible', 'width': '' }).animate({ left: '0px', opacity: 1.0 }, 300, 'easeOutQuint');
+    //            activeView = country;
 
 
-            });
+    //        });
+    //    }
 
-
-
-        }
-
-
-
-    });
-
-
+    //});
 
 
     var shareDevelopment = new google.visualization.LineChart($('.share-development')[0]);
@@ -217,54 +203,30 @@
     //    colNumber: listColumns
     //});
 
-    
-
-    $(this).on('click', '.navigation-item', function () {
-
-        $('.navigation-item').removeClass('active'); 
-        var destination = $(this).attr('row-location');
-        var rowHeight = $('.sub-section').height() + 72; // Big resolution height
-
-        $(this).addClass('active');
-
-        getShareView(destination, rowHeight); 
 
 
-    });
+   
+    //$(this).on('click', '.market-search-share-list li', function () {
 
-    $(this).on('click', '.market-search-share-list li .data', function () {
+    //    $('.navigation-item').removeClass('active');
+    //    $('.market-search-share-list li').removeClass('active');
+    //    var rowHeight = $('.sub-section').height() + 72; // Big resolution height
 
-        $('.navigation-item').removeClass('active');
-        $('.market-search-share-list li').removeClass('active');
-        var rowHeight = $('.sub-section').height() + 72; // Big resolution height
+    //    $(this).addClass('active');
+    //    $('.navigation-item:last-of-type').addClass('active');
 
-        $(this).parent().addClass('active');
-        $('.navigation-item:last-of-type').addClass('active');
-
-        getShareView('market-share', rowHeight);
-
-
-    });
+    //    getSectionView($(this), 'market-share', rowHeight);
 
 
-    function getShareView($destination, rowHeight) {
-
-        var i = 0;
-        $('.sub-section').each(function () {
-
-            var distance = i * rowHeight;
-
-            if ($(this).attr('row-location') == $destination) {
+    //});
 
 
+    //$(this).on('click', '.market-search-share-list li', function () {
 
-                $('.sub-section').stop().animate({ top: '-' + distance + 'px' }, 500, 'easeOutQuint');
+    //    showUp(); 
 
-            }
 
-            i++;
-        });
+    //});
 
-    }
 
 });
