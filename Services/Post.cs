@@ -44,7 +44,23 @@ namespace Services
             uow.ContestRepository.Add(contest);
             uow.Save();
 
+            SignUpForContest(userId, contest.Id);
+
             return contest.Id; 
+        }
+
+        public void SignUpForContest(string userId, int contestId)
+        {
+            var usr = uow.UserRepository.GetByID(userId);
+            var contest = uow.ContestRepository.GetSingle(x => x.Id == contestId);
+            var portfolio = new Portfolio() {Name = contest.Name, Balance = contest.CashLimit};
+            uow.PortfolioRepository.Add(portfolio);
+            
+
+            uow.PortfolioAssociationRepository.Add(new UserContestPortfolioAssociation(){Contest = contest, Portfolio = portfolio, User = usr});
+
+            uow.Save();
+
         }
 
 

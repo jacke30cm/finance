@@ -10,7 +10,7 @@ namespace Data.Entities
     {
 
        public string Name { get; set; }
-       public string Balance { get; set; }
+       public int Balance { get; set; }
        public virtual ICollection<PortfolioHistory> History { get; set; } 
 
     }

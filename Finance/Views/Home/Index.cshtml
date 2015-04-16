@@ -1,4 +1,6 @@
-﻿@using Services
+﻿@using Data.Entities
+@using Services
+@model List<Data.Entities.Contest>
 @{
     ViewBag.Title = "Start"; 
     @Styles.Render("~/CssBundle/home")
@@ -52,6 +54,30 @@
 
             </div>
             
+            
+            @foreach (var element in Model)
+            {
+                <div class="block-m">
+                    <a href="@Url.Action("Index", "Contest")">
+                        <div class="competition -white">
+                            <div class="competition-ghost"></div>
+
+                            <div class="image-wrap">
+                                <img src="@GfxHelper.Contest/@element.Image.Url" />
+                            </div>
+
+                            <div class="content">
+
+                                <h3>@element.Name</h3>
+                                <p class="-capitalize">Pågår till @element.EndDate</p>
+                            </div>
+
+                        </div>
+                    </a>
+                    </div>
+
+
+            }
            
                 
                

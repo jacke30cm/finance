@@ -115,6 +115,23 @@ namespace Services
             return 0; 
         }
 
+        public List<Contest> GetContestByUser(string userId)
+        {
+            var usr = uow.UserRepository.GetByID(userId);
+            var contestList = new List<Contest>();
+
+            var userContests = uow.PortfolioAssociationRepository.Get(x => x.User.Id == usr.Id);
+
+            foreach (var element in userContests)
+            {
+                contestList.Add(uow.ContestRepository.GetSingle(x => x.Id == element.Contest.Id));
+            }
+
+
+            return contestList;
+
+        }
+
 
     }
 }

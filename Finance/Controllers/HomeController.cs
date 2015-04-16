@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
 using Data.Entities;
+using Microsoft.AspNet.Identity;
 using Services;
 
 
@@ -21,8 +22,12 @@ namespace Finance.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            LocationHelper.Location = "Home"; 
-            return View();
+            var ser = new Get();
+            
+
+            LocationHelper.Location = "Home";
+            var contestlist = ser.GetContestByUser(User.Identity.GetUserId());
+            return View(contestlist);
         }
 
         [AllowAnonymous]
@@ -30,11 +35,13 @@ namespace Finance.Controllers
         {
 
             var serv = new StockHandler();
-            serv.PopulateStockQuotes();
-            serv.UpdateDatbase();
-            serv.RequestStockQuotes();
+            //serv.PopulateStockQuotes();
+            //serv.UpdateDatbase();
+            //serv.RequestStockQuotes();
             //serv.UpdateDatbase();
             //serv.AddUSAStock();
+
+
 
             LocationHelper.Location = "About"; 
             return View();
@@ -47,9 +54,23 @@ namespace Finance.Controllers
 
         }
 
+        public void SignUpContest()
+        {
+
+            var ser = new Post();
+            ser.SignUpForContest(User.Identity.GetUserId(), 2);
+
+        }
+
+        public void GetContestByUser()
+        {
+            var ser = new Get();
+            ser.GetContestByUser(User.Identity.GetUserId());
+        }
 
 
-        
-       
+
+
+
     }
 }
