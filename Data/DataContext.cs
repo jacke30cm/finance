@@ -39,7 +39,8 @@ namespace Data
         
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<PortfolioHistory> PortfolioHistory { get; set; }
-        public DbSet<Transaction> PortfolioAssociations { get; set; } 
+        public DbSet<Transaction> PortfolioAssociations { get; set; }
+        public DbSet<PortfolioShares> PortfolioShares { get; set; } 
 
     }
 }

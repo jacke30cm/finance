@@ -28,6 +28,7 @@ namespace Data.Entities
     public class Transaction : RelationalBase
     {
         public string Type { get; set; }
+        public int Amount { get; set; }
         public DateTime TimeStamp { get; set; }
         public decimal Value { get; set; }
         public decimal Price { get; set; }
@@ -35,6 +36,15 @@ namespace Data.Entities
         public virtual Share Share { get; set; }
         
     }
+
+    public class PortfolioShares : RelationalBase
+    {
+
+        public virtual Transaction Transaction { get; set; }
+        public virtual Portfolio Portfolio { get; set; }
+
+    }
+
 
     public class UserContestPortfolioAssociation : RelationalBase
     {
