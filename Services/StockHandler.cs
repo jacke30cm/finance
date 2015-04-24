@@ -431,5 +431,89 @@ namespace Services
        }
 
 
+       public void Transaction(int stockId, int amount, decimal price, string type, string userId, int contestId)
+       {
+
+           var uow = new DataWorker();
+           var usr = uow.UserRepository.GetSingle(x => x.Id.Equals(userId));
+           var portfolioassociation =
+               uow.PortfolioAssociationRepository.GetSingle(x => x.Contest.Id == contestId && x.User.Id.Equals(userId));
+
+           if (type.ToLower().Equals("buy"))
+           {
+               if (portfolioassociation.Portfolio.Balance >= amount*price)
+               {
+                   var transaction = new Transaction() { Type = type, Amount = amount, Portfolio = uow.PortfolioAssociationRepository.GetSingle(x => x.User.Id.Equals(usr.Id) && x.Contest.Id == contestId), Price = price, Share = uow.ShareRepository.GetSingle(x => x.Id == stockId), Value = amount * price, TimeStamp = DateTime.Now, Active = false };
+                   uow.TransactionRepository.Add(transaction);
+
+               }
+              
+           }
+           else if (type.ToLower().Equals("sell") && CheckUserStock(stockId, userId, contestId))
+           {
+               if (portfolioassociation.Portfolio.Balance <= amount * price)
+               {
+                   var transaction = new Transaction() { Type = type, Amount = amount, Portfolio = uow.PortfolioAssociationRepository.GetSingle(x => x.User.Id.Equals(usr.Id) && x.Contest.Id == contestId), Price = price, Share = uow.ShareRepository.GetSingle(x => x.Id == stockId), Value = amount * price, TimeStamp = DateTime.Now, Active = false };
+                   uow.TransactionRepository.Add(transaction);
+
+               }
+           }
+
+           
+           uow.Save();
+           }
+
+
+       public void UpdateTransaction()
+       {
+
+           var uow = new DataWorker();
+
+           var transactionList = uow.TransactionRepository.Get(x => x.Active == false).ToList();
+           
+
+           foreach (var transaction in transactionList)
+           {
+
+
+               var portfolio = uow.PortfolioRepository.GetSingle(x => x.Id == transaction.Portfolio.Portfolio.Id);
+
+               if (transaction.Type.ToLower().Equals("buy"))
+               {
+                   transaction.Active = true;
+                   portfolio.Balance -= transaction.Amount * Convert.ToInt32(transaction.Price);
+                   var portfolioShareBuy = new PortfolioShares() { Transaction = transaction, Portfolio = portfolio };
+                   uow.PortfolioShareRepository.Add(portfolioShareBuy);
+
+
+               }
+               else if (transaction.Type.ToLower().Equals("sell"))
+               {
+                   transaction.Active = true;
+                   portfolio.Balance += transaction.Amount * Convert.ToInt32(transaction.Price);
+                   var portfolioShareSell = new PortfolioShares() { Transaction = transaction, Portfolio = portfolio };
+                   uow.PortfolioShareRepository.Add(portfolioShareSell);
+                   
+               }
+
+               
+               uow.Save();
+           }
+
+           
+       }
+
+       public bool CheckUserStock(int stockId, string userId, int contestId)
+       {
+           var uow = new DataWorker();
+           var portfolioassociation =
+               uow.PortfolioAssociationRepository.GetSingle(x => x.Contest.Id == contestId && x.User.Id.Equals(userId));
+           
+           var transaction = uow.TransactionRepository.GetSingle(x => x.Active && x.Share.Id == stockId && x.Portfolio.Id == portfolioassociation.Id);
+
+           return transaction != null;
+       }
+
+
    }
 }

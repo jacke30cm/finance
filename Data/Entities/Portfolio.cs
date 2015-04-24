@@ -32,8 +32,9 @@ namespace Data.Entities
         public DateTime TimeStamp { get; set; }
         public decimal Value { get; set; }
         public decimal Price { get; set; }
-        public virtual Portfolio Portfolio { get; set; }
+        public virtual UserContestPortfolioAssociation Portfolio { get; set; }
         public virtual Share Share { get; set; }
+        public bool Active { get; set; }
         
     }
 

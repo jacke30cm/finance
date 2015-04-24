@@ -26,7 +26,7 @@ namespace Data
         private RelationalRepository<PortfolioHistory> portfolioHistoryRepository;
         private RelationalRepository<Transaction> transactionRepository;
         private RelationalRepository<UserContestPortfolioAssociation> portfolioAssociationRepository;
-
+        private RelationalRepository<PortfolioShares> portfolioShareRepository;
 
         // RelationalDB- repositories
         public RelationalRepository<User> UserRepository
@@ -77,7 +77,10 @@ namespace Data
         {
             get { return this.portfolioAssociationRepository ?? new RelationalRepository<UserContestPortfolioAssociation>(context); }
         }
-
+        public RelationalRepository<PortfolioShares> PortfolioShareRepository
+        {
+            get { return this.portfolioShareRepository ?? new RelationalRepository<PortfolioShares>(context); }
+        }
 
         public void Save()
         {

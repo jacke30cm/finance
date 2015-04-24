@@ -40,7 +40,8 @@ namespace Finance.Controllers
             //serv.RequestStockQuotes();
             //serv.UpdateDatbase();
             //serv.AddUSAStock();
-
+            //serv.Transaction(3949, 100, 100, "buy", User.Identity.GetUserId(), 1);
+            //serv.UpdateTransaction();
 
 
             LocationHelper.Location = "About"; 
